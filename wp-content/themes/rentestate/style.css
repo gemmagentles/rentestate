@@ -1,3 +1,138 @@
+/* Theme Name: Rent Estate Theme */
+/* Version: 0.1 */
+/* Author: Another Blank Page */
+/*********************
+COLOURS
+*********************/
+/* grey backgrounds */
+/* gold highlights and lines */
+/* light grey */
+/* light black footer */
+/* darker grey */
+/* lighter grey */
+/* grey */
+/* very light pink grey */
+/*********************
+SIZES
+*********************/
+/*********************
+TYPOGRAPHY
+*********************/
+@font-face {
+  font-family: Calibre-Semibold;
+  src: url("/wp-content/themes/platinum-theme/fonts/Calibre-Semibold.otf") format("opentype"); }
+
+@font-face {
+  font-family: Calibre-Medium;
+  src: url("/wp-content/themes/platinum-theme/fonts/Calibre-Medium.otf") format("opentype"); }
+
+/*********************
+BREAKPOINTS
+*********************/
+/************************
+
+Example Usage:
+
+SCSS =
+
+h1 {
+    font-size: em(32);
+}
+
+Output CSS = 
+
+h1 {
+    font-size: 2em;
+}
+
+************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
 body {
-  background: yellow; }
+  background: white;
+  overflow-x: hidden; }
+
+section {
+  position: relative; }
+
+a[href^=tel] {
+  color: #201C1D;
+  text-decoration: none; }
+
+.footer a[href^=tel] {
+  color: white;
+  text-decoration: none; }
+
+p {
+  font-size: 1em;
+  line-height: 28px;
+  letter-spacing: 0.55px;
+  font-family: Calibre-Medium; }
+  @media (min-width: 64em) {
+    p {
+      font-size: 1.125em;
+      line-height: 32px; } }
+
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none; }
+
+/*********************
+TYPOGRAPHY
+*********************/
+:root {
+  font-size: 1em; }
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Calibre-Semibold;
+  color: #201C1D;
+  font-weight: 400; }
+
+h1 {
+  font-size: 3em;
+  line-height: 52px;
+  letter-spacing: 2.08px; }
+  @media (min-width: 87em) {
+    h1 {
+      font-size: 5.25em;
+      line-height: 86px; } }
+
+h2 {
+  font-size: 2.375em;
+  letter-spacing: 1.81px;
+  line-height: 54px; }
+  @media (min-width: 87em) {
+    h2 {
+      font-size: 3.75em;
+      line-height: 82px; } }
+
+h3 {
+  font-size: 1.75em;
+  letter-spacing: 1px;
+  line-height: 38px; }
+  @media (min-width: 64em) {
+    h3 {
+      font-size: 2em;
+      line-height: 38px; } }
+  @media (min-width: 87em) {
+    h3 {
+      font-size: 3em;
+      line-height: 60px;
+      letter-spacing: 1.6px; } }
+
+h4 {
+  font-size: 0.75em;
+  letter-spacing: 2.53px;
+  line-height: 20px; }
+  @media (min-width: 70em) {
+    h4 {
+      font-size: 1em; } }
 
