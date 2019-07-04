@@ -17,7 +17,7 @@ $form-border-color: #dedede; /* very light pink grey */
 SIZES
 *********************/
 
-$site-width: 1530px;
+$site-width: 1610px;
 $inner-site-width: 1400px;
 
 /*********************
@@ -30,9 +30,9 @@ TYPOGRAPHY
 }
 
 @font-face {
-    font-family: Calibre-Medium;
+    font-family: Calibre-Regular;
     src: url("/wp-content/themes/platinum-theme/fonts/Calibre-Medium.otf") format("opentype");
 }
 
 $heading-font-family: Calibre-Semibold;
-$secondary-font-family: Calibre-Medium;
+$secondary-font-family: Calibre-Regular;

@@ -1,1 +1,0 @@
-this is folder for js includes that will be imported in app.js

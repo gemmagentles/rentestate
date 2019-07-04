@@ -94,7 +94,18 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"jquery\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sass/main.scss */ \"./src/sass/main.scss\");\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n// Listen to tab events to enable outlines (accessibility improvement)\nfunction handleFirstTab(e) {\n    if (e.keyCode === 9) {\n        // the \"I am a keyboard user\" key\n        document.body.classList.add('user-is-tabbing');\n        window.removeEventListener('keydown', handleFirstTab);\n    }\n}\n\nwindow.addEventListener('keydown', handleFirstTab);\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"jquery\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sass/main.scss */ \"./src/sass/main.scss\");\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_header_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/header.js */ \"./src/components/header.js\");\n/* harmony import */ var _components_header_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_header_js__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\n// Listen to tab events to enable outlines (accessibility improvement)\nfunction handleFirstTab(e) {\n    if (e.keyCode === 9) {\n        // the \"I am a keyboard user\" key\n        document.body.classList.add('user-is-tabbing');\n        window.removeEventListener('keydown', handleFirstTab);\n    }\n}\n\nwindow.addEventListener('keydown', handleFirstTab);\n\n//# sourceURL=webpack:///./src/app.js?");
+
+/***/ }),
+
+/***/ "./src/components/header.js":
+/*!**********************************!*\
+  !*** ./src/components/header.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("(function ($, root, undefined) {\n\n    $(function () {\n\n        'use strict';\n    });\n\n    $(document).ready(function () {\n        $(\".nav__hamburger-icon\").click(function () {\n            $(\".nav__hamburger-icon\").toggleClass(\"nav__open\");\n        });\n\n        // When the user scrolls down 80px from the top of the document, make the nav bar smaller\n        window.onscroll = function () {\n            scrollFunction();\n        };\n\n        function scrollFunction() {\n\n            var headingNavBar = document.getElementById(\"navbar-js\");\n\n            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {\n                headingNavBar.classList.add(\"sticky\");\n            } else {\n                headingNavBar.classList.remove(\"sticky\");\n            }\n        }\n    });\n})(jQuery, this);\n\n//# sourceURL=webpack:///./src/components/header.js?");
 
 /***/ }),
 

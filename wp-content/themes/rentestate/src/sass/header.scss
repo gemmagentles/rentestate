@@ -1,0 +1,307 @@
+#navbar-js {
+    overflow: visible;
+    background: white;
+    box-shadow: 0 10px 20px 0 rgba(100, 112, 160, 0.05);
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+
+    .header {
+        padding: 14px;
+    }
+
+    .header__logo-desktop {
+        max-width: 82px;
+    }
+}
+
+main {
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+    margin-top: 146px;
+}
+
+.header {
+    padding: 31px 25px 25px;
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 6px;
+        border-top: 6px solid $secondary-color;
+        width: 100%;
+        top: 0;
+        left: 0;
+
+        @include breakpoint(tablet) {
+            opacity: 0;
+
+            @keyframes linegrow {
+                0%   { width: 0; opacity: 0; }
+                100% { width: 100%; opacity: 1; }
+            }
+
+            animation: linegrow 4s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+        }
+    }
+
+    @include breakpoint(xlargedesktop) {
+        padding: 30px 0 24px;     
+    }
+
+    &__logo-desktop {
+        max-width: 66px;
+        transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+
+        @include breakpoint(largedesktop) {
+            max-width: 97px;
+        }
+    }
+
+    &__logo-wrapper {
+        padding-right: 62px;
+    }
+
+    &__wrapper {
+        max-width: $site-width;
+        margin: 0 auto;
+
+        @include breakpoint(smalldesktop) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @include breakpoint(largedesktop) {
+            padding: 0 20px;
+        }
+
+        .logo-img {
+            width: 80px;
+            animation-name: fadein;
+            animation-duration: 2s;
+            opacity: 1;
+            
+            @keyframes fadein {
+                from {opacity: 0;}
+            }
+
+            @include breakpoint(desktop) {
+                width: 102px;
+            }
+        }
+    }
+
+    &__nav {
+        display: none;
+        visibility: hidden;
+
+        @include breakpoint(smalldesktop) {
+            visibility: visible;
+            display: block;
+            width: 100%;
+        }
+
+        .menu-item-type-post_type {
+            list-style-type: none; 
+            position: relative;
+            padding-bottom: 25px;
+            text-align: center;
+            animation-name: fadein;
+            animation-duration: 2s;
+            opacity: 1;
+
+            @keyframes fadein {
+                from {opacity: 0;}
+            }
+
+            @include breakpoint(smalldesktop) {
+                display: inline;
+                float: left;
+                padding-bottom: 0;
+                padding-right: 40px;
+            }
+
+            @include breakpoint(desktop) {
+                padding-right: 52px;
+            }
+        }
+
+        .menu-item-type-custom {
+            text-align: center;
+            list-style-type: none; 
+            position: relative;
+            animation-name: fadein;
+            animation-duration: 2s;
+            opacity: 1;
+            padding-bottom: 25px;
+
+            @include breakpoint(smalldesktop) {
+                float: right;
+                text-align: right;
+                padding-left: 35px;
+                padding-bottom: 0;
+            }
+
+            &::after {
+                @include breakpoint(smalldesktop) {
+                    content: "";
+                    position: absolute;
+                    height: 48px;
+                    border-left: 2px solid $tertiary-color;
+                    top: -50%;
+                    left: 0;
+                }
+            }
+
+            &:last-child {
+                padding: 0 35px;
+
+                &::after {
+                    content: none;
+                }
+            }
+        }
+
+        .current-menu-item a {
+            @include breakpoint(smalldesktop) {
+                color: $secondary-color;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $font-secondary-color;
+            font-family: $secondary-font-family;
+            letter-spacing: 1.12px;
+            font-size: em(18);
+            font-weight: normal;
+
+            @include breakpoint(smalldesktop) {
+                font-size: em(16);
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $secondary-color;
+                }
+            }
+
+            @include breakpoint(largedesktop) {
+                font-size: em(18);
+            }
+        }
+    }
+}
+
+/* styles only for mobile and tablet when menu is a hamburger */
+.nav__hamburger-icon {
+    display: inline-block;
+    cursor: pointer;
+    z-index: 100;
+    position: absolute;
+    top: 35px;
+    right: 25px;
+
+    &::before {
+        content: "Menu";
+        position: absolute;
+        top: 11px;
+        right: 52px;
+        font-family: $secondary-font-family;
+        letter-spacing: 0.9px;
+        font-size: em(16);
+        color: $secondary-color;
+        text-transform: uppercase;
+    }
+
+    .hamburger-bar1, 
+    .hamburger-bar2, 
+    .hamburger-bar3 {
+        width: 30px;
+        height: 3px;
+        background-color: $secondary-color;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    @include breakpoint(smalldesktop) {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+ /* style the hamburger menu icon to transition into a cross when clicked */
+
+.nav__open {
+
+    &::before {
+        content: "Close";
+        position: absolute;
+        top: 11px;
+        right: 52px;
+        font-family: $secondary-font-family;
+        letter-spacing: 0.9px;
+        font-size: em(16);
+        text-transform: uppercase;
+
+        animation-name: fadein;
+        animation-duration: 2s;
+        opacity: 1;
+        
+        @keyframes fadein {
+            from {opacity: 0;}
+        }
+    }
+
+  .hamburger-bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .hamburger-bar2 { opacity: 0; }
+
+  .hamburger-bar3 {
+    transform: rotate(45deg) translate(-6px, -4px);
+  }  
+}
+
+ /* inside the hamburger menu once opened */
+.nav__open + .header__nav {
+  display: block;
+  visibility: visible;
+  background: $primary-color;
+  position: absolute;
+  top: 96px;
+  left: 0;
+  animation-name: slidein;
+  animation-duration: 0.3s;
+  width: 100%;
+  height: 100vh;
+  z-index: 99;
+  opacity: 1;
+  padding-top: 35px;
+  
+  @keyframes slidein {
+    from {left: -100%;}
+  }
+
+  .logo {
+    top: 31px;
+    left: 25px;
+    position: relative;
+  }
+}

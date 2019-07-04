@@ -1,5 +1,6 @@
 import 'jquery';
 import './sass/main.scss';
+import './components/header.js';
 
 // Listen to tab events to enable outlines (accessibility improvement)
 function handleFirstTab(e) {
