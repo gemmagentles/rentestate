@@ -7,7 +7,7 @@ COLOURS
 /* grey backgrounds */
 /* gold highlights and lines */
 /* light grey */
-/* light black footer */
+/* light black */
 /* darker grey */
 /* lighter grey */
 /* grey */
@@ -69,7 +69,7 @@ h1 {
 main {
   transition: 0.4s;
   /* Adds a transition effect when the padding is decreased */
-  margin-top: 146px; }
+  margin-top: 94px; }
 
 .header {
   padding: 31px 25px 25px;
@@ -289,6 +289,69 @@ main {
     top: 31px;
     left: 25px;
     position: relative; }
+
+.hero__background {
+  background: #F3F4F5;
+  width: 100%;
+  height: 72%;
+  position: absolute; }
+
+.hero__container {
+  max-width: 1438px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 38px; }
+
+.hero__text-wrapper--ontop {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 80px;
+  color: white;
+  max-width: 550px;
+  padding-right: 80px; }
+  @media (min-width: 87em) {
+    .hero__text-wrapper--ontop {
+      left: 120px;
+      padding-right: 0; } }
+  .hero__text-wrapper--ontop .hero__heading {
+    color: white; }
+
+.hero__text-wrapper--above {
+  max-width: 750px;
+  padding: 50px 0 0; }
+  @media (min-width: 64em) {
+    .hero__text-wrapper--above {
+      padding: 130px 0 20px; } }
+  .hero__text-wrapper--above .hero__heading {
+    color: #201C1D;
+    font-size: 2em;
+    line-height: 41px; }
+    @media (min-width: 64em) {
+      .hero__text-wrapper--above .hero__heading {
+        font-size: 3.75em;
+        line-height: 66px; } }
+
+.hero__period {
+  color: #B98361; }
+
+.hero__paragraph {
+  font-size: 1.5em;
+  line-height: 36px;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 15px; }
+  @media (min-width: 87em) {
+    .hero__paragraph {
+      padding-top: 40px; } }
+
+.hero__image {
+  margin-top: 38px;
+  width: 100%;
+  min-height: 528px;
+  object-fit: cover; }
+  @media (min-width: 87em) {
+    .hero__image {
+      margin-top: 84px; } }
 
 * {
   margin: 0;

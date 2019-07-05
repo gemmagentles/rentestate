@@ -9,7 +9,29 @@
 	External Modules/Files
 \*------------------------------------*/
 
-// Load any external files you have here
+// Blocks
+
+add_action('acf/init', 'hero');
+function hero() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a Hero block.
+        acf_register_block(array(
+            'name'              => 'hero',
+            'title'             => __("Hero"),
+            'description'       => __("The block for the hero component, to hold a large image with text and a full width background color."),
+            'render_template'   => 'template-parts/blocks/hero.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'format-image',
+            'mode'              => 'edit',
+            'keywords'          => array('hero', 'image'),
+        ));
+    }
+}
+
 
 /*------------------------------------*\
 	Theme Support
