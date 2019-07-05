@@ -7,6 +7,7 @@
 @import 'pixel-to-em.scss';
 @import 'header.scss';
 @import 'hero.scss';
+@import 'half-and-half-list.scss';
 
 * {
   margin: 0;
@@ -28,11 +29,13 @@ a[href^=tel]{ color:$font-color; text-decoration:none;}
 
 .footer { a[href^=tel]{ color:white; text-decoration:none;} }
 
-p {
+p,
+li {
   font-size: em(16);
   line-height: 28px;
   letter-spacing: 0.55px;
   font-family: $secondary-font-family;
+  -webkit-font-smoothing: antialiased;
 
   @include breakpoint(smalldesktop) {
     font-size: em(18);

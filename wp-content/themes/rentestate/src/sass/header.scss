@@ -16,7 +16,7 @@
     z-index: 99999;
 
     .header {
-        padding: 14px;
+        padding: 25px 0 19px;     
     }
 
     .header__logo-desktop {
@@ -163,7 +163,7 @@ main {
                     position: absolute;
                     height: 48px;
                     border-left: 2px solid $tertiary-color;
-                    top: -50%;
+                    top: -28%;
                     left: 0;
                 }
             }

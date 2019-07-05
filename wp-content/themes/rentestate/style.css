@@ -26,6 +26,10 @@ TYPOGRAPHY
   font-family: Calibre-Regular;
   src: url("/wp-content/themes/platinum-theme/fonts/Calibre-Medium.otf") format("opentype"); }
 
+@font-face {
+  font-family: EngraversGothic-Bold;
+  src: url("/wp-content/themes/platinum-theme/fonts/EngraversGothic-Bold.otf") format("opentype"); }
+
 /*********************
 BREAKPOINTS
 *********************/
@@ -62,7 +66,7 @@ h1 {
   width: 100%;
   z-index: 99999; }
   .sticky .header {
-    padding: 14px; }
+    padding: 25px 0 19px; }
   .sticky .header__logo-desktop {
     max-width: 82px; }
 
@@ -183,7 +187,7 @@ main {
           position: absolute;
           height: 48px;
           border-left: 2px solid #B8C1CB;
-          top: -50%;
+          top: -28%;
           left: 0; } }
       .header__nav .menu-item-type-custom:last-child {
         padding: 0 35px; }
@@ -290,6 +294,9 @@ main {
     left: 25px;
     position: relative; }
 
+.hero__wrapper {
+  position: relative; }
+
 .hero__background {
   background: #F3F4F5;
   width: 100%;
@@ -353,6 +360,67 @@ main {
     .hero__image {
       margin-top: 84px; } }
 
+.half-and-half-list__wrapper {
+  max-width: 1438px;
+  margin: 0 auto;
+  padding: 0 38px;
+  display: flex;
+  justify-content: space-evenly; }
+  @media (min-width: 87em) {
+    .half-and-half-list__wrapper {
+      padding: 240px 38px; } }
+
+.half-and-half-list__text-half {
+  width: 58%;
+  padding: 0 160px 0 120px; }
+
+.half-and-half-list__heading {
+  padding-bottom: 40px;
+  font-size: 2.25em;
+  line-height: 48px;
+  letter-spacing: 0.3px; }
+
+.half-and-half-list__paragraph {
+  font-size: 1.375em;
+  padding-bottom: 40px;
+  line-height: 36px; }
+
+.half-and-half-list__text-button {
+  text-decoration: none;
+  color: #201C1D;
+  font-family: Calibre-Regular;
+  font-size: 1.5em; }
+  .half-and-half-list__text-button:hover, .half-and-half-list__text-button:focus {
+    text-decoration: underline; }
+
+.half-and-half-list__list-half {
+  width: 42%;
+  background: #B98361;
+  color: white;
+  padding: 80px 120px; }
+
+.half-and-half-list__list-title {
+  color: white;
+  text-transform: uppercase;
+  font-family: EngraversGothic-Bold;
+  font-size: 1em;
+  line-height: 20px;
+  letter-spacing: 2px;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 28px; }
+
+.half-and-half-list__list-button {
+  background: white;
+  padding: 24px 48px;
+  color: #B98361;
+  text-decoration: none;
+  font-family: Calibre-Regular;
+  font-size: 1.125em;
+  border-radius: 4px;
+  display: block;
+  margin-top: 30px;
+  -webkit-font-smoothing: antialiased; }
+
 * {
   margin: 0;
   padding: 0;
@@ -373,13 +441,16 @@ a[href^=tel] {
   color: white;
   text-decoration: none; }
 
-p {
+p,
+li {
   font-size: 1em;
   line-height: 28px;
   letter-spacing: 0.55px;
-  font-family: Calibre-Regular; }
+  font-family: Calibre-Regular;
+  -webkit-font-smoothing: antialiased; }
   @media (min-width: 64em) {
-    p {
+    p,
+    li {
       font-size: 1.125em;
       line-height: 32px; } }
 

@@ -1,4 +1,7 @@
 .hero {
+    &__wrapper {
+        position: relative;
+    }
 
     &__background {
         background: $primary-color;
