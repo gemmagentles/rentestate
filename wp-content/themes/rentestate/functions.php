@@ -53,6 +53,26 @@ function halfandhalflist() {
     }
 }
 
+add_action('acf/init', 'ctabanner');
+function ctabanner() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a CTA Banner block.
+        acf_register_block(array(
+            'name'              => 'ctabanner',
+            'title'             => __("CTA Banner"),
+            'description'       => __("The block for the CTA Banner component, to be a background image with a white box overlay that holds text and a link."),
+            'render_template'   => 'template-parts/blocks/cta-banner.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'align-center',
+            'mode'              => 'edit',
+            'keywords'          => array('cta', 'banner', 'image'),
+        ));
+    }
+}
 
 /*------------------------------------*\
 	Theme Support
