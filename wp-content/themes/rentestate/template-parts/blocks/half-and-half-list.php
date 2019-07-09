@@ -6,7 +6,9 @@
             <div class="half-and-half-list__paragraph"><?php the_sub_field( 'paragraph' ); ?></div>
             <?php $button_link = get_sub_field( 'button_link' ); ?>
             <?php if ( $button_link ) { ?>
-                <a class="half-and-half-list__text-button" href="<?php echo $button_link['url']; ?>" target="<?php echo $button_link['target']; ?>"><?php echo $button_link['title']; ?></a>
+                <a class="half-and-half-list__text-button" href="<?php echo $button_link['url']; ?>" target="<?php echo $button_link['target']; ?>"><?php echo $button_link['title']; ?>
+                    <svg class="half-and-half-list__text-button--icon"><use href="<?php echo get_template_directory_uri(); ?>/img/icons/icons.svg#icon-arrow" xlink:href="<?php echo get_template_directory_uri(); ?>/img/icons/icons.svg#icon-arrow"/></svg>
+                </a>
             <?php } ?>
         </div>
         <div class="half-and-half-list__list-half">
@@ -22,7 +24,10 @@
             <?php endif; ?>
             <?php $list_button_link = get_sub_field( 'list_button_link' ); ?>
             <?php if ( $list_button_link ) { ?>
-                <a class="half-and-half-list__list-button" href="<?php echo $list_button_link['url']; ?>" target="<?php echo $list_button_link['target']; ?>"><?php echo $list_button_link['title']; ?></a>
+                <a class="half-and-half-list__list-button" href="<?php echo $list_button_link['url']; ?>" target="<?php echo $list_button_link['target']; ?>">
+                    <?php echo $list_button_link['title']; ?>
+                    <svg class="half-and-half-list__list-button--icon"><use href="<?php echo get_template_directory_uri(); ?>/img/icons/icons.svg#icon-arrow" xlink:href="<?php echo get_template_directory_uri(); ?>/img/icons/icons.svg#icon-arrow"/></svg>
+                </a>
             <?php } ?>
         </div>        
     <?php endwhile; ?>

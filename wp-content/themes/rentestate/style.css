@@ -66,7 +66,7 @@ h1 {
   width: 100%;
   z-index: 99999; }
   .sticky .header {
-    padding: 25px 0 19px; }
+    padding: 25px 25px 19px; }
   .sticky .header__logo-desktop {
     max-width: 82px; }
 
@@ -363,16 +363,36 @@ main {
 .half-and-half-list__wrapper {
   max-width: 1438px;
   margin: 0 auto;
-  padding: 0 38px;
-  display: flex;
-  justify-content: space-evenly; }
+  padding: 70px 38px; }
+  @media (min-width: 48em) {
+    .half-and-half-list__wrapper {
+      padding: 80px 38px; } }
+  @media (min-width: 64em) {
+    .half-and-half-list__wrapper {
+      padding: 140px 38px;
+      display: flex;
+      justify-content: space-evenly; } }
   @media (min-width: 87em) {
     .half-and-half-list__wrapper {
       padding: 240px 38px; } }
 
 .half-and-half-list__text-half {
-  width: 58%;
-  padding: 0 160px 0 120px; }
+  width: 100%;
+  margin-bottom: 100px; }
+  @media (min-width: 48em) {
+    .half-and-half-list__text-half {
+      padding: 0 60px 0 0; } }
+  @media (min-width: 64em) {
+    .half-and-half-list__text-half {
+      margin-bottom: 0;
+      width: 50%; } }
+  @media (min-width: 70em) {
+    .half-and-half-list__text-half {
+      padding: 0 100px 0 80px; } }
+  @media (min-width: 87em) {
+    .half-and-half-list__text-half {
+      width: 58%;
+      padding: 0 160px 0 120px; } }
 
 .half-and-half-list__heading {
   padding-bottom: 40px;
@@ -389,15 +409,37 @@ main {
   text-decoration: none;
   color: #201C1D;
   font-family: Calibre-Regular;
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  display: flex;
+  align-items: center; }
   .half-and-half-list__text-button:hover, .half-and-half-list__text-button:focus {
     text-decoration: underline; }
+  .half-and-half-list__text-button--icon {
+    width: 40px;
+    height: 18px;
+    margin-left: 25px; }
 
 .half-and-half-list__list-half {
-  width: 42%;
+  width: 100%;
   background: #B98361;
   color: white;
-  padding: 80px 120px; }
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center; }
+  @media (min-width: 48em) {
+    .half-and-half-list__list-half {
+      padding: 60px 80px; } }
+  @media (min-width: 64em) {
+    .half-and-half-list__list-half {
+      width: 50%; } }
+  @media (min-width: 70em) {
+    .half-and-half-list__list-half {
+      padding: 80px 120px; } }
+  @media (min-width: 87em) {
+    .half-and-half-list__list-half {
+      width: 42%; } }
 
 .half-and-half-list__list-title {
   color: white;
@@ -409,6 +451,14 @@ main {
   -webkit-font-smoothing: antialiased;
   padding-bottom: 28px; }
 
+.half-and-half-list__list-wrapper {
+  list-style-image: url("/wp-content/themes/rentestate/img/icons/white-bullet.svg");
+  margin-left: 32px; }
+
+.half-and-half-list__list-item {
+  padding-left: 24px;
+  padding-top: 5px; }
+
 .half-and-half-list__list-button {
   background: white;
   padding: 24px 48px;
@@ -417,9 +467,14 @@ main {
   font-family: Calibre-Regular;
   font-size: 1.125em;
   border-radius: 4px;
-  display: block;
   margin-top: 30px;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  align-items: center; }
+  .half-and-half-list__list-button--icon {
+    width: 27px;
+    height: 12px;
+    margin-left: 25px; }
 
 * {
   margin: 0;
