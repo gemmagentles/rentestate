@@ -32,6 +32,27 @@ function hero() {
     }
 }
 
+add_action('acf/init', 'halfandhalflist');
+function halfandhalflist() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a Half and Half List block.
+        acf_register_block(array(
+            'name'              => 'halfandhalflist',
+            'title'             => __("Half and Half List"),
+            'description'       => __("The block for the half and half list component, to be split 50 50 one side text, another side a list."),
+            'render_template'   => 'template-parts/blocks/half-and-half-list.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'format-aside',
+            'mode'              => 'edit',
+            'keywords'          => array('list', 'half'),
+        ));
+    }
+}
+
 
 /*------------------------------------*\
 	Theme Support

@@ -34,5 +34,11 @@ TYPOGRAPHY
     src: url("/wp-content/themes/platinum-theme/fonts/Calibre-Medium.otf") format("opentype");
 }
 
+@font-face {
+    font-family: EngraversGothic-Bold;
+    src: url("/wp-content/themes/platinum-theme/fonts/EngraversGothic-Bold.otf") format("opentype");
+}
+
 $heading-font-family: Calibre-Semibold;
 $secondary-font-family: Calibre-Regular;
+$tertiary-font-family: EngraversGothic-Bold;
