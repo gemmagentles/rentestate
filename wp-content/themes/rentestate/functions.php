@@ -9,6 +9,14 @@
 	External Modules/Files
 \*------------------------------------*/
 
+/* Overall Site Options */
+
+if ( function_exists('acf_add_options_page') ) {
+    acf_add_options_page();
+    acf_set_options_page_menu('Rent Estate Options');
+    acf_add_options_sub_page('Global Site Options');
+}
+
 // Blocks
 
 add_action('acf/init', 'hero');

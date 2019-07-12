@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
 </head>
-<body id="top" <?php body_class(); ?>>
+<body <?php body_class(); ?>>
 <div class="wrapper">
     <div id="navbar-js">
         <header class="header clear" role="banner">
