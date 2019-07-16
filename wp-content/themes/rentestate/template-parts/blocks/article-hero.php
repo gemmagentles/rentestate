@@ -17,15 +17,19 @@
 			<?php while ( have_rows( 'slider' ) ) : the_row(); ?>
 			<p class="article-hero__price">$<?php the_sub_field( 'price' ); ?></p>
 				<?php if ( have_rows( 'image_slider' ) ) : ?>
+				<div class="article-hero__slides">
 						<?php while ( have_rows( 'image_slider' ) ) : the_row(); ?>
 							<?php $image = get_sub_field( 'image' ); ?>
 							<?php if ( $image ) { ?>
-								<img class="article-hero__image" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+								<div>
+									<img class="article-hero__image" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+								</div>
 							<?php } ?>
 						<?php endwhile; ?>
 					<?php else : ?>
 						<?php // no rows found ?>
 					<?php endif; ?>
+				</div>
 			<?php endwhile; ?>
 		</div>
 		<?php endif; ?>

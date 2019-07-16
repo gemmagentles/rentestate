@@ -1,6 +1,11 @@
 .article-hero {
     &__wrapper {
         position: relative;
+        margin-bottom: 60px;
+
+        @include breakpoint(smalldesktop) {
+            margin-bottom: 160px;
+        }
     }
 
     &__background {
@@ -95,6 +100,7 @@
 
     &__slider {
         position: relative;
+        overflow: hidden;
         
         @include breakpoint(smalldesktop) {
             width: 55%;
@@ -102,6 +108,43 @@
 
         @include breakpoint(largedesktop) {
             width: 65%;
+        }
+
+        .tns-controls {
+            display: none;
+            visibility: hidden;
+        }
+
+        .tns-nav {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+
+            @include breakpoint(smalldesktop) {
+                bottom: 25px;
+            }
+        }
+
+        .tns-nav button {
+            width: 12px;
+            height: 12px;
+            border-radius: 100%;
+            margin: 8px;
+            background: transparent;
+            border: 1px solid white;
+
+            &.tns-nav-active {
+                background: white;
+            }
+        }
+
+        [data-action='start'],
+        [data-action='stop'] {
+            display: none;
+            visibility: hidden;
         }
     }
 
@@ -115,6 +158,7 @@
         position: absolute;
         bottom: 0;
         right: 0;
+        z-index: 1;
 
         @include breakpoint(tablet) {
             font-size: em(20);
