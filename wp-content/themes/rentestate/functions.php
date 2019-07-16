@@ -82,6 +82,25 @@ function ctabanner() {
     }
 }
 
+/*Register WordPress Gutenberg CPT */
+function listing_post_type() {
+
+    register_post_type( 'listing',
+        // WordPress CPT Options Start
+        array(
+            'labels' => array(
+                'name' => __( 'Listings' ),
+                'singular_name' => __( 'Listing' )
+            ),
+            'has_archive' => true,
+            'public' => true,
+            'rewrite' => array('slug' => 'listing'),
+        )
+    );
+}
+ 
+add_action( 'init', 'listing_post_type' );
+
 /*------------------------------------*\
 	Theme Support
 \*------------------------------------*/
