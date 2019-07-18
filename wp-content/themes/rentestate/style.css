@@ -146,7 +146,7 @@ main {
         visibility: visible;
         display: block;
         width: 100%; } }
-    .header__nav .menu-item-type-post_type {
+    .header__nav .menu-item {
       list-style-type: none;
       position: relative;
       padding-bottom: 25px;
@@ -159,15 +159,15 @@ main {
   from {
     opacity: 0; } }
       @media (min-width: 64em) {
-        .header__nav .menu-item-type-post_type {
+        .header__nav .menu-item {
           display: inline;
           float: left;
           padding-bottom: 0;
           padding-right: 40px; } }
       @media (min-width: 70em) {
-        .header__nav .menu-item-type-post_type {
+        .header__nav .menu-item {
           padding-right: 52px; } }
-    .header__nav .menu-item-type-custom {
+    .header__nav .menu-login-link {
       text-align: center;
       list-style-type: none;
       position: relative;
@@ -176,22 +176,22 @@ main {
       opacity: 1;
       padding-bottom: 25px; }
       @media (min-width: 64em) {
-        .header__nav .menu-item-type-custom {
+        .header__nav .menu-login-link {
           float: right;
           text-align: right;
           padding-left: 35px;
           padding-bottom: 0; } }
       @media (min-width: 64em) {
-        .header__nav .menu-item-type-custom::after {
+        .header__nav .menu-login-link::after {
           content: "";
           position: absolute;
           height: 48px;
           border-left: 2px solid #B8C1CB;
           top: -28%;
           left: 0; } }
-      .header__nav .menu-item-type-custom:last-child {
+      .header__nav .menu-login-link:last-child {
         padding: 0 35px; }
-        .header__nav .menu-item-type-custom:last-child::after {
+        .header__nav .menu-login-link:last-child::after {
           content: none; }
     @media (min-width: 64em) {
       .header__nav .current-menu-item a {
@@ -475,7 +475,8 @@ main {
 .cta-banner__paragraph {
   padding-top: 15px;
   font-size: 1.125em;
-  line-height: 28px; }
+  line-height: 28px;
+  color: #787C82; }
   @media (min-width: 64em) {
     .cta-banner__paragraph {
       padding-top: 30px;
@@ -758,6 +759,115 @@ main {
   @media (min-width: 64em) {
     .article-hero__image {
       max-width: 920px; } }
+
+.article-cards__grid {
+  margin: 0 auto;
+  padding: 68px 38px 0;
+  max-width: 1476px; }
+  @media (min-width: 48em) {
+    .article-cards__grid {
+      padding: 68px 38px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 62px 40px; } }
+  @media (min-width: 64em) {
+    .article-cards__grid {
+      padding: 68px 38px 92px;
+      grid-template-columns: 1fr 1fr 1fr; } }
+
+.article-cards__card {
+  margin-bottom: 60px; }
+  @media (min-width: 48em) {
+    .article-cards__card {
+      margin-bottom: 0; } }
+
+.article-cards__container {
+  width: 100%;
+  max-width: 440px; }
+
+.article-cards__image-wrapper {
+  position: relative; }
+
+.article-cards__image-container div:not(:first-child) {
+  display: none;
+  visibility: hidden; }
+
+.article-cards__image {
+  width: 100%;
+  min-height: 323px;
+  object-fit: cover;
+  display: block; }
+  @media (min-width: 64em) {
+    .article-cards__image {
+      max-width: 440px; } }
+
+.article-cards__price {
+  background: #B98361;
+  color: white;
+  padding: 10px 15px 5px;
+  font-size: 1em;
+  line-height: 20px;
+  letter-spacing: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; }
+  @media (min-width: 48em) {
+    .article-cards__price {
+      font-size: 1.125em;
+      line-height: 24px; } }
+
+.article-cards__sub-heading {
+  color: #787C82;
+  font-family: EngraversGothic-Bold;
+  font-size: 1em;
+  line-height: 20px;
+  letter-spacing: 2.0px;
+  padding: 24px 0; }
+
+.article-cards__link {
+  text-decoration: none; }
+
+.article-cards__heading {
+  font-size: 1.5em;
+  line-height: 28px;
+  font-family: Calibre-Regular;
+  letter-spacing: 0;
+  padding: 26px 0 0;
+  border-top: 1px solid #B98361; }
+  @media (min-width: 64em) {
+    .article-cards__heading {
+      font-size: 1.75em;
+      line-height: 38px; } }
+
+.article-cards__features-wrapper {
+  display: flex; }
+
+.article-cards__features {
+  color: #B98361;
+  font-family: EngraversGothic-Bold;
+  font-size: 1em;
+  padding-right: 25px; }
+
+.article-cards__load-button-wrapper {
+  max-width: 1476px;
+  padding: 0 38px;
+  margin: 0 auto;
+  text-align: center; }
+
+.article-cards__load-button {
+  background: transparent;
+  border: 1px solid #B98361;
+  border-radius: 5px;
+  padding: 12px 30px 7px;
+  color: #B98361;
+  font-family: Calibre-Regular;
+  font-size: 1.125em;
+  cursor: pointer;
+  margin-bottom: 60px; }
+  @media (min-width: 64em) {
+    .article-cards__load-button {
+      margin-bottom: 96px; } }
 
 * {
   margin: 0;

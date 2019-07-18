@@ -35,6 +35,7 @@
         padding-top: 15px;
         font-size: em(18);
         line-height: 28px;
+        color: $font-secondary-color;
 
         @include breakpoint(smalldesktop) {
             padding-top: 30px;

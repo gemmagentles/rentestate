@@ -15,6 +15,7 @@ if ( function_exists('acf_add_options_page') ) {
     acf_add_options_page();
     acf_set_options_page_menu('Rent Estate Options');
     acf_add_options_sub_page('Global Site Options');
+    acf_add_options_sub_page('Listings CTA');
 }
 
 // Blocks
@@ -82,6 +83,27 @@ function ctabanner() {
     }
 }
 
+add_action('acf/init', 'articlecards');
+function articlecards() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register an Article Cards block.
+        acf_register_block(array(
+            'name'              => 'articlecards',
+            'title'             => __("Article Cards"),
+            'description'       => __("The block for the Article Cards component, a slider that should pull in the first 5 listing posts."),
+            'render_template'   => 'template-parts/blocks/article-cards.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'align-center',
+            'mode'              => 'edit',
+            'keywords'          => array('slider', 'images', 'listings'),
+        ));
+    }
+}
+
 /*Register WordPress Gutenberg CPT */
 function listing_post_type() {
 
@@ -94,7 +116,7 @@ function listing_post_type() {
             ),
             'has_archive' => true,
             'public' => true,
-            'rewrite' => array('slug' => 'listing'),
+            'rewrite' => array('slug' => 'listings'),
         )
     );
 }
@@ -149,6 +171,32 @@ if (function_exists('add_theme_support')) {
 /*------------------------------------*\
 	Functions
 \*------------------------------------*/
+
+// Load more button for functions
+function article_cards_load_more_scripts() {
+ 
+	global $wp_query; 
+ 
+	// In most cases it is already included on the page and this line can be removed
+	wp_enqueue_script('jquery');
+ 
+	// register our main script but do not enqueue it yet
+	wp_register_script( 'loadmore', get_stylesheet_directory_uri() . '/js/article-cards.js', array('jquery') );
+ 
+	// now the most interesting part
+	// we have to pass parameters to article-cards.js script but we can get the parameters values only in PHP
+	// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
+	wp_localize_script( 'loadmore', 'article_loadmore_params', array(
+		'ajaxurl' => site_url() . '/listings/', // WordPress AJAX
+		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
+		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+		'max_page' => $wp_query->max_num_pages
+	) );
+ 
+ 	wp_enqueue_script( 'loadmore' );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'article_cards_load_more_scripts' );
 
 // HTML5 Blank navigation
 function html5blank_nav()
