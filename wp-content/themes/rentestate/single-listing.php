@@ -26,6 +26,11 @@
 
 	</section>
 	<!-- /section -->
+
+	<section>
+		<?php get_template_part('template-parts/blocks/cta-banner-listings'); ?> 		
+	</section>
+
 	</main>
 
 <?php get_footer(); ?>

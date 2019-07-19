@@ -15,6 +15,7 @@ if ( function_exists('acf_add_options_page') ) {
     acf_add_options_page();
     acf_set_options_page_menu('Rent Estate Options');
     acf_add_options_sub_page('Global Site Options');
+    acf_add_options_sub_page('Listings CTA');
 }
 
 // Blocks
@@ -82,6 +83,27 @@ function ctabanner() {
     }
 }
 
+add_action('acf/init', 'articlecards');
+function articlecards() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register an Article Cards block.
+        acf_register_block(array(
+            'name'              => 'articlecards',
+            'title'             => __("Article Cards"),
+            'description'       => __("The block for the Article Cards component, a slider that should pull in the first 5 listing posts."),
+            'render_template'   => 'template-parts/blocks/article-cards.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'align-center',
+            'mode'              => 'edit',
+            'keywords'          => array('slider', 'images', 'listings'),
+        ));
+    }
+}
+
 /*Register WordPress Gutenberg CPT */
 function listing_post_type() {
 
@@ -94,7 +116,7 @@ function listing_post_type() {
             ),
             'has_archive' => true,
             'public' => true,
-            'rewrite' => array('slug' => 'listing'),
+            'rewrite' => array('slug' => 'listings'),
         )
     );
 }
@@ -149,6 +171,68 @@ if (function_exists('add_theme_support')) {
 /*------------------------------------*\
 	Functions
 \*------------------------------------*/
+
+// Load more button for functions
+function rentestate_loadmore_scripts() {
+ 
+	global $wp_query; 
+ 
+	// In most cases it is already included on the page and this line can be removed
+	wp_enqueue_script('jquery');
+ 
+	// register our main script but do not enqueue it yet
+	wp_register_script( 'rentestate_loadmore', get_stylesheet_directory_uri() . '/js/article-cards.js', array('jquery') );
+ 
+	// now the most interesting part
+	// we have to pass parameters to article-cards.js script but we can get the parameters values only in PHP
+	// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
+	wp_localize_script( 'rentestate_loadmore', 'article_loadmore_params', array(
+		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
+		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+		'max_page' => $wp_query->max_num_pages
+	) );
+ 
+ 	wp_enqueue_script( 'rentestate_loadmore' );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'rentestate_loadmore_scripts' );
+
+
+function article_loadmore_ajax_handler(){
+ 
+	// prepare our arguments for the query
+	$args = json_decode( stripslashes( $_POST['query'] ), true );
+	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
+	$args['post_status'] = 'publish';
+ 
+	// it is always better to use WP_Query but not here
+	query_posts( $args );
+ 
+	if( have_posts() ) :
+ 
+		// run the loop
+		while( have_posts() ): the_post();
+ 
+			// look into your theme code how the posts are inserted, but you can use your own HTML of course
+			// do you remember? - my example is adapted for Twenty Seventeen theme
+			get_template_part( 'template-parts/blocks/article-cards', get_post_format() );
+			// for the test purposes comment the line above and uncomment the below one
+			// the_title();
+ 
+ 
+		endwhile;
+ 
+	endif;
+	die; // here we exit the script and even no wp_reset_query() required!
+}
+ 
+ 
+ 
+add_action('wp_ajax_loadmore', 'article_loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'article_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+
+
 
 // HTML5 Blank navigation
 function html5blank_nav()
