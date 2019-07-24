@@ -33,12 +33,12 @@
         }
 
         @include breakpoint(desktop) {
-            padding: 0 100px 0 80px;
+            padding: 0 100px 0 40px;
         }
 
         @include breakpoint(largedesktop) {
             width: 58%;
-            padding: 0 160px 0 120px;
+            padding: 0 160px 0 82px;
         }
     }
 

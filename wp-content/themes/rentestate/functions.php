@@ -93,11 +93,32 @@ function articlecards() {
         acf_register_block(array(
             'name'              => 'articlecards',
             'title'             => __("Article Cards"),
-            'description'       => __("The block for the Article Cards component, a slider that should pull in the first 5 listing posts."),
+            'description'       => __("The block for the Article Cards component, 3 columns in each row that shows the thumbnail information of each listing."),
             'render_template'   => 'template-parts/blocks/article-cards.php',
             'enqueue_style'     => get_template_directory_uri() . '/style.css',
             'category'          => 'layout',
-            'icon'              => 'align-center',
+            'icon'              => 'building',
+            'mode'              => 'edit',
+            'keywords'          => array('cards', 'images', 'listings', 'columns', 'rows'),
+        ));
+    }
+}
+
+add_action('acf/init', 'horizontalslider');
+function horizontalslider() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register an Horizontal Slider block.
+        acf_register_block(array(
+            'name'              => 'horizontalslider',
+            'title'             => __("Horizontal Slider"),
+            'description'       => __("The block for the Horizontal Slider component, a slider that should pull in the first 5 listing posts."),
+            'render_template'   => 'template-parts/blocks/horizontal-slider.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'slides',
             'mode'              => 'edit',
             'keywords'          => array('slider', 'images', 'listings'),
         ));
@@ -116,7 +137,7 @@ function listing_post_type() {
             ),
             'has_archive' => true,
             'public' => true,
-            'rewrite' => array('slug' => 'listings'),
+            'rewrite' => array('slug' => 'listings', 'index'),
         )
     );
 }
@@ -273,6 +294,8 @@ function html5blank_footer_scripts()
 {
     wp_register_script('article-hero-main-slider', get_template_directory_uri() . '/js/article-hero.js', array('jquery'), '1.0.0'); // Conditional script(s)
     wp_enqueue_script('article-hero-main-slider'); // Enqueue it!  
+    wp_register_script('horizontal-slider-main-slider', get_template_directory_uri() . '/js/horizontal-slider.js', array('jquery'), '1.0.0'); // Conditional script(s)
+    wp_enqueue_script('horizontal-slider-main-slider'); // Enqueue it!  
 }
 
 // Load HTML5 Blank conditional scripts
