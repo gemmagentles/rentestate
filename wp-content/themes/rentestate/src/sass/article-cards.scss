@@ -125,9 +125,16 @@
         font-size: em(18);
         cursor: pointer;
         margin-bottom: 60px;
-
+        transition: all 0.2s ease-in;
+        
         @include breakpoint(smalldesktop) {
             margin-bottom: 96px;
+        }
+
+        &:hover,
+        &:active {
+            background: $secondary-color;
+            color: white;
         }
     }
 }
