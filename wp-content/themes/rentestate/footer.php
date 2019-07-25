@@ -26,7 +26,7 @@
 						<div class="footer__contact--row">
 							<p class="footer__contact--name"><?php the_sub_field( 'name' ); ?></p>
 							<p class="footer__contact--phone"><?php the_sub_field( 'phone_number' ); ?></p>
-							<p class="footer__contact--email"><a class="footer__contact--email" href="mailto:<?php the_sub_field( 'email_address' ); ?>" target="_top"><?php the_sub_field( 'email_address' ); ?></a></p>
+							<p><a class="footer__contact--email" href="mailto:<?php the_sub_field( 'email_address' ); ?>" target="_top"><?php the_sub_field( 'email_address' ); ?></a></p>
 						</div>
 						<?php endwhile; ?>
 					</div>
