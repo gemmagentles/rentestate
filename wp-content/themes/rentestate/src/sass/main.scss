@@ -13,6 +13,7 @@
 @import 'article-hero.scss';
 @import 'article-cards.scss';
 @import 'horizontal-slider.scss';
+@import 'split-text.scss';
 
 * {
   margin: 0;
@@ -134,7 +135,6 @@ BUTTONS
   font-family: $secondary-font-family;
   font-size: em(24);
   display: flex;
-  align-items: center;
 
   &:hover,
   &:focus {
@@ -147,6 +147,8 @@ BUTTONS
       margin-left: 25px;
       fill: $secondary-color;
       color: $secondary-color;
+      top: 3px;
+      position: relative;      
   }
 }
 
@@ -161,7 +163,6 @@ BUTTONS
   margin-top: 30px;
   -webkit-font-smoothing: antialiased;
   display: flex;
-  align-items: center;
   transition: all 0.2s ease-in;
 
   @include breakpoint(smalldesktop) {
@@ -178,6 +179,8 @@ BUTTONS
       width: 27px;
       height: 12px;
       margin-left: 25px;
+      top: 3px;
+      position: relative;
   }
 }
 
@@ -185,7 +188,6 @@ BUTTONS
   margin-top: 23px;
   -webkit-font-smoothing: antialiased;
   display: inline-flex;
-  align-items: center;
   background: $secondary-color;
   color: white;
   padding: 24px 28px;
@@ -210,5 +212,7 @@ BUTTONS
       width: 27px;
       height: 12px;
       margin-left: 25px;
+      top: 3px;
+      position: relative;
   }
 }
