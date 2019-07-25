@@ -69,6 +69,10 @@ h1 {
     padding: 25px 25px 19px; }
   .sticky .header__logo-desktop {
     max-width: 82px; }
+  .sticky .nav__hamburger-icon {
+    top: 28px; }
+  .sticky .nav__open + .header__nav {
+    top: 82px; }
 
 main {
   transition: 0.4s;
@@ -351,10 +355,13 @@ main {
     .hero__paragraph {
       padding-top: 40px; } }
 
+.hero__text-wrapper--ontop + .hero__image {
+  min-height: 528px; }
+
 .hero__image {
   margin-top: 38px;
   width: 100%;
-  min-height: 528px;
+  min-height: 220px;
   object-fit: cover; }
   @media (min-width: 87em) {
     .hero__image {
@@ -581,11 +588,20 @@ main {
         .footer__contact--row:last-child {
           margin-top: 40px; } }
     .footer__contact--phone, .footer__contact--email {
-      color: #787C82; }
+      color: #787C82;
+      position: relative; }
     .footer__contact--email {
       text-decoration: none; }
       .footer__contact--email:hover, .footer__contact--email:active {
-        text-decoration: underline; }
+        color: #201C1D; }
+        .footer__contact--email:hover::after, .footer__contact--email:active::after {
+          content: "";
+          position: absolute;
+          height: 2px;
+          border-bottom: 1px solid #201C1D;
+          width: 100%;
+          top: 18px;
+          left: 0; }
   .footer__bottom-footer {
     display: flex;
     justify-content: space-between; }
@@ -864,10 +880,14 @@ main {
   font-family: Calibre-Regular;
   font-size: 1.125em;
   cursor: pointer;
-  margin-bottom: 60px; }
+  margin-bottom: 60px;
+  transition: all 0.2s ease-in; }
   @media (min-width: 64em) {
     .article-cards__load-button {
       margin-bottom: 96px; } }
+  .article-cards__load-button:hover, .article-cards__load-button:active {
+    background: #B98361;
+    color: white; }
 
 .horizontal-slider__wrapper {
   margin-bottom: 70px;
@@ -1043,6 +1063,53 @@ main {
   font-size: 1em;
   padding-right: 25px; }
 
+.split-text__wrapper {
+  max-width: 1476px;
+  margin: 0 auto;
+  padding: 50px 38px 80px; }
+  @media (min-width: 64em) {
+    .split-text__wrapper {
+      padding: 122px 38px; } }
+  @media (min-width: 87em) {
+    .split-text__wrapper {
+      padding: 122px 170px; } }
+
+@media (min-width: 64em) {
+  .split-text__container {
+    display: flex; } }
+
+@media (min-width: 64em) {
+  .split-text__heading-container {
+    width: 30%; } }
+
+.split-text__heading {
+  font-size: 1.75em;
+  line-height: 36px;
+  color: #B98361;
+  letter-spacing: 0.0px;
+  font-family: Calibre-Regular;
+  padding-bottom: 30px; }
+  @media (min-width: 64em) {
+    .split-text__heading {
+      padding-right: 100px;
+      padding-bottom: 0;
+      font-size: 2.25em;
+      line-height: 48px;
+      letter-spacing: 0.3px; } }
+
+.split-text__paragraph p {
+  font-size: 1.25em;
+  line-height: 32px;
+  letter-spacing: 0.17px; }
+  @media (min-width: 64em) {
+    .split-text__paragraph p {
+      font-size: 1.5em;
+      line-height: 36px; } }
+
+@media (min-width: 64em) {
+  .split-text__paragraph {
+    width: 70%; } }
+
 * {
   margin: 0;
   padding: 0;
@@ -1144,8 +1211,7 @@ BUTTONS
   color: #201C1D;
   font-family: Calibre-Regular;
   font-size: 1.5em;
-  display: flex;
-  align-items: center; }
+  display: flex; }
   .text-button:hover, .text-button:focus {
     color: #B98361; }
   .text-button--icon {
@@ -1153,7 +1219,9 @@ BUTTONS
     height: 18px;
     margin-left: 25px;
     fill: #B98361;
-    color: #B98361; }
+    color: #B98361;
+    top: 3px;
+    position: relative; }
 
 .light-button {
   background: white;
@@ -1166,7 +1234,6 @@ BUTTONS
   margin-top: 30px;
   -webkit-font-smoothing: antialiased;
   display: flex;
-  align-items: center;
   transition: all 0.2s ease-in; }
   @media (min-width: 64em) {
     .light-button {
@@ -1177,13 +1244,14 @@ BUTTONS
     fill: #B98361;
     width: 27px;
     height: 12px;
-    margin-left: 25px; }
+    margin-left: 25px;
+    top: 3px;
+    position: relative; }
 
 .dark-button {
   margin-top: 23px;
   -webkit-font-smoothing: antialiased;
   display: inline-flex;
-  align-items: center;
   background: #B98361;
   color: white;
   padding: 24px 28px;
@@ -1202,5 +1270,7 @@ BUTTONS
     fill: white;
     width: 27px;
     height: 12px;
-    margin-left: 25px; }
+    margin-left: 25px;
+    top: 3px;
+    position: relative; }
 

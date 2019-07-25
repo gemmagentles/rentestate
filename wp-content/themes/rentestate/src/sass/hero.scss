@@ -74,10 +74,15 @@
         }
     }
 
+    // If there is text on top of the image the image needs more height to fit this text overlay that is positioned absolute.
+    &__text-wrapper--ontop + .hero__image {
+        min-height: 528px;
+    }
+
     &__image {
         margin-top: 38px;
         width: 100%;
-        min-height: 528px;
+        min-height: 220px;        
         object-fit: cover;
 
         @include breakpoint(largedesktop) {

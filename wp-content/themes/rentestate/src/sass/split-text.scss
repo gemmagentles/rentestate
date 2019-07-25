@@ -1,0 +1,61 @@
+.split-text {
+    &__wrapper {
+        max-width: $inner-site-width;
+        margin: 0 auto;
+        padding: 50px 38px 80px;
+
+        @include breakpoint(smalldesktop) {
+            padding: 122px 38px;
+        }
+
+        @include breakpoint(largedesktop) {
+            padding: 122px 170px;
+        }
+    }
+
+    &__container {
+        @include breakpoint(smalldesktop) {
+            display: flex;
+        }
+    }
+
+    &__heading-container {
+        @include breakpoint(smalldesktop) {
+            width: 30%;
+        }
+    }
+
+    &__heading {
+        font-size: em(28);
+        line-height: 36px;
+        color: $secondary-color;
+        letter-spacing: 0.0px;
+        font-family: $secondary-font-family;
+        padding-bottom: 30px;
+        
+        @include breakpoint(smalldesktop) {
+            padding-right: 100px;
+            padding-bottom: 0;
+            font-size: em(36);
+            line-height: 48px;
+            letter-spacing: 0.3px;
+        }
+    }
+
+    &__paragraph p {
+        font-size: em(20);
+        line-height: 32px;
+        letter-spacing: 0.17px;
+
+        @include breakpoint(smalldesktop) {        
+            font-size: em(24);
+            line-height: 36px;
+        }
+    }
+
+    &__paragraph {
+        @include breakpoint(smalldesktop) {        
+            width: 70%;
+        }
+    }
+}

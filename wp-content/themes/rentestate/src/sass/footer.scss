@@ -144,6 +144,7 @@
         &--phone,
         &--email {
             color: $font-secondary-color;
+            position: relative;
         }
 
         &--email {
@@ -151,7 +152,17 @@
 
             &:hover,
             &:active {
-                text-decoration: underline;
+                color: $font-color;
+                
+                &::after {
+                    content: "";
+                    position: absolute;
+                    height: 2px;
+                    border-bottom: 1px solid $font-color;
+                    width: 100%;
+                    top: 18px;
+                    left: 0;
+                }
             }
         }
     }

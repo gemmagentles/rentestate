@@ -125,6 +125,27 @@ function horizontalslider() {
     }
 }
 
+add_action('acf/init', 'split_text');
+function split_text() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register an Split Text block.
+        acf_register_block(array(
+            'name'              => 'split_text',
+            'title'             => __("Split Text"),
+            'description'       => __("The block for the Split Text component, 1 row with 2 columns. One side a heading, the other a paragraph."),
+            'render_template'   => 'template-parts/blocks/split-text.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'editor-table',
+            'mode'              => 'edit',
+            'keywords'          => array('text', 'half'),
+        ));
+    }
+}
+
 /*Register WordPress Gutenberg CPT */
 function listing_post_type() {
 

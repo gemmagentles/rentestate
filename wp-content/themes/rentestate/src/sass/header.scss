@@ -22,6 +22,14 @@
     .header__logo-desktop {
         max-width: 82px;
     }
+
+    .nav__hamburger-icon {
+        top: 28px;
+    }
+
+    .nav__open + .header__nav {
+        top: 82px;
+    }
 }
 
 main {
