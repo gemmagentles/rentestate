@@ -9,7 +9,161 @@
 	External Modules/Files
 \*------------------------------------*/
 
-// Load any external files you have here
+/* Overall Site Options */
+
+if ( function_exists('acf_add_options_page') ) {
+    acf_add_options_page();
+    acf_set_options_page_menu('Rent Estate Options');
+    acf_add_options_sub_page('Global Site Options');
+    acf_add_options_sub_page('Listings CTA');
+}
+
+// Blocks
+
+add_action('acf/init', 'hero');
+function hero() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a Hero block.
+        acf_register_block(array(
+            'name'              => 'hero',
+            'title'             => __("Hero"),
+            'description'       => __("The block for the hero component, to hold a large image with text and a full width background color."),
+            'render_template'   => 'template-parts/blocks/hero.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'format-image',
+            'mode'              => 'edit',
+            'keywords'          => array('hero', 'image'),
+        ));
+    }
+}
+
+add_action('acf/init', 'halfandhalflist');
+function halfandhalflist() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a Half and Half List block.
+        acf_register_block(array(
+            'name'              => 'halfandhalflist',
+            'title'             => __("Half and Half List"),
+            'description'       => __("The block for the half and half list component, to be split 50 50 one side text, another side a list."),
+            'render_template'   => 'template-parts/blocks/half-and-half-list.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'format-aside',
+            'mode'              => 'edit',
+            'keywords'          => array('list', 'half'),
+        ));
+    }
+}
+
+add_action('acf/init', 'ctabanner');
+function ctabanner() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a CTA Banner block.
+        acf_register_block(array(
+            'name'              => 'ctabanner',
+            'title'             => __("CTA Banner"),
+            'description'       => __("The block for the CTA Banner component, to be a background image with a white box overlay that holds text and a link."),
+            'render_template'   => 'template-parts/blocks/cta-banner.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'align-center',
+            'mode'              => 'edit',
+            'keywords'          => array('cta', 'banner', 'image'),
+        ));
+    }
+}
+
+add_action('acf/init', 'articlecards');
+function articlecards() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register an Article Cards block.
+        acf_register_block(array(
+            'name'              => 'articlecards',
+            'title'             => __("Article Cards"),
+            'description'       => __("The block for the Article Cards component, 3 columns in each row that shows the thumbnail information of each listing."),
+            'render_template'   => 'template-parts/blocks/article-cards.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'building',
+            'mode'              => 'edit',
+            'keywords'          => array('cards', 'images', 'listings', 'columns', 'rows'),
+        ));
+    }
+}
+
+add_action('acf/init', 'horizontalslider');
+function horizontalslider() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register an Horizontal Slider block.
+        acf_register_block(array(
+            'name'              => 'horizontalslider',
+            'title'             => __("Horizontal Slider"),
+            'description'       => __("The block for the Horizontal Slider component, a slider that should pull in the first 5 listing posts."),
+            'render_template'   => 'template-parts/blocks/horizontal-slider.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'slides',
+            'mode'              => 'edit',
+            'keywords'          => array('slider', 'images', 'listings'),
+        ));
+    }
+}
+
+add_action('acf/init', 'split_text');
+function split_text() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register an Split Text block.
+        acf_register_block(array(
+            'name'              => 'split_text',
+            'title'             => __("Split Text"),
+            'description'       => __("The block for the Split Text component, 1 row with 2 columns. One side a heading, the other a paragraph."),
+            'render_template'   => 'template-parts/blocks/split-text.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'editor-table',
+            'mode'              => 'edit',
+            'keywords'          => array('text', 'half'),
+        ));
+    }
+}
+
+/*Register WordPress Gutenberg CPT */
+function listing_post_type() {
+
+    register_post_type( 'listing',
+        // WordPress CPT Options Start
+        array(
+            'labels' => array(
+                'name' => __( 'Listings' ),
+                'singular_name' => __( 'Listing' )
+            ),
+            'has_archive' => true,
+            'public' => true,
+            'rewrite' => array('slug' => 'listings', 'index'),
+        )
+    );
+}
+ 
+add_action( 'init', 'listing_post_type' );
 
 /*------------------------------------*\
 	Theme Support
@@ -60,6 +214,68 @@ if (function_exists('add_theme_support')) {
 	Functions
 \*------------------------------------*/
 
+// Load more button for functions
+function rentestate_loadmore_scripts() {
+ 
+	global $wp_query; 
+ 
+	// In most cases it is already included on the page and this line can be removed
+	wp_enqueue_script('jquery');
+ 
+	// register our main script but do not enqueue it yet
+	wp_register_script( 'rentestate_loadmore', get_stylesheet_directory_uri() . '/js/article-cards.js', array('jquery') );
+ 
+	// now the most interesting part
+	// we have to pass parameters to article-cards.js script but we can get the parameters values only in PHP
+	// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
+	wp_localize_script( 'rentestate_loadmore', 'article_loadmore_params', array(
+		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
+		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+		'max_page' => $wp_query->max_num_pages
+	) );
+ 
+ 	wp_enqueue_script( 'rentestate_loadmore' );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'rentestate_loadmore_scripts' );
+
+
+function article_loadmore_ajax_handler(){
+ 
+	// prepare our arguments for the query
+	$args = json_decode( stripslashes( $_POST['query'] ), true );
+	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
+	$args['post_status'] = 'publish';
+ 
+	// it is always better to use WP_Query but not here
+	query_posts( $args );
+ 
+	if( have_posts() ) :
+ 
+		// run the loop
+		while( have_posts() ): the_post();
+ 
+			// look into your theme code how the posts are inserted, but you can use your own HTML of course
+			// do you remember? - my example is adapted for Twenty Seventeen theme
+			get_template_part( 'template-parts/blocks/article-cards', get_post_format() );
+			// for the test purposes comment the line above and uncomment the below one
+			// the_title();
+ 
+ 
+		endwhile;
+ 
+	endif;
+	die; // here we exit the script and even no wp_reset_query() required!
+}
+ 
+ 
+ 
+add_action('wp_ajax_loadmore', 'article_loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'article_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+
+
+
 // HTML5 Blank navigation
 function html5blank_nav()
 {
@@ -92,6 +308,15 @@ function html5blank_header_scripts()
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
     }
+}
+
+// Load HTML5 Blank footer scripts
+function html5blank_footer_scripts()
+{
+    wp_register_script('article-hero-main-slider', get_template_directory_uri() . '/js/article-hero.js', array('jquery'), '1.0.0'); // Conditional script(s)
+    wp_enqueue_script('article-hero-main-slider'); // Enqueue it!  
+    wp_register_script('horizontal-slider-main-slider', get_template_directory_uri() . '/js/horizontal-slider.js', array('jquery'), '1.0.0'); // Conditional script(s)
+    wp_enqueue_script('horizontal-slider-main-slider'); // Enqueue it!  
 }
 
 // Load HTML5 Blank conditional scripts
@@ -336,6 +561,7 @@ add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 //add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
+add_action('wp_footer', 'html5blank_footer_scripts'); // Add Custom Scripts to wp_footer
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds

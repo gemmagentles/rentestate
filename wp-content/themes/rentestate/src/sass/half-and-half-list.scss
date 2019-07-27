@@ -1,0 +1,105 @@
+.half-and-half-list {
+    &__wrapper {
+        max-width: $inner-site-width;
+        margin: 0 auto;
+        padding: 70px 38px;
+
+        @include breakpoint(tablet) {
+            padding: 80px 38px;
+        }
+
+        @include breakpoint(smalldesktop) {
+            padding: 140px 38px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        @include breakpoint(largedesktop) {
+            padding: 240px 38px;
+        }
+    }
+
+    &__text-half {
+        width: 100%;
+        margin-bottom: 100px;
+
+        @include breakpoint(tablet) {
+            padding: 0 60px 0 0;
+        }
+
+        @include breakpoint(smalldesktop) {
+            margin-bottom: 0;
+            width: 50%;
+        }
+
+        @include breakpoint(desktop) {
+            padding: 0 100px 0 40px;
+        }
+
+        @include breakpoint(largedesktop) {
+            width: 58%;
+            padding: 0 160px 0 82px;
+        }
+    }
+
+    &__heading {
+        padding-bottom: 40px;
+        font-size: em(36);
+        line-height: 48px;
+        letter-spacing: 0.3px;
+    }
+
+    &__paragraph {
+        font-size: em(22);
+        padding-bottom: 40px;
+        line-height: 36px;
+    }
+
+    &__list-half {
+        width: 100%;
+        background: $secondary-color;
+        color: white;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        
+        @include breakpoint(tablet) {
+            padding: 60px 80px;
+        }
+
+        @include breakpoint(smalldesktop) {
+            width: 50%;
+        }
+
+        @include breakpoint(desktop) {
+            padding: 80px 120px;
+        }
+
+        @include breakpoint(largedesktop) {
+            width: 42%;
+        }
+    }
+
+    &__list-title {
+        color: white;
+        text-transform: uppercase;
+        font-family: $tertiary-font-family;
+        font-size: em(16);
+        line-height: 20px;
+        letter-spacing: 2px;
+        -webkit-font-smoothing: antialiased;
+        padding-bottom: 28px;
+    }
+
+    &__list-wrapper {
+        list-style-image: url('/wp-content/themes/rentestate/img/icons/white-bullet.svg');
+        margin-left: 32px;
+    }
+
+    &__list-item {
+        padding-left: 24px;
+        padding-top: 5px;
+    }
+}

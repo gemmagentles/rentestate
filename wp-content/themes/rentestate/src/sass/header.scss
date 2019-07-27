@@ -1,0 +1,317 @@
+#navbar-js {
+    overflow: visible;
+    background: white;
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+}
+
+#js-main {
+    transition: margin-left .5s;
+    // set 100% width to stop the main wrapper of the site from being responsive when the content gets pushed off of screen. 
+    width: 100%;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+    box-shadow: 0 10px 20px 0 rgba(100, 112, 160, 0.1);
+    background: white;
+
+    .header {
+        padding: 25px 25px 19px;     
+    }
+
+    .header__logo-desktop {
+        max-width: 82px;
+    }
+
+    .nav__hamburger-icon {
+        top: 28px;
+    }
+
+    .nav__open + .header__nav {
+        top: 82px;
+    }
+}
+
+main {
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+    margin-top: 94px;
+    width: 100%;
+}
+
+.header {
+    padding: 31px 25px 25px;
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 6px;
+        border-top: 6px solid $secondary-color;
+        width: 100%;
+        top: 0;
+        left: 0;
+
+        @include breakpoint(tablet) {
+            opacity: 0;
+
+            @keyframes linegrow {
+                0%   { width: 0; opacity: 0; }
+                100% { width: 100%; opacity: 1; }
+            }
+
+            animation: linegrow 4s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+        }
+    }
+
+    @include breakpoint(xlargedesktop) {
+        padding: 30px 0 24px;     
+    }
+
+    &__logo-desktop {
+        max-width: 66px;
+        transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+
+        @include breakpoint(largedesktop) {
+            max-width: 97px;
+        }
+    }
+
+    &__logo-wrapper {
+        text-align: center;
+    }
+
+    .logo {
+        transition: 0.3s all ease;
+    }
+
+    &__wrapper {
+        max-width: $site-width;
+        margin: 0 auto;
+
+        @include breakpoint(smalldesktop) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @include breakpoint(largedesktop) {
+            padding: 0 20px;
+        }
+
+        .logo-img {
+            width: 80px;
+            animation-name: fadein;
+            animation-duration: 2s;
+            opacity: 1;
+            
+            @keyframes fadein {
+                from {opacity: 0;}
+            }
+
+            @include breakpoint(desktop) {
+                width: 102px;
+            }
+        }
+    }
+
+    &__nav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+
+        &--open {
+            padding-left: 32px;
+            box-shadow: 0 10px 20px 0 rgba(100, 112, 160, 0.1);
+        }
+    
+        // set width to stop the nav from being responsive when the content gets pushed off of screen. 
+        ul {
+            width: 272px;
+
+            @include breakpoint(smalldesktop) {
+                width: 100%;
+            }
+        }
+
+        @include breakpoint(smalldesktop) {
+            position: relative;
+            width: 100%;
+            height: auto;
+            padding-top: 0;
+            padding-left: 60px;
+            box-shadow: none;
+        }
+
+        .menu-item {
+            list-style-type: none; 
+            position: relative;
+            text-align: left;
+            animation-name: fadein;
+            animation-duration: 2s;
+            opacity: 1;
+            padding-bottom: 10px;
+
+            @keyframes fadein {
+                from {opacity: 0;}
+            }
+
+            @include breakpoint(smalldesktop) {
+                display: inline;
+                float: left;
+                padding-right: 30px;
+                padding-bottom: 0;
+            }
+
+            @include breakpoint(largedesktop) {
+                padding-right: 52px;
+            }
+        }
+
+        .menu-login-link {
+            text-align: left;
+            list-style-type: none; 
+            position: relative;
+            animation-name: fadein;
+            animation-duration: 2s;
+            opacity: 1;
+
+            @include breakpoint(smalldesktop) {
+                float: right;
+                text-align: right;
+                padding-left: 24px;
+            }
+
+            @include breakpoint(largedesktop) {
+                padding-left: 35px;
+            }
+
+            &::after {
+                @include breakpoint(smalldesktop) {
+                    content: "";
+                    position: absolute;
+                    height: 48px;
+                    border-left: 2px solid $tertiary-color;
+                    top: -28%;
+                    left: 0;
+                }
+            }
+
+            &:last-child {
+                @include breakpoint(smalldesktop) {
+                    padding: 0 35px;
+                }
+
+                &::after {
+                    content: none;
+                }
+            }
+        }
+
+        .current-menu-item a {
+            @include breakpoint(smalldesktop) {
+                color: $secondary-color;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $font-secondary-color;
+            font-family: $secondary-font-family;
+            letter-spacing: 1.12px;
+            font-size: em(18);
+            font-weight: normal;
+
+            @include breakpoint(smalldesktop) {
+                font-size: em(16);
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $secondary-color;
+                }
+            }
+
+            @include breakpoint(largedesktop) {
+                font-size: em(18);
+            }
+        }
+    }
+}
+
+/* styles only for mobile and tablet when menu is a hamburger */
+.nav__hamburger-icon {
+    display: inline-block;
+    cursor: pointer;
+    z-index: 100;
+    position: absolute;
+    top: 38px;
+    left: 30px;
+
+    .hamburger-bar1, 
+    .hamburger-bar2, 
+    .hamburger-bar3 {
+        width: 24px;
+        height: 2px;
+        background-color: $font-secondary-color;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .hamburger-bar2 {
+        width: 14px;
+    }
+
+    @include breakpoint(smalldesktop) {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+ /* style the hamburger menu icon to transition into a cross when clicked */
+
+.nav__open {
+
+  .hamburger-bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .hamburger-bar2 { opacity: 0; }
+
+  .hamburger-bar3 {
+    transform: rotate(45deg) translate(-6px, -4px);
+  }  
+}
+
+/// push out nav mobile
+  .header__social {
+    margin-top: 20px;
+    // set width to stop the nav from being responsive when the content gets pushed off of screen. 
+    width: 272px;
+    
+    @include breakpoint(smalldesktop) {
+        display: none;
+        visibility: hidden;
+    }
+  }
+
+  .header__social--icon {
+      margin-right: 18px;
+  }

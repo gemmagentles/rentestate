@@ -1,0 +1,46 @@
+/*********************
+COLOURS
+*********************/
+
+$primary-color: #F3F4F5; /* grey backgrounds */
+$secondary-color: #B98361; /* gold highlights and lines */
+$tertiary-color: #B8C1CB; /* light grey */
+$quaternary-color: #29292B; /* light black */
+
+$hover-dark-button: #86573A;
+
+$font-color: #201C1D; /* darker grey */
+$font-secondary-color: #787C82; /* lighter grey */
+
+$border-color: #979797; /* grey */
+$form-border-color: #DEDEDE; /* very light pink grey */
+
+/*********************
+SIZES
+*********************/
+
+$site-width: 1610px;
+$inner-site-width: 1476px;
+
+/*********************
+TYPOGRAPHY
+*********************/
+
+@font-face {
+    font-family: Calibre-Semibold;
+    src: url("/wp-content/themes/platinum-theme/fonts/Calibre-Semibold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Calibre-Regular;
+    src: url("/wp-content/themes/platinum-theme/fonts/Calibre-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: EngraversGothic-Bold;
+    src: url("/wp-content/themes/platinum-theme/fonts/EngraversGothic-Bold.otf") format("opentype");
+}
+
+$heading-font-family: Calibre-Semibold;
+$secondary-font-family: Calibre-Regular;
+$tertiary-font-family: EngraversGothic-Bold;

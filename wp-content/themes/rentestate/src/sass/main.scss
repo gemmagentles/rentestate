@@ -1,3 +1,218 @@
+/* Theme Name: Rent Estate Theme */
+/* Version: 0.1 */
+/* Author: Another Blank Page */
+
+@import 'vars.scss';
+@import 'breakpoints.scss';
+@import 'pixel-to-em.scss';
+@import 'header.scss';
+@import 'hero.scss';
+@import 'half-and-half-list.scss';
+@import 'cta-banner.scss';
+@import 'footer.scss';
+@import 'article-hero.scss';
+@import 'article-cards.scss';
+@import 'horizontal-slider.scss';
+@import 'split-text.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background: yellow;
+  background: white;
+  overflow-x: hidden;
+}
+
+section {
+  position: relative;
+}
+
+// for ios devices to stop phone turning phone number blue
+a[href^=tel]{ color:$font-color; text-decoration:none;}
+
+.footer { a[href^=tel]{ color:white; text-decoration:none;} }
+
+p,
+li {
+  font-size: em(16);
+  line-height: 28px;
+  letter-spacing: 0.55px;
+  font-family: $secondary-font-family;
+  -webkit-font-smoothing: antialiased;
+
+  @include breakpoint(smalldesktop) {
+    font-size: em(18);
+    line-height: 32px;
+  }
+}
+
+// Listen to tab events to enable outlines (accessibility improvement) there is js to detect this too to add it in for tab users in the app.js file.
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none;
+}
+
+
+/*********************
+TYPOGRAPHY
+*********************/
+
+:root {
+  font-size: em(16);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $heading-font-family;
+  color: $font-color;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: em(48);
+  line-height: 52px;
+  letter-spacing: 2.08px;
+
+  @include breakpoint(largedesktop) {
+    font-size: em(84);
+    line-height: 86px;
+  }
+}
+
+h2 {
+  font-size: em(38);
+  letter-spacing: 1.81px;
+  line-height: 54px;
+
+  @include breakpoint(largedesktop) {
+    font-size: em(60);
+    line-height: 82px;
+  }
+}
+
+h3 {
+  font-size: em(28);
+  letter-spacing: 1px;    
+  line-height: 38px;
+
+  @include breakpoint(smalldesktop) {
+    font-size: em(32);
+    line-height: 38px;
+  }
+
+  @include breakpoint(largedesktop) {
+    font-size: em(48);
+    line-height: 60px;
+    letter-spacing: 1.6px;
+  }
+}
+
+h4 {
+  font-size: em(12);
+  letter-spacing: 2.53px;
+  line-height: 20px;
+
+  @include breakpoint(desktop) {
+    font-size: em(16);
+  }
+}
+
+
+/*********************
+BUTTONS
+*********************/
+
+.text-button {
+  text-decoration: none;
+  color: $font-color;
+  font-family: $secondary-font-family;
+  font-size: em(24);
+  display: flex;
+
+  &:hover,
+  &:focus {
+      color: $secondary-color;
+  }
+
+  &--icon {
+      width: 40px;
+      height: 18px;
+      margin-left: 25px;
+      fill: $secondary-color;
+      color: $secondary-color;
+      top: 3px;
+      position: relative;      
+  }
+}
+
+.light-button {
+  background: white;
+  padding: 24px 28px;
+  color: $secondary-color;
+  text-decoration: none;
+  font-family: $secondary-font-family;
+  font-size: em(18);
+  border-radius: 4px;
+  margin-top: 30px;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  transition: all 0.2s ease-in;
+
+  @include breakpoint(smalldesktop) {
+    padding: 24px 48px;
+  }
+
+  &:hover,
+  &:focus {
+      background: $primary-color;
+  }
+
+  &--icon {
+      fill: $secondary-color;
+      width: 27px;
+      height: 12px;
+      margin-left: 25px;
+      top: 3px;
+      position: relative;
+  }
+}
+
+.dark-button {
+  margin-top: 23px;
+  -webkit-font-smoothing: antialiased;
+  display: inline-flex;
+  background: $secondary-color;
+  color: white;
+  padding: 24px 28px;
+  text-decoration: none;
+  font-family: $secondary-font-family;
+  font-size: em(18);
+  border-radius: 4px; 
+  transition: all 0.2s ease-in;
+
+  @include breakpoint(smalldesktop) {
+    margin-top: 46px;
+    padding: 24px 48px;
+  }
+
+  &:hover,
+  &:focus {
+      background: $hover-dark-button;
+  }
+
+  &--icon {
+      fill: white;
+      width: 27px;
+      height: 12px;
+      margin-left: 25px;
+      top: 3px;
+      position: relative;
+  }
 }

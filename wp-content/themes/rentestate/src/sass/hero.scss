@@ -1,0 +1,92 @@
+.hero {
+    &__wrapper {
+        position: relative;
+    }
+
+    &__background {
+        background: $primary-color;
+        width: 100%;
+        height: 72%;
+        position: absolute;
+    }
+
+    &__container {
+        max-width: $inner-site-width;
+        margin: 0 auto;
+        position: relative;
+        padding: 0 38px;
+    }
+
+    &__text-wrapper {
+
+        &--ontop {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 80px;
+            color: white;
+            max-width: 550px;
+            padding-right: 80px;
+
+            @include breakpoint(largedesktop) {
+                left: 120px;
+                padding-right: 0;
+            }
+
+            .hero__heading {
+                color: white;
+            }
+        }
+
+        &--above {
+            max-width: 750px;
+            padding: 50px 0 0;
+
+            @include breakpoint(smalldesktop) {
+                padding: 130px 0 20px;
+            }
+
+            .hero__heading {
+                color: $font-color;
+                font-size: em(32);
+                line-height: 41px;
+
+                @include breakpoint(smalldesktop) {
+                    font-size: em(60);
+                    line-height: 66px;
+                }
+            }
+        }
+    }
+
+    &__period {
+        color: $secondary-color;
+    }
+
+    &__paragraph {
+        font-size: em(24);
+        line-height: 36px;
+        -webkit-font-smoothing: antialiased;
+        padding-top: 15px;
+
+        @include breakpoint(largedesktop) {
+            padding-top: 40px;
+        }
+    }
+
+    // If there is text on top of the image the image needs more height to fit this text overlay that is positioned absolute.
+    &__text-wrapper--ontop + .hero__image {
+        min-height: 528px;
+    }
+
+    &__image {
+        margin-top: 38px;
+        width: 100%;
+        min-height: 220px;        
+        object-fit: cover;
+
+        @include breakpoint(largedesktop) {
+            margin-top: 84px;
+        }
+    }
+}
