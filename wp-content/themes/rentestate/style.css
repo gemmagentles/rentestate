@@ -53,18 +53,23 @@ h1 {
 #navbar-js {
   overflow: visible;
   background: white;
-  box-shadow: 0 10px 20px 0 rgba(100, 112, 160, 0.05);
   transition: 0.4s;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 99; }
 
+#js-main {
+  transition: margin-left .5s;
+  width: 100%; }
+
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 99999; }
+  z-index: 99999;
+  box-shadow: 0 10px 20px 0 rgba(100, 112, 160, 0.1);
+  background: white; }
   .sticky .header {
     padding: 25px 25px 19px; }
   .sticky .header__logo-desktop {
@@ -77,7 +82,8 @@ h1 {
 main {
   transition: 0.4s;
   /* Adds a transition effect when the padding is decreased */
-  margin-top: 94px; }
+  margin-top: 94px;
+  width: 100%; }
 
 .header {
   padding: 31px 25px 25px;
@@ -118,7 +124,9 @@ main {
       .header__logo-desktop {
         max-width: 97px; } }
   .header__logo-wrapper {
-    padding-right: 62px; }
+    text-align: center; }
+  .header .logo {
+    transition: 0.3s all ease; }
   .header__wrapper {
     max-width: 1610px;
     margin: 0 auto; }
@@ -143,21 +151,39 @@ main {
         .header__wrapper .logo-img {
           width: 102px; } }
   .header__nav {
-    display: none;
-    visibility: hidden; }
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    padding-top: 60px; }
+    .header__nav--open {
+      padding-left: 32px;
+      box-shadow: 0 10px 20px 0 rgba(100, 112, 160, 0.1); }
+    .header__nav ul {
+      width: 272px; }
+      @media (min-width: 64em) {
+        .header__nav ul {
+          width: 100%; } }
     @media (min-width: 64em) {
       .header__nav {
-        visibility: visible;
-        display: block;
-        width: 100%; } }
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding-top: 0;
+        padding-left: 60px;
+        box-shadow: none; } }
     .header__nav .menu-item {
       list-style-type: none;
       position: relative;
-      padding-bottom: 25px;
-      text-align: center;
+      text-align: left;
       animation-name: fadein;
       animation-duration: 2s;
-      opacity: 1; }
+      opacity: 1;
+      padding-bottom: 10px; }
 
 @keyframes fadein {
   from {
@@ -166,25 +192,26 @@ main {
         .header__nav .menu-item {
           display: inline;
           float: left;
-          padding-bottom: 0;
-          padding-right: 40px; } }
-      @media (min-width: 70em) {
+          padding-right: 30px;
+          padding-bottom: 0; } }
+      @media (min-width: 87em) {
         .header__nav .menu-item {
           padding-right: 52px; } }
     .header__nav .menu-login-link {
-      text-align: center;
+      text-align: left;
       list-style-type: none;
       position: relative;
       animation-name: fadein;
       animation-duration: 2s;
-      opacity: 1;
-      padding-bottom: 25px; }
+      opacity: 1; }
       @media (min-width: 64em) {
         .header__nav .menu-login-link {
           float: right;
           text-align: right;
-          padding-left: 35px;
-          padding-bottom: 0; } }
+          padding-left: 24px; } }
+      @media (min-width: 87em) {
+        .header__nav .menu-login-link {
+          padding-left: 35px; } }
       @media (min-width: 64em) {
         .header__nav .menu-login-link::after {
           content: "";
@@ -193,10 +220,11 @@ main {
           border-left: 2px solid #B8C1CB;
           top: -28%;
           left: 0; } }
-      .header__nav .menu-login-link:last-child {
-        padding: 0 35px; }
-        .header__nav .menu-login-link:last-child::after {
-          content: none; }
+      @media (min-width: 64em) {
+        .header__nav .menu-login-link:last-child {
+          padding: 0 35px; } }
+      .header__nav .menu-login-link:last-child::after {
+        content: none; }
     @media (min-width: 64em) {
       .header__nav .current-menu-item a {
         color: #B98361; } }
@@ -222,49 +250,24 @@ main {
   cursor: pointer;
   z-index: 100;
   position: absolute;
-  top: 35px;
-  right: 25px; }
-  .nav__hamburger-icon::before {
-    content: "Menu";
-    position: absolute;
-    top: 11px;
-    right: 52px;
-    font-family: Calibre-Regular;
-    letter-spacing: 0.9px;
-    font-size: 1em;
-    color: #B98361;
-    text-transform: uppercase; }
+  top: 38px;
+  left: 30px; }
   .nav__hamburger-icon .hamburger-bar1,
   .nav__hamburger-icon .hamburger-bar2,
   .nav__hamburger-icon .hamburger-bar3 {
-    width: 30px;
-    height: 3px;
-    background-color: #B98361;
-    margin: 6px 0;
+    width: 24px;
+    height: 2px;
+    background-color: #787C82;
+    margin: 5px 0;
     transition: 0.4s; }
+  .nav__hamburger-icon .hamburger-bar2 {
+    width: 14px; }
   @media (min-width: 64em) {
     .nav__hamburger-icon {
       display: none;
       visibility: hidden; } }
 
 /* style the hamburger menu icon to transition into a cross when clicked */
-.nav__open::before {
-  content: "Close";
-  position: absolute;
-  top: 11px;
-  right: 52px;
-  font-family: Calibre-Regular;
-  letter-spacing: 0.9px;
-  font-size: 1em;
-  text-transform: uppercase;
-  animation-name: fadein;
-  animation-duration: 2s;
-  opacity: 1; }
-
-@keyframes fadein {
-  from {
-    opacity: 0; } }
-
 .nav__open .hamburger-bar1 {
   transform: rotate(-45deg) translate(-9px, 6px); }
 
@@ -274,29 +277,16 @@ main {
 .nav__open .hamburger-bar3 {
   transform: rotate(45deg) translate(-6px, -4px); }
 
-/* inside the hamburger menu once opened */
-.nav__open + .header__nav {
-  display: block;
-  visibility: visible;
-  background: #F3F4F5;
-  position: absolute;
-  top: 96px;
-  left: 0;
-  animation-name: slidein;
-  animation-duration: 0.3s;
-  width: 100%;
-  height: 100vh;
-  z-index: 99;
-  opacity: 1;
-  padding-top: 35px; }
+.header__social {
+  margin-top: 20px;
+  width: 272px; }
+  @media (min-width: 64em) {
+    .header__social {
+      display: none;
+      visibility: hidden; } }
 
-@keyframes slidein {
-  from {
-    left: -100%; } }
-  .nav__open + .header__nav .logo {
-    top: 31px;
-    left: 25px;
-    position: relative; }
+.header__social--icon {
+  margin-right: 18px; }
 
 .hero__wrapper {
   position: relative; }
