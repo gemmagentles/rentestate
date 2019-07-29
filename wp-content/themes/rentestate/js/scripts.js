@@ -105,7 +105,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jque
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("throw new Error(\"Module build failed: Error: ENOENT: no such file or directory, open '/Users/gemma/Documents/workspace/rentestate-wp/wp-content/themes/rentestate/src/components/footer.js'\");\n\n//# sourceURL=webpack:///./src/components/footer.js?");
+eval("(function ($, root, undefined) {\n\n    $(function () {\n\n        'use strict';\n    });\n\n    $(document).ready(function () {\n        $('#top').click(function () {\n            // When arrow is clicked\n            $('body,html').animate({\n                scrollTop: 0 // Scroll to top of body\n            }, 500);\n        });\n    });\n})(jQuery, this);\n\n//# sourceURL=webpack:///./src/components/footer.js?");
 
 /***/ }),
 
@@ -116,7 +116,7 @@ eval("throw new Error(\"Module build failed: Error: ENOENT: no such file or dire
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("throw new Error(\"Module build failed: Error: ENOENT: no such file or directory, open '/Users/gemma/Documents/workspace/rentestate-wp/wp-content/themes/rentestate/src/components/header.js'\");\n\n//# sourceURL=webpack:///./src/components/header.js?");
+eval("(function ($, root, undefined) {\n\n    $(function () {\n\n        'use strict';\n    });\n\n    $(document).ready(function () {\n        // When the user scrolls down 80px from the top of the document, make the nav bar smaller\n        window.onscroll = function () {\n            scrollFunction();\n        };\n\n        function scrollFunction() {\n\n            var headingNavBar = document.getElementById(\"navbar-js\");\n\n            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {\n                headingNavBar.classList.add(\"sticky\");\n            } else {\n                headingNavBar.classList.remove(\"sticky\");\n            }\n        }\n    });\n})(jQuery, this);\n\n//# sourceURL=webpack:///./src/components/header.js?");
 
 /***/ }),
 
