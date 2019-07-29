@@ -1,4 +1,4 @@
-<?php /* Template Name: Rent Estate Page Template */ get_header(); ?>
+<?php /* Template Name: Rent Estate: Page Template */ get_header(); ?>
 
 	<main role="main">
 		<!-- section -->
