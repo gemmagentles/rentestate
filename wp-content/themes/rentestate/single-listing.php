@@ -11,8 +11,13 @@
 		</section>
 
 		<section class="individual-listing__layout">
-			<?php get_template_part('template-parts/blocks/content-lists'); ?> 	
-			<div class="sidebar-form-test">Sidebar Form Placement</div>	
+			<div class="individual-listing__layout--left">
+				<?php get_template_part('template-parts/blocks/content-lists'); ?> 	
+				<?php get_template_part('template-parts/blocks/map'); ?> 	
+			</div>
+			<div class="individual-listing__layout--right">
+				<div class="sidebar-form-test">Sidebar Form Placement</div>	
+			</div>
 		</section>
 		
 	<?php endwhile; ?>
