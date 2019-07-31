@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "layout": "row",
             "sub_fields": [
                 {
                     "key": "field_5d29097f662b0",
@@ -232,5 +232,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1563580358
+    "modified": 1564446450
 }

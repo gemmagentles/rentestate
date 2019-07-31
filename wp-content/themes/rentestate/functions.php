@@ -146,6 +146,7 @@ function split_text() {
     }
 }
 
+
 /*Register WordPress Gutenberg CPT */
 function listing_post_type() {
 

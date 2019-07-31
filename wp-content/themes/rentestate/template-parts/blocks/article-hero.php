@@ -1,3 +1,4 @@
+<!-- This block is called inside the single-listing.php file to be able to show on custom posts -->
 <?php if ( have_rows( 'article_hero_block' ) ) : ?>
 <div class="article-hero__wrapper">
 	<?php while ( have_rows( 'article_hero_block' ) ) : the_row(); ?>

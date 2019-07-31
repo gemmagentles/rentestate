@@ -1100,6 +1100,91 @@ main {
   .split-text__paragraph {
     width: 70%; } }
 
+.content-lists__heading {
+  font-size: 2em;
+  color: #B98361;
+  line-height: 42px;
+  letter-spacing: 0.3px;
+  font-family: Calibre-Regular;
+  padding-bottom: 26px; }
+  @media (min-width: 64em) {
+    .content-lists__heading {
+      font-size: 2.25em;
+      line-height: 48px;
+      padding-bottom: 60px; } }
+
+.content-lists__paragraph p {
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0.2px;
+  padding-bottom: 50px; }
+  @media (min-width: 64em) {
+    .content-lists__paragraph p {
+      font-size: 1.5em;
+      line-height: 36px;
+      padding-bottom: 100px; } }
+
+.content-lists__sub-heading {
+  color: #787C82;
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 24px;
+  letter-spacing: 2.0px;
+  font-family: EngraversGothic-Bold;
+  padding-bottom: 20px; }
+
+.content-lists__list {
+  padding-bottom: 60px;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px 50px; }
+  @media (min-width: 37.5em) {
+    .content-lists__list {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 30px 8%; } }
+  @media (min-width: 64em) {
+    .content-lists__list {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      padding-bottom: 100px; } }
+  .content-lists__list--heading {
+    font-size: 1.75em;
+    color: #B98361;
+    line-height: 38px;
+    letter-spacing: 0.3px;
+    font-family: Calibre-Regular;
+    padding-bottom: 30px; }
+    @media (min-width: 64em) {
+      .content-lists__list--heading {
+        font-size: 2.25em;
+        line-height: 48px;
+        padding-bottom: 42px; } }
+  .content-lists__list--item {
+    padding-left: 15px;
+    line-height: 28px; }
+
+.content-lists__features-list {
+  text-transform: capitalize;
+  list-style-image: url("/wp-content/themes/rentestate/img/icons/dark-bullet.svg");
+  margin-left: 32px; }
+
+.individual-listing__layout {
+  max-width: 1476px;
+  margin: 0 auto;
+  padding: 0 38px; }
+  @media (min-width: 64em) {
+    .individual-listing__layout {
+      display: flex; } }
+
+@media (min-width: 64em) {
+  .content-lists__wrapper {
+    width: 75%;
+    padding-right: 162px; } }
+
+@media (min-width: 64em) {
+  .sidebar-form-test {
+    width: 25%; } }
+
 * {
   margin: 0;
   padding: 0;

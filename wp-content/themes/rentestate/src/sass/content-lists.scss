@@ -1,0 +1,84 @@
+.content-lists {
+
+    &__heading {
+        font-size: em(32);
+        color: $secondary-color;
+        line-height: 42px;
+        letter-spacing: 0.3px;
+        font-family: $secondary-font-family;
+        padding-bottom: 26px;
+
+        @include breakpoint(smalldesktop) {
+            font-size: em(36);
+            line-height: 48px;
+            padding-bottom: 60px;
+        }
+    }
+
+    &__paragraph p {
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: 0.2px;
+        padding-bottom: 50px;
+
+        @include breakpoint(smalldesktop) {
+            font-size: em(24);
+            line-height: 36px;
+            padding-bottom: 100px;
+        }
+    }
+
+    &__sub-heading {
+        color: $font-secondary-color;
+        text-transform: uppercase;
+        font-size: em(16);
+        line-height: 24px;
+        letter-spacing: 2.0px;
+        font-family: $tertiary-font-family;
+        padding-bottom: 20px;
+    }
+
+    &__list {
+        padding-bottom: 60px;
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px 50px;
+
+        @include breakpoint(mobile) {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 30px 8%;
+        }
+
+        @include breakpoint(smalldesktop) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            padding-bottom: 100px;
+        }
+
+        &--heading {
+            font-size: em(28);
+            color: $secondary-color;
+            line-height: 38px;
+            letter-spacing: 0.3px;
+            font-family: $secondary-font-family;
+            padding-bottom: 30px;
+
+            @include breakpoint(smalldesktop) {
+                font-size: em(36);
+                line-height: 48px;
+                padding-bottom: 42px;
+            }
+        }
+
+        &--item {
+            padding-left: 15px;
+            line-height: 28px;
+        }
+    }
+
+    &__features-list {
+        text-transform: capitalize;
+        list-style-image: url('/wp-content/themes/rentestate/img/icons/dark-bullet.svg');
+        margin-left: 32px;
+    }
+}

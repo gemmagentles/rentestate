@@ -9,6 +9,11 @@
 		<section>
 			<?php get_template_part('template-parts/blocks/article-hero'); ?> 		
 		</section>
+
+		<section class="individual-listing__layout">
+			<?php get_template_part('template-parts/blocks/content-lists'); ?> 	
+			<div class="sidebar-form-test">Sidebar Form Placement</div>	
+		</section>
 		
 	<?php endwhile; ?>
 
