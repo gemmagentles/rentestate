@@ -75,7 +75,7 @@ class RestAPI extends Factory
 		return $result !== false;
 	}
 	
-	protected function registerRoute($route, $args)
+	public function registerRoute($route, $args)
 	{
 		$methodIsOnlyGET = true;
 		
@@ -273,6 +273,8 @@ class RestAPI extends Factory
 			'callback'					=> array($this, 'decompress'),
 			'useCompressedPathVariable'	=> true
 		));
+		
+		do_action('wpgmza_register_rest_api_routes');
 	}
 	
 	/**

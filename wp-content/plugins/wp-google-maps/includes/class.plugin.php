@@ -139,6 +139,21 @@ class Plugin extends Factory
 		return $this->{$name};
 	}
 	
+	public function __isset($name)
+	{
+		switch($name)
+		{
+			case 'settings':
+			case 'gdprCompliance':
+			case 'restAPI':
+			case 'spatialFunctionPrefix':
+				return true;
+				break;
+		}
+		
+		return false;
+	}
+	
 	public function onInit()
 	{
 		$this->_gdprCompliance = new GDPRCompliance();
