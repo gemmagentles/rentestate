@@ -1,0 +1,43 @@
+{
+    "key": "group_5d421546aba44",
+    "title": "Map",
+    "fields": [
+        {
+            "key": "field_5d42154b5fda3",
+            "label": "Map Shortcode",
+            "name": "map_shortcode",
+            "type": "wysiwyg",
+            "instructions": "To create a map to mark the location of this apartment please go to the Maps plugin in the left sidebar and create a new map. Then copy the shortcode generated and paste it into the below text editor.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "listing"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1564612152
+}
