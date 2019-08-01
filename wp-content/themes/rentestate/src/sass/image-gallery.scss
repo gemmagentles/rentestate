@@ -1,21 +1,35 @@
-.map {
+.image-gallery {
     &__wrapper {
+        padding: 110px 0 180px;
         display: block;
         clear: both;
     }
-    
+
     &__heading {
-        padding: 26px 0 30px;
         font-size: em(28);
         color: $secondary-color;
         line-height: 38px;
         letter-spacing: 0.3px;
         font-family: $secondary-font-family;
+        padding-bottom: 30px;
 
         @include breakpoint(smalldesktop) {
             font-size: em(36);
             line-height: 48px;
-            padding: 26px 0 52px;
+            padding-bottom: 42px;
         }
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 40px 40px;
+    }
+
+    &__image {
+        width: 100%;
+        max-width: 440px;
+        height: 262px;
+        object-fit: cover;
     }
 }

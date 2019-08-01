@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "browser-sync": "^2.24.4",
+    "fslightbox": "^2.0.1",
     "tiny-slider": "^2.9.2"
   }
 }

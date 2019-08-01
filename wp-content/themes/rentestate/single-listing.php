@@ -14,6 +14,7 @@
 			<div class="individual-listing__layout--left">
 				<?php get_template_part('template-parts/blocks/content-lists'); ?> 	
 				<?php get_template_part('template-parts/blocks/map'); ?> 	
+				<?php get_template_part('template-parts/blocks/image-gallery'); ?> 	
 			</div>
 			<div class="individual-listing__layout--right">
 				<div class="sidebar-form-test">Sidebar Form Placement</div>	
