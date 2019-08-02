@@ -220,6 +220,10 @@ Please upgrade your version of WP Google Maps to version 6.0.27 as it includes m
 
 == Changelog ==
 
+= 7.11.43 :- 2019-07-31 :- Low priority =
+* RestAPI now exposes registerRoute as a public function for add-ons to register REST API routes
+* New action wpgmza_register_rest_api_routes added
+
 = 7.11.42 :- 2019-07-30 :- Medium priority =
 * Added checks for ABSPATH to all PHP modules
 * Added a console warning when Array prototype has been improperly extended, which breaks for ... in loops
@@ -1238,6 +1242,8 @@ Please upgrade your version of WP Google Maps to version 6.0.27 as it includes m
 
 
 For more, please view the WP Google Maps site
+
+
 
 
 

@@ -108,15 +108,28 @@ jQuery(function($) {
 	
 	WPGMZA.RestAPI.prototype.getNonce = function(route)
 	{
+		var matches = [];
+		
 		for(var pattern in WPGMZA.restnoncetable)
 		{
 			var regex = new RegExp(pattern);
 			
 			if(route.match(regex))
-				return WPGMZA.restnoncetable[pattern];
+				matches.push({
+					pattern: pattern,
+					nonce: WPGMZA.restnoncetable[pattern],
+					length: pattern.length
+				});
 		}
 		
-		throw new Error("No nonce found for route");
+		if(!matches.length)
+			throw new Error("No nonce found for route");
+		
+		matches.sort(function(a, b) {
+			return b.length - a.length;
+		});
+		
+		return matches[0].nonce;
 	}
 	
 	WPGMZA.RestAPI.prototype.addNonce = function(route, params, context)

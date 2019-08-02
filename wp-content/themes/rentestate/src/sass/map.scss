@@ -1,4 +1,9 @@
 .map {
+    &__wrapper {
+        display: block;
+        clear: both;
+    }
+    
     &__heading {
         padding: 26px 0 30px;
         font-size: em(28);
