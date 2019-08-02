@@ -1,0 +1,37 @@
+.title-hero {
+    &__wrapper {
+        position: relative;
+        background: $primary-color;
+    }
+
+    &__container {
+        max-width: $inner-site-width;
+        margin: 0 auto;
+        position: relative;
+        padding: 0 38px;
+    }
+
+    &__text-wrapper {
+        max-width: 750px;
+        padding: 50px 0 40px;
+
+        @include breakpoint(smalldesktop) {
+            padding: 96px 0 72px;
+        }
+
+        .title-hero__heading {
+            color: $font-color;
+            font-size: em(32);
+            line-height: 41px;
+
+            @include breakpoint(smalldesktop) {
+                font-size: em(60);
+                line-height: 66px;
+            }
+        }
+    }
+
+    &__period {
+        color: $secondary-color;
+    }
+}
