@@ -5,7 +5,9 @@
         <?php while ( have_rows( 'image_gallery_block' ) ) : the_row(); ?>
             <?php $image = get_sub_field( 'image' ); ?>
             <?php if ( $image ) { ?>
-                <img class="image-gallery__image" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                <a data-fslightbox="rentestate-gallery" href="<?php echo $image['url']; ?>"> 
+                    <img class="image-gallery__image" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                </a> 
             <?php } ?>
         <?php endwhile; ?>
     </div>

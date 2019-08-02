@@ -22,14 +22,21 @@
 
     &__container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-gap: 40px 40px;
+
+        @include breakpoint(mobile) {
+            grid-template-columns: 1fr 1fr;
+        }
     }
 
     &__image {
         width: 100%;
-        max-width: 440px;
         height: 262px;
         object-fit: cover;
+
+        @include breakpoint(mobile) {
+            max-width: 440px;
+        }
     }
 }

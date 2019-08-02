@@ -1220,14 +1220,19 @@ main {
 
 .image-gallery__container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 40px 40px; }
+  @media (min-width: 37.5em) {
+    .image-gallery__container {
+      grid-template-columns: 1fr 1fr; } }
 
 .image-gallery__image {
   width: 100%;
-  max-width: 440px;
   height: 262px;
   object-fit: cover; }
+  @media (min-width: 37.5em) {
+    .image-gallery__image {
+      max-width: 440px; } }
 
 * {
   margin: 0;
