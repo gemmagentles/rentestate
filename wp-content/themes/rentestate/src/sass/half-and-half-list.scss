@@ -49,10 +49,11 @@
         letter-spacing: 0.3px;
     }
 
-    &__paragraph {
-        font-size: em(22);
+    &__paragraph p {
+        font-size: em(24);
         padding-bottom: 40px;
-        line-height: 36px;
+        line-height: 1.5;
+        color: $font-color;
     }
 
     &__list-half {
@@ -93,13 +94,12 @@
         padding-bottom: 28px;
     }
 
-    &__list-wrapper {
-        list-style-image: url('/wp-content/themes/rentestate/img/icons/white-bullet.svg');
-        margin-left: 32px;
-    }
-
     &__list-item {
-        padding-left: 24px;
-        padding-top: 5px;
+        list-style: none;
+        background: url('/wp-content/themes/rentestate/img/icons/white-bullet.svg');
+        margin: 0;
+        padding: 0px 0px 1px 48px;
+        background-repeat: no-repeat;
+        background-position: 0 12px;
     }
 }
