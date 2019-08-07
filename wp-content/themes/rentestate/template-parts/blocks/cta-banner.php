@@ -4,7 +4,7 @@
     <div class="cta-banner__wrapper" style="background-image: url('<?php the_sub_field( 'banner_image' ); ?>');">
         <div class="cta-banner__container">
             <div class="cta-banner__text-box">
-                <h3><?php the_sub_field( 'heading' ); ?></h3>
+                <h3 class="cta-banner__heading"><?php the_sub_field( 'heading' ); ?></h3>
                 <p class="cta-banner__paragraph"><?php the_sub_field( 'paragraph' ); ?></p>
                 <?php $button_link = get_sub_field( 'button_link' ); ?>
                 <?php if ( $button_link ) { ?>

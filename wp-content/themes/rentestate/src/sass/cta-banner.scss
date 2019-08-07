@@ -20,7 +20,7 @@
     &__text-box {
         background: white;
         padding: 40px;
-        max-width: 620px;
+        max-width: 600px;
         width: 80%;
         position: absolute;
         bottom: -110px;
@@ -31,11 +31,16 @@
         }
     }
 
+    &__heading {
+        letter-spacing: normal;
+    }
+
     &__paragraph {
         padding-top: 15px;
         font-size: em(18);
         line-height: 28px;
         color: $font-secondary-color;
+        letter-spacing: normal;
 
         @include breakpoint(smalldesktop) {
             padding-top: 30px;

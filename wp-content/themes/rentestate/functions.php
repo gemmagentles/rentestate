@@ -41,6 +41,27 @@ function hero() {
     }
 }
 
+add_action('acf/init', 'title_hero');
+function title_hero() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a Title Hero block.
+        acf_register_block(array(
+            'name'              => 'title_hero',
+            'title'             => __("Title Hero"),
+            'description'       => __("The block for the Title Hero component, a heading title only with background color."),
+            'render_template'   => 'template-parts/blocks/title-hero.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'minus',
+            'mode'              => 'edit',
+            'keywords'          => array('hero', 'title', 'text'),
+        ));
+    }
+}
+
 add_action('acf/init', 'halfandhalflist');
 function halfandhalflist() {
 
@@ -142,6 +163,27 @@ function split_text() {
             'icon'              => 'editor-table',
             'mode'              => 'edit',
             'keywords'          => array('text', 'half'),
+        ));
+    }
+}
+
+add_action('acf/init', 'wysiwyg');
+function wysiwyg() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register an Wysiwyg block.
+        acf_register_block(array(
+            'name'              => 'wysiwyg',
+            'title'             => __("Wysiwyg"),
+            'description'       => __("The block for the Wysiwyg component, a simple text editor."),
+            'render_template'   => 'template-parts/blocks/wysiwyg.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'editor-alignleft',
+            'mode'              => 'edit',
+            'keywords'          => array('text', 'editor', 'wysiwyg'),
         ));
     }
 }

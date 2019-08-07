@@ -1,0 +1,24 @@
+.individual-listing {
+    &__layout {
+        max-width: $inner-site-width;
+        margin: 0 auto;
+        padding: 0 38px;
+
+        @include breakpoint(smalldesktop) {
+            display: flex;
+        }
+
+        &--left {
+            @include breakpoint(smalldesktop) {
+                width: 75%;
+                padding-right: 162px;
+            }
+        }
+
+        &--right {
+            @include breakpoint(smalldesktop) {
+                width: 25%;
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.wysiwyg {
+    &__wrapper {
+        max-width: $inner-site-width;
+        margin: 0 auto;
+        padding: 60px 38px 72px 38px;
+
+        @include breakpoint(desktop) {
+            padding: 120px 250px 144px 38px;
+        }
+
+        @include breakpoint(largedesktop) {
+            padding: 120px 450px 144px 38px;
+        }
+
+        h2 {
+            font-size: em(22);
+            line-height: 36px;
+            letter-spacing: 0.2px;
+            font-family: $secondary-font-family;
+
+            @include breakpoint(largedesktop) {
+                font-size: em(24);
+            }
+        }
+
+        h3 {
+            font-size: em(24);
+            line-height: 36px;
+            letter-spacing: 0px;
+            color: $secondary-color;
+            font-family: $secondary-font-family;
+            padding: 36px 0 10px;
+        }
+    }
+}
