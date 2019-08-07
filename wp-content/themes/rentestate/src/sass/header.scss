@@ -134,12 +134,18 @@ main {
         top: 0;
         left: 0;
         overflow: hidden;
-        transition: 0.5s;
         padding-top: 60px;
+        opacity: 0;
+
+        @include breakpoint(smalldesktop) {
+            opacity: 1;
+        }
 
         &--open {
             padding-left: 32px;
             box-shadow: 0 10px 20px 0 rgba(100, 112, 160, 0.1);
+            opacity: 1;
+            transition: 0.5s;
         }
     
         // set width to stop the nav from being responsive when the content gets pushed off of screen. 
@@ -192,11 +198,13 @@ main {
             animation-name: fadein;
             animation-duration: 2s;
             opacity: 1;
+            padding-top: 54px;
 
             @include breakpoint(smalldesktop) {
                 float: right;
                 text-align: right;
                 padding-left: 24px;
+                padding-top: 0;
             }
 
             @include breakpoint(largedesktop) {
@@ -204,17 +212,25 @@ main {
             }
 
             &::after {
+                content: "";
+                position: absolute;
+                height: 1px;
+                border-top: 1px solid $secondary-color;
+                top: 20px;
+                left: 0;
+                width: 24px;
+                
                 @include breakpoint(smalldesktop) {
-                    content: "";
-                    position: absolute;
                     height: 48px;
                     border-left: 2px solid $tertiary-color;
                     top: -28%;
-                    left: 0;
+                    width: 2px;
                 }
             }
 
             &:last-child {
+                padding-top: 0;
+
                 @include breakpoint(smalldesktop) {
                     padding: 0 35px;
                 }
@@ -247,10 +263,6 @@ main {
                 &:active {
                     color: $secondary-color;
                 }
-            }
-
-            @include breakpoint(largedesktop) {
-                font-size: em(18);
             }
         }
     }
