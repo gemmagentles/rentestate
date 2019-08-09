@@ -1,0 +1,102 @@
+.list-with-background {
+    &__wrapper {
+        background: $primary-color;
+    }
+
+    &__container {
+        max-width: $inner-site-width;
+        margin: 0 auto;
+        padding: 80px 38px;
+
+        @include breakpoint(desktop) {
+            padding: 120px 38px;
+        }
+
+        @include breakpoint(largedesktop) {
+            padding: 196px 38px 144px;
+        }
+    }
+
+    &__intro {
+        max-width: 920px;
+
+        &--heading {
+            font-size: em(28);
+            line-height: 36px;
+            color: $secondary-color;
+            letter-spacing: 0.0px;
+            font-family: $secondary-font-family;
+            padding-bottom: 30px;
+            
+            @include breakpoint(smalldesktop) {
+                padding-right: 100px;
+                padding-bottom: 50px;
+                font-size: em(36);
+                line-height: 48px;
+                letter-spacing: 0.3px;
+            }
+        }
+
+        &--paragraph {
+            padding-bottom: 70px;
+
+            @include breakpoint(smalldesktop) {        
+                padding-bottom: 130px;
+            }
+        }
+
+        &--paragraph p {
+            font-size: em(20);
+            line-height: 32px;
+            letter-spacing: 0.2px;
+
+            @include breakpoint(smalldesktop) {        
+                font-size: em(24);
+                line-height: 36px;
+            }
+        }
+    }
+
+    &__list {
+        @include breakpoint(smalldesktop) {        
+            padding-left: 140px;
+        }
+
+        @include breakpoint(largedesktop) {        
+            padding-left: 240px;
+        }
+    }
+
+    &__list-item {
+        list-style: none;
+        background: url('/wp-content/themes/rentestate/img/icons/dark-bullet.svg');
+        margin: 0;
+        padding: 0 0 58px 48px;
+        background-repeat: no-repeat;
+        background-position: 0 12px;
+
+        &:last-child {
+            padding: 0 0 0 48px;
+        }
+
+        &--heading {
+            font-size: em(24);
+            line-height: 34px;
+            letter-spacing: normal;
+            font-family: $secondary-font-family;
+            padding-bottom: 14px;
+
+            @include breakpoint(smalldesktop) {        
+                font-size: em(28);
+                padding-bottom: 24px;
+            }
+        }
+
+        &--paragraph p {
+            font-size: em(18);
+            line-height: 30px;
+            letter-spacing: 0.15px;
+            font-family: $secondary-font-family;
+        }
+    }
+}

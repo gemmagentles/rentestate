@@ -1404,6 +1404,83 @@ main {
 .half-and-half-image__image {
   width: 100%; }
 
+.list-with-background__wrapper {
+  background: #F3F4F5; }
+
+.list-with-background__container {
+  max-width: 1476px;
+  margin: 0 auto;
+  padding: 80px 38px; }
+  @media (min-width: 70em) {
+    .list-with-background__container {
+      padding: 120px 38px; } }
+  @media (min-width: 87em) {
+    .list-with-background__container {
+      padding: 196px 38px 144px; } }
+
+.list-with-background__intro {
+  max-width: 920px; }
+  .list-with-background__intro--heading {
+    font-size: 1.75em;
+    line-height: 36px;
+    color: #B98361;
+    letter-spacing: 0.0px;
+    font-family: Calibre-Regular;
+    padding-bottom: 30px; }
+    @media (min-width: 64em) {
+      .list-with-background__intro--heading {
+        padding-right: 100px;
+        padding-bottom: 50px;
+        font-size: 2.25em;
+        line-height: 48px;
+        letter-spacing: 0.3px; } }
+  .list-with-background__intro--paragraph {
+    padding-bottom: 70px; }
+    @media (min-width: 64em) {
+      .list-with-background__intro--paragraph {
+        padding-bottom: 130px; } }
+  .list-with-background__intro--paragraph p {
+    font-size: 1.25em;
+    line-height: 32px;
+    letter-spacing: 0.2px; }
+    @media (min-width: 64em) {
+      .list-with-background__intro--paragraph p {
+        font-size: 1.5em;
+        line-height: 36px; } }
+
+@media (min-width: 64em) {
+  .list-with-background__list {
+    padding-left: 140px; } }
+
+@media (min-width: 87em) {
+  .list-with-background__list {
+    padding-left: 240px; } }
+
+.list-with-background__list-item {
+  list-style: none;
+  background: url("/wp-content/themes/rentestate/img/icons/dark-bullet.svg");
+  margin: 0;
+  padding: 0 0 58px 48px;
+  background-repeat: no-repeat;
+  background-position: 0 12px; }
+  .list-with-background__list-item:last-child {
+    padding: 0 0 0 48px; }
+  .list-with-background__list-item--heading {
+    font-size: 1.5em;
+    line-height: 34px;
+    letter-spacing: normal;
+    font-family: Calibre-Regular;
+    padding-bottom: 14px; }
+    @media (min-width: 64em) {
+      .list-with-background__list-item--heading {
+        font-size: 1.75em;
+        padding-bottom: 24px; } }
+  .list-with-background__list-item--paragraph p {
+    font-size: 1.125em;
+    line-height: 30px;
+    letter-spacing: 0.15px;
+    font-family: Calibre-Regular; }
+
 * {
   margin: 0;
   padding: 0;
