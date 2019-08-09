@@ -1,0 +1,69 @@
+.half-and-half-image {
+    &__wrapper {
+        max-width: $inner-site-width;
+        margin: 0 auto;
+        padding: 0 38px 80px;
+        display: flex;
+        flex-direction: column-reverse;
+
+        @include breakpoint(desktop) {
+            padding: 0 38px 140px;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        @include breakpoint(largedesktop) {
+            padding: 84px 38px 210px;
+        }
+    }
+
+    &__text-wrapper {
+        @include breakpoint(desktop) {
+            width: 40%;
+            padding-right: 90px;
+        }
+    }
+
+    &__heading {
+        padding: 36px 0 26px;
+        font-size: em(30);
+        line-height: 38px;
+        letter-spacing: 0.0px;
+        font-family: $heading-font-family;
+
+        @include breakpoint(smalldesktop) {
+            font-size: em(36);
+            line-height: 48px;
+            padding-bottom: 40px;
+        }
+
+        @include breakpoint(largedesktop) {
+            font-size: em(48);
+            line-height: 60px;
+        }
+    }
+
+    &__paragraph p {
+        font-size: em(20);
+        line-height: 32px;
+        color: $font-color;
+        padding-bottom: 15px;
+
+        @include breakpoint(smalldesktop) {
+            font-size: em(24);
+            line-height: 1.5;
+            padding-bottom: 0;
+        }
+    }
+
+    &__image-wrapper {
+        @include breakpoint(desktop) {
+            width: 60%;
+        }
+    }
+
+    &__image {
+        width: 100%;
+    }
+}

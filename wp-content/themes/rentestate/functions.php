@@ -188,6 +188,27 @@ function wysiwyg() {
     }
 }
 
+add_action('acf/init', 'half_and_half_image');
+function half_and_half_image() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a half_and_half_image block.
+        acf_register_block(array(
+            'name'              => 'half_and_half_image',
+            'title'             => __("Half and Half Image"),
+            'description'       => __("The block for the Half and Half Image component, left side is text with a button and the right side is an image."),
+            'render_template'   => 'template-parts/blocks/half-and-half-image.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'align-right',
+            'mode'              => 'edit',
+            'keywords'          => array('half', 'image', 'text'),
+        ));
+    }
+}
+
 /*Register WordPress Gutenberg CPT */
 function listing_post_type() {
 
