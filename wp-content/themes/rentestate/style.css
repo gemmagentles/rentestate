@@ -1481,6 +1481,149 @@ main {
     letter-spacing: 0.15px;
     font-family: Calibre-Regular; }
 
+.contact-page {
+  background: #F3F4F5;
+  position: relative; }
+  .contact-page__wrapper {
+    max-width: 1476px;
+    margin: 0 auto 94px;
+    padding: 68px 38px 80px;
+    height: calc(100% - 94px); }
+    @media (min-width: 64em) {
+      .contact-page__wrapper {
+        padding: 128px 38px 80px; } }
+  @media (min-width: 64em) {
+    .contact-page__container {
+      display: flex;
+      justify-content: space-between; } }
+  .contact-page__left {
+    max-width: 680px;
+    margin-right: 60px; }
+  .contact-page__right {
+    width: 100%;
+    max-width: 560px;
+    padding-bottom: 38px; }
+  .contact-page__heading {
+    color: #201C1D;
+    font-size: 2em;
+    line-height: 41px;
+    padding-bottom: 30px; }
+    @media (min-width: 37.5em) {
+      .contact-page__heading {
+        font-size: 3em;
+        line-height: 56px; } }
+    @media (min-width: 64em) {
+      .contact-page__heading {
+        font-size: 3.75em;
+        line-height: 66px;
+        padding-bottom: 110px; } }
+  .contact-page__period {
+    color: #B98361; }
+  .contact-page__paragraph {
+    position: relative;
+    font-size: 1.375em;
+    line-height: 34px;
+    letter-spacing: 0.2px;
+    padding: 0 0 40px;
+    margin-bottom: 50px; }
+    @media (min-width: 64em) {
+      .contact-page__paragraph {
+        font-size: 1.5em;
+        line-height: 36px; } }
+    .contact-page__paragraph::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      border-bottom: 1px solid #B98361;
+      width: 120px;
+      bottom: 0;
+      left: 0; }
+  .contact-page__contact-details {
+    padding-bottom: 32px;
+    display: grid;
+    grid-gap: 20px; }
+    @media (min-width: 37.5em) {
+      .contact-page__contact-details {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 40px; } }
+    .contact-page__contact-details p {
+      font-size: 1.25em;
+      line-height: 30px;
+      letter-spacing: 0.2px; }
+      @media (min-width: 64em) {
+        .contact-page__contact-details p {
+          font-size: 1.5em;
+          line-height: 36px; } }
+  .contact-page__name {
+    color: #B98361; }
+  .contact-page__phone {
+    color: #787C82; }
+  .contact-page__email {
+    text-decoration: none;
+    color: #787C82;
+    position: relative; }
+    .contact-page__email:hover, .contact-page__email:active {
+      color: #201C1D; }
+      .contact-page__email:hover::after, .contact-page__email:active::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        border-bottom: 1px solid #201C1D;
+        width: 100%;
+        top: 26px;
+        left: 0; }
+  .contact-page__address {
+    max-width: 240px;
+    color: #787C82; }
+    @media (min-width: 64em) {
+      .contact-page__address {
+        max-width: 280px; } }
+  .contact-page__social {
+    padding: 0 0 40px; }
+    @media (min-width: 64em) {
+      .contact-page__social {
+        padding: 75px 0; } }
+    .contact-page__social--icon {
+      margin-right: 20px; }
+  .contact-page__newsletter-wrapper {
+    background: white;
+    padding: 38px; }
+    @media (min-width: 64em) {
+      .contact-page__newsletter-wrapper {
+        padding: 60px; } }
+    .contact-page__newsletter-wrapper form {
+      position: relative; }
+    .contact-page__newsletter-wrapper .footer__newsletter--title {
+      font-size: 1.5em;
+      line-height: 30px; }
+      @media (min-width: 64em) {
+        .contact-page__newsletter-wrapper .footer__newsletter--title {
+          font-size: 2.25em;
+          line-height: 48px; } }
+
+.contact-footer {
+  background: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; }
+  .contact-footer__container {
+    max-width: 1476px;
+    margin: 0 auto;
+    padding: 36px 38px; }
+  .contact-footer__copyright {
+    text-transform: uppercase;
+    color: #787C82;
+    font-size: 0.75em;
+    line-height: 22px;
+    letter-spacing: 1.5px;
+    font-family: EngraversGothic-Bold; }
+    .contact-footer__copyright--link {
+      text-decoration: none;
+      color: #787C82; }
+      .contact-footer__copyright--link:hover, .contact-footer__copyright--link:focus {
+        color: #B98361; }
+
 * {
   margin: 0;
   padding: 0;
