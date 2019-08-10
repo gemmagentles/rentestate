@@ -1,0 +1,207 @@
+.contact-page {
+    background: $primary-color;
+    position: relative;
+
+    &__wrapper {
+        max-width: $inner-site-width;
+        margin: 0 auto 94px;
+        padding: 68px 38px 80px;
+        height: calc(100% - 94px);
+
+        @include breakpoint(smalldesktop) {
+            padding: 128px 38px 80px;
+        }
+    }
+
+    &__container {
+        @include breakpoint(smalldesktop) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__left {
+        max-width: 680px;
+        margin-right: 60px;
+    }
+
+    &__right {
+        width: 100%;
+        max-width: 560px;
+        padding-bottom: 38px;
+    }
+
+    &__heading {
+        color: $font-color;
+        font-size: em(32);
+        line-height: 41px;
+        padding-bottom: 30px;
+
+        @include breakpoint(mobile) {
+            font-size: em(48);
+            line-height: 56px;
+        }
+
+        @include breakpoint(smalldesktop) {
+            font-size: em(60);
+            line-height: 66px;
+            padding-bottom: 110px;
+        }
+    }
+
+    &__period {
+        color: $secondary-color;
+    }
+
+    &__paragraph {
+        position: relative;
+        font-size: em(22);
+        line-height: 34px;
+        letter-spacing: 0.2px;
+        padding: 0 0 40px;
+        margin-bottom: 50px;
+
+        @include breakpoint(smalldesktop) {
+            font-size: em(24);
+            line-height: 36px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            border-bottom: 1px solid $secondary-color;
+            width: 120px;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &__contact-details {
+        padding-bottom: 32px;
+        display: grid;
+        grid-gap: 20px;
+
+        @include breakpoint(mobile) {
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 40px;
+        }
+
+        p {
+            font-size: em(20);
+            line-height: 30px;
+            letter-spacing: 0.2px;
+
+            @include breakpoint(smalldesktop) {
+                font-size: em(24);
+                line-height: 36px;
+            }
+        }
+    }
+
+    &__name {
+        color: $secondary-color;
+    }
+
+    &__phone {
+        color: $font-secondary-color;
+    }
+
+    &__email {
+        text-decoration: none;
+        color: $font-secondary-color;
+        position: relative;
+
+        &:hover,
+        &:active {
+            color: $font-color;
+            
+            &::after {
+                content: "";
+                position: absolute;
+                height: 2px;
+                border-bottom: 1px solid $font-color;
+                width: 100%;
+                top: 26px;
+                left: 0;
+            }
+        }
+    }
+
+    &__address {
+        max-width: 240px;
+        color: $font-secondary-color;
+
+        @include breakpoint(smalldesktop) {
+            max-width: 280px;
+        }
+    }
+
+    &__social {
+        padding: 0 0 40px;
+
+        @include breakpoint(smalldesktop) {
+            padding: 75px 0;
+        }
+
+        &--icon {
+            margin-right: 20px;
+        }
+    }
+
+    &__newsletter-wrapper {
+        background: white;
+        padding: 38px;
+
+        @include breakpoint(smalldesktop) {
+            padding: 60px;
+        }
+
+        form {
+            position: relative;
+        }
+
+        .footer__newsletter--title {
+            font-size: em(24);
+            line-height: 30px;
+
+            @include breakpoint(smalldesktop) {
+                font-size: em(36);
+                line-height: 48px;
+            }
+        }
+    }
+}
+
+.contact-footer {
+    background: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    &__container {
+        max-width: $inner-site-width;
+        margin: 0 auto;
+        padding: 36px 38px;
+    }
+
+    &__copyright {
+        text-transform: uppercase;
+        color: $font-secondary-color;
+        font-size: em(12);
+        line-height: 22px;
+        letter-spacing: 1.5px;
+        font-family: $tertiary-font-family;
+
+        &--link {
+            text-decoration: none;
+            color: $font-secondary-color;
+
+            &:hover,
+            &:focus {
+                color: $secondary-color;
+            }
+        }
+    }
+}

@@ -188,6 +188,48 @@ function wysiwyg() {
     }
 }
 
+add_action('acf/init', 'half_and_half_image');
+function half_and_half_image() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a Half and Half Image block.
+        acf_register_block(array(
+            'name'              => 'half_and_half_image',
+            'title'             => __("Half and Half Image"),
+            'description'       => __("The block for the Half and Half Image component, left side is text with a button and the right side is an image."),
+            'render_template'   => 'template-parts/blocks/half-and-half-image.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'align-right',
+            'mode'              => 'edit',
+            'keywords'          => array('half', 'image', 'text'),
+        ));
+    }
+}
+
+add_action('acf/init', 'list_with_background');
+function list_with_background() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a List with Background block.
+        acf_register_block(array(
+            'name'              => 'list_with_background',
+            'title'             => __("List with Background"),
+            'description'       => __("The block for the List with Background component, a list repeater with an intro heading and paragraph."),
+            'render_template'   => 'template-parts/blocks/list-with-background.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'list-view',
+            'mode'              => 'edit',
+            'keywords'          => array('list', 'background', 'text'),
+        ));
+    }
+}
+
 /*Register WordPress Gutenberg CPT */
 function listing_post_type() {
 
