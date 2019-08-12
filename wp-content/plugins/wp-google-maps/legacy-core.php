@@ -759,24 +759,19 @@ function wpgmaps_admin_edit_marker_javascript() {
  * Outputs the JavaScript for the map editor
  * @return void
  */
-function wpgmaps_admin_javascript_basic() {
-    if (!is_admin())
-		return;
-	
+function wpgmaps_admin_javascript_basic()
+{	
 	global $wpgmza;
 	global $wpdb;
 	global $wpgmza_version;
 	global $wpgmza_tblname_maps;
 	
+    if (!is_admin() || !$wpgmza->isUserAllowedToEdit())
+		return;
+	
 	if(!empty($_POST['wpgmaps_marker-nonce']) && !wp_verify_nonce($_POST['wpgmaps_marker-nonce'], 'wpgmza'))
 	{
 		http_response_code(403);
-		exit;
-	}
-	
-	if(!$wpgmza->isUserAllowedToEdit())
-	{
-		http_response_code(401);
 		exit;
 	}
 	
@@ -803,8 +798,13 @@ function wpgmaps_admin_javascript_basic() {
 	else if (is_admin() && isset( $_GET['page'] ) && $_GET['page'] == 'wp-google-maps-menu' && isset( $_GET['action'] ) && $_GET['action'] == "edit") {
 
 		if (!$_GET['map_id']) { return; }
-		$wpgmza_check = wpgmaps_update_xml_file(sanitize_text_field($_GET['map_id']));
-		if ( is_wp_error($wpgmza_check) ) wpgmza_return_error($wpgmza_check);
+		
+		if(!empty($_POST))
+		{
+			$wpgmza_check = wpgmaps_update_xml_file(sanitize_text_field($_GET['map_id']));
+		
+			if ( is_wp_error($wpgmza_check) ) wpgmza_return_error($wpgmza_check);
+		}
 		
 		$wpgmza_settings = get_option("WPGMZA_OTHER_SETTINGS");
 
@@ -2588,7 +2588,7 @@ function wpgmza_settings_page_post()
 		exit;
 	}
 	
-	if($wpgmza->isUserAllowedToEdit())
+	if(!$wpgmza->isUserAllowedToEdit())
 	{
 		http_response_code(401);
 		exit;
@@ -3896,6 +3896,7 @@ function wpgmaps_settings_page_basic() {
             $ret .= "               <div class='switch'><input type='checkbox' class='cmn-toggle cmn-toggle-round-flat' disabled /> <label></label></div>".__("Hide the Address column","wp-google-maps")."<br />";
             $ret .= "               <div class='switch'><input type='checkbox' class='cmn-toggle cmn-toggle-round-flat' disabled /> <label></label></div>".__("Hide the Category column","wp-google-maps")."<br />";
             $ret .= "               <div class='switch'><input type='checkbox' class='cmn-toggle cmn-toggle-round-flat' disabled /> <label></label></div>".__("Hide the Description column","wp-google-maps")."<br />";
+            $ret .= "               <div class='switch'><input type='checkbox' class='cmn-toggle cmn-toggle-round-flat' disabled /> <label></label></div>".__("Do not Enqueue Datatables","wp-google-maps")."<br />";
             $ret .= "           </td>";
             $ret .= "       </tr>";
             $ret .= "   </table>";

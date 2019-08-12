@@ -31,6 +31,7 @@ class Factory
 		if($class == 'WPGMZA\Factory')
 			throw new \Exception('Factory createInstance would return abstract Factory');
 		
+		// TODO: If the created object is a descendant of CRUD 
 		if(empty($args))
 			$filter_args = array($filter, null);
 		else
