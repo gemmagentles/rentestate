@@ -1,0 +1,27 @@
+.large-text__wrapper {
+    margin: 0 auto;
+    padding: 90px 38px 0;
+
+    @include breakpoint(smalldesktop) {
+        max-width: 960px;
+        padding: 160px 20px 0 20px;
+    }
+
+    @include breakpoint(largedesktop) {
+        max-width: 1112px;
+        padding: 230px 0 0 92px;
+    }
+
+    p {
+        font-family: $secondary-font-family;
+        font-size: em(24);
+        line-height: 36px;
+        letter-spacing: 0.3px;
+        color: $secondary-color;
+
+        @include breakpoint(smalldesktop) {
+            font-size: em(36);
+            line-height: 48px;
+        }
+    }
+}

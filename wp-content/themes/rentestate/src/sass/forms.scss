@@ -16,7 +16,88 @@
     }
 }
 
-.sidebar-form #wpforms-form-198 { 
+.form-shortcode__wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 38px 50px;
+    
+    @include breakpoint(smalldesktop) {
+        padding: 90px 0 150px;
+    }
+}
+
+#wpforms-203 { 
+    
+    .wpforms-field-container {
+        @include breakpoint(smalldesktop) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+#wpforms-form-198,
+#wpforms-203 { 
+    
+    .rentestate-forms__input--half {
+        @include breakpoint(smalldesktop) {
+            min-width: 50%;
+            padding: 10px 20px;
+        }
+    }
+
+    .rentestate-forms__input--third {
+        @include breakpoint(smalldesktop) {
+            min-width: 50%;
+            padding: 10px 20px;
+        }
+    }
+
+    .property-details-form {
+        position: relative;
+        padding-top: 200px;
+
+        &::before {
+            content: "Property Details";
+            position: absolute;
+            top: 100px;
+            left: 0;
+            font-family: $secondary-font-family;
+            letter-spacing: 0.3px;
+            color: $font-color;
+            font-size: em(24);
+            line-height: 36px;
+
+            @include breakpoint(smalldesktop) {
+                left: 20px;
+                font-size: em(36);
+                line-height: 48px;
+            }
+        }
+    }
+
+    .contact-details-form {
+        position: relative;
+        padding-top: 200px;
+
+        &::before {
+            content: "Contact Details";
+            position: absolute;
+            top: 100px;
+            left: 0;
+            font-family: $secondary-font-family;
+            font-size: em(24);
+            line-height: 36px;
+            letter-spacing: 0.3px;
+            color: $font-color;
+
+            @include breakpoint(smalldesktop) {
+                left: 20px;
+                font-size: em(36);
+                line-height: 48px;
+            }
+        } 
+    }
 
     .wpforms-field {
         display: flex;
@@ -39,6 +120,12 @@
         }
     }
 
+    select { 
+        color: $tertiary-color !important;
+        margin-left: -8px;
+    }
+
+    // sidebar form text area
     #wpforms-198-field_5 {
         height: 40px;
     }
@@ -105,5 +192,13 @@
         font-size: em(18) !important;
         line-height: 24px !important;
         letter-spacing: 0.15px !important;
+    }
+}
+
+#wpforms-203 .wpforms-submit {
+    margin: 50px 0 0 0;
+
+    @include breakpoint(smalldesktop) {
+        margin: 70px 0 0 20px;
     }
 }

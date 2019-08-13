@@ -251,6 +251,27 @@ function form_shortcode() {
     }
 }
 
+add_action('acf/init', 'large_text_block');
+function large_text_block() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a Large Text block.
+        acf_register_block(array(
+            'name'              => 'large_text_block',
+            'title'             => __("Large Text"),
+            'description'       => __("The block for the Large Text component, a wysiwyg editor to hold text that is larger than the rest of the site with more space and gold in color."),
+            'render_template'   => 'template-parts/blocks/large-text.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'editor-alignleft',
+            'mode'              => 'edit',
+            'keywords'          => array('large', 'text'),
+        ));
+    }
+}
+
 /*Register WordPress Gutenberg CPT */
 function listing_post_type() {
 
