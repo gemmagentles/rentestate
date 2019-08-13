@@ -17,7 +17,10 @@
 				<?php get_template_part('template-parts/blocks/image-gallery'); ?> 	
 			</div>
 			<div class="individual-listing__layout--right">
-				<div class="sidebar-form-test">Sidebar Form Placement</div>	
+				<div class="sidebar-form">
+					<h4 class="sidebar-form__heading">Contact us about this property</h4>
+					<?php echo do_shortcode( '[wpforms id="198" title="false" description="false"]' ); ?>
+				</div>	
 			</div>
 		</section>
 		

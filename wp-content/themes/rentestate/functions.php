@@ -230,6 +230,27 @@ function list_with_background() {
     }
 }
 
+add_action('acf/init', 'form_shortcode');
+function form_shortcode() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a Form Shortcode block.
+        acf_register_block(array(
+            'name'              => 'form_shortcode',
+            'title'             => __("Form Shortcode"),
+            'description'       => __("The block for the Form Shortcode component, a wysiwyg editor to hold shortcode text from wpforms."),
+            'render_template'   => 'template-parts/blocks/form-shortcode.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'email-alt',
+            'mode'              => 'edit',
+            'keywords'          => array('form', 'shortcode', 'wpforms'),
+        ));
+    }
+}
+
 /*Register WordPress Gutenberg CPT */
 function listing_post_type() {
 
