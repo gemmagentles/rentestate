@@ -8,6 +8,7 @@ COLOURS
 /* gold highlights and lines */
 /* light grey */
 /* light black */
+/* bluish grey */
 /* darker grey */
 /* lighter grey */
 /* grey */
@@ -1266,11 +1267,20 @@ main {
       display: flex; } }
   @media (min-width: 64em) {
     .individual-listing__layout--left {
+      width: 70%;
+      padding-right: 100px; } }
+  @media (min-width: 87em) {
+    .individual-listing__layout--left {
       width: 75%;
       padding-right: 162px; } }
-  @media (min-width: 64em) {
-    .individual-listing__layout--right {
-      width: 25%; } }
+  .individual-listing__layout--right {
+    padding-bottom: 80px; }
+    @media (min-width: 64em) {
+      .individual-listing__layout--right {
+        width: 30%; } }
+    @media (min-width: 87em) {
+      .individual-listing__layout--right {
+        width: 25%; } }
 
 .map__wrapper {
   display: block;
@@ -1290,9 +1300,12 @@ main {
       padding: 26px 0 52px; } }
 
 .image-gallery__wrapper {
-  padding: 110px 0 180px;
+  padding: 110px 0 110px;
   display: block;
   clear: both; }
+  @media (min-width: 64em) {
+    .image-gallery__wrapper {
+      padding: 110px 0 180px; } }
 
 .image-gallery__heading {
   font-size: 1.75em;
@@ -1623,6 +1636,94 @@ main {
       color: #787C82; }
       .contact-footer__copyright--link:hover, .contact-footer__copyright--link:focus {
         color: #B98361; }
+
+@media (min-width: 64em) {
+  .sidebar-form {
+    position: sticky;
+    top: 150px; } }
+
+.sidebar-form__heading {
+  color: #778F9B;
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 24px;
+  letter-spacing: 2.0px;
+  padding-bottom: 22px;
+  font-family: EngraversGothic-Bold; }
+
+.sidebar-form #wpforms-form-198 .wpforms-field {
+  display: flex;
+  flex-direction: column-reverse; }
+
+.sidebar-form #wpforms-form-198 .wpforms-field-large {
+  border: none;
+  border-bottom: 1px solid #B98361;
+  font-family: Calibre-Regular;
+  font-size: 1.125em;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #787C82;
+  padding-left: 0; }
+  .sidebar-form #wpforms-form-198 .wpforms-field-large::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #B8C1CB;
+    opacity: 1;
+    /* Firefox */ }
+
+.sidebar-form #wpforms-form-198 #wpforms-198-field_5 {
+  height: 40px; }
+
+.sidebar-form #wpforms-form-198 .wpforms-field-label {
+  text-transform: uppercase;
+  font-family: EngraversGothic-Bold;
+  color: #787C82;
+  letter-spacing: 2.0px;
+  font-size: 1em;
+  padding-top: 10px; }
+
+.sidebar-form #wpforms-form-198 .wpforms-required-label {
+  color: #787C82; }
+
+.sidebar-form #wpforms-form-198 .wpforms-error {
+  color: #787C82;
+  font-family: Calibre-Regular; }
+
+.sidebar-form #wpforms-form-198 .wpforms-submit {
+  margin-top: 23px;
+  -webkit-font-smoothing: antialiased;
+  display: inline-flex;
+  background: #B98361;
+  color: white;
+  text-decoration: none;
+  font-family: Calibre-Regular;
+  font-size: 1.125em;
+  border-radius: 4px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  padding: 22px 110px 22px 40px; }
+  .sidebar-form #wpforms-form-198 .wpforms-submit:hover, .sidebar-form #wpforms-form-198 .wpforms-submit:focus {
+    background: #86573A; }
+  .sidebar-form #wpforms-form-198 .wpforms-submit::before {
+    content: "";
+    position: absolute;
+    width: 27px;
+    height: 12px;
+    top: 47%;
+    transform: translateY(-47%);
+    right: 35px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='12' viewBox='0 0 27 12'%3E%3Cpath fill='%23FFF' fill-rule='evenodd' d='M19.466 1.2l3.949 3.95H0v1.7h23.415l-3.95 3.95 1.202 1.2 6-6-6-6z'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat; }
+
+.wpforms-confirmation-container-full, div[submit-success] > .wpforms-confirmation-container-full {
+  background: #B98361 !important;
+  border: #B98361 !important;
+  color: white !important;
+  padding: 50px !important; }
+  .wpforms-confirmation-container-full p, div[submit-success] > .wpforms-confirmation-container-full p {
+    font-family: Calibre-Regular !important;
+    font-size: 1.125em !important;
+    line-height: 24px !important;
+    letter-spacing: 0.15px !important; }
 
 * {
   margin: 0;

@@ -10,13 +10,24 @@
 
         &--left {
             @include breakpoint(smalldesktop) {
+                width: 70%;
+                padding-right: 100px;
+            }
+
+            @include breakpoint(largedesktop) {
                 width: 75%;
                 padding-right: 162px;
             }
         }
 
         &--right {
+            padding-bottom: 80px;
+            
             @include breakpoint(smalldesktop) {
+                width: 30%;
+            }
+
+            @include breakpoint(largedesktop) {
                 width: 25%;
             }
         }

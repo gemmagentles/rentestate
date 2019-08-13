@@ -1,8 +1,12 @@
 .image-gallery {
     &__wrapper {
-        padding: 110px 0 180px;
+        padding: 110px 0 110px;
         display: block;
         clear: both;
+
+        @include breakpoint(smalldesktop) {
+            padding: 110px 0 180px;
+        }
     }
 
     &__heading {
