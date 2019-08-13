@@ -19,14 +19,13 @@
 .form-shortcode__wrapper {
     max-width: 960px;
     margin: 0 auto;
-    padding: 90px 38px 50px;
+    padding: 0 38px 50px;
     
     @include breakpoint(smalldesktop) {
-        padding: 190px 0 150px;
+        padding: 90px 0 150px;
     }
 }
 
-#wpforms-form-198,
 #wpforms-203 { 
     
     .wpforms-field-container {
@@ -35,7 +34,11 @@
             flex-wrap: wrap;
         }
     }
+}
 
+#wpforms-form-198,
+#wpforms-203 { 
+    
     .rentestate-forms__input--half {
         @include breakpoint(smalldesktop) {
             min-width: 50%;
@@ -60,13 +63,15 @@
             top: 100px;
             left: 0;
             font-family: $secondary-font-family;
-            font-size: em(36);
-            line-height: 48px;
             letter-spacing: 0.3px;
             color: $font-color;
+            font-size: em(24);
+            line-height: 36px;
 
             @include breakpoint(smalldesktop) {
                 left: 20px;
+                font-size: em(36);
+                line-height: 48px;
             }
         }
     }
@@ -81,13 +86,15 @@
             top: 100px;
             left: 0;
             font-family: $secondary-font-family;
-            font-size: em(36);
-            line-height: 48px;
+            font-size: em(24);
+            line-height: 36px;
             letter-spacing: 0.3px;
             color: $font-color;
 
             @include breakpoint(smalldesktop) {
                 left: 20px;
+                font-size: em(36);
+                line-height: 48px;
             }
         } 
     }

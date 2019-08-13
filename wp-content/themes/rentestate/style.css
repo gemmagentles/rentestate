@@ -1654,13 +1654,12 @@ main {
 .form-shortcode__wrapper {
   max-width: 960px;
   margin: 0 auto;
-  padding: 90px 38px 50px; }
+  padding: 0 38px 50px; }
   @media (min-width: 64em) {
     .form-shortcode__wrapper {
-      padding: 190px 0 150px; } }
+      padding: 90px 0 150px; } }
 
 @media (min-width: 64em) {
-  #wpforms-form-198 .wpforms-field-container,
   #wpforms-203 .wpforms-field-container {
     display: flex;
     flex-wrap: wrap; } }
@@ -1688,14 +1687,16 @@ main {
     top: 100px;
     left: 0;
     font-family: Calibre-Regular;
-    font-size: 2.25em;
-    line-height: 48px;
     letter-spacing: 0.3px;
-    color: #201C1D; }
+    color: #201C1D;
+    font-size: 1.5em;
+    line-height: 36px; }
     @media (min-width: 64em) {
       #wpforms-form-198 .property-details-form::before,
       #wpforms-203 .property-details-form::before {
-        left: 20px; } }
+        left: 20px;
+        font-size: 2.25em;
+        line-height: 48px; } }
 
 #wpforms-form-198 .contact-details-form,
 #wpforms-203 .contact-details-form {
@@ -1708,14 +1709,16 @@ main {
     top: 100px;
     left: 0;
     font-family: Calibre-Regular;
-    font-size: 2.25em;
-    line-height: 48px;
+    font-size: 1.5em;
+    line-height: 36px;
     letter-spacing: 0.3px;
     color: #201C1D; }
     @media (min-width: 64em) {
       #wpforms-form-198 .contact-details-form::before,
       #wpforms-203 .contact-details-form::before {
-        left: 20px; } }
+        left: 20px;
+        font-size: 2.25em;
+        line-height: 48px; } }
 
 #wpforms-form-198 .wpforms-field,
 #wpforms-203 .wpforms-field {
@@ -1812,6 +1815,28 @@ main {
   @media (min-width: 64em) {
     #wpforms-203 .wpforms-submit {
       margin: 70px 0 0 20px; } }
+
+.large-text__wrapper {
+  margin: 0 auto;
+  padding: 90px 38px 0; }
+  @media (min-width: 64em) {
+    .large-text__wrapper {
+      max-width: 960px;
+      padding: 160px 20px 0 20px; } }
+  @media (min-width: 87em) {
+    .large-text__wrapper {
+      max-width: 1112px;
+      padding: 230px 0 0 92px; } }
+  .large-text__wrapper p {
+    font-family: Calibre-Regular;
+    font-size: 1.5em;
+    line-height: 36px;
+    letter-spacing: 0.3px;
+    color: #B98361; }
+    @media (min-width: 64em) {
+      .large-text__wrapper p {
+        font-size: 2.25em;
+        line-height: 48px; } }
 
 * {
   margin: 0;
