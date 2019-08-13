@@ -26,7 +26,8 @@
     }
 }
 
-#wpforms-203 { 
+#wpforms-203,
+#wpforms-208 { 
     
     .wpforms-field-container {
         @include breakpoint(smalldesktop) {
@@ -37,7 +38,8 @@
 }
 
 #wpforms-form-198,
-#wpforms-203 { 
+#wpforms-203,
+#wpforms-208 { 
     
     .rentestate-forms__input--half {
         @include breakpoint(smalldesktop) {
@@ -195,7 +197,8 @@
     }
 }
 
-#wpforms-203 .wpforms-submit {
+#wpforms-203 .wpforms-submit,
+#wpforms-208 .wpforms-submit {
     margin: 50px 0 0 0;
 
     @include breakpoint(smalldesktop) {
