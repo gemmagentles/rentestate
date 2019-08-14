@@ -230,6 +230,48 @@ function list_with_background() {
     }
 }
 
+add_action('acf/init', 'form_shortcode');
+function form_shortcode() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a Form Shortcode block.
+        acf_register_block(array(
+            'name'              => 'form_shortcode',
+            'title'             => __("Form Shortcode"),
+            'description'       => __("The block for the Form Shortcode component, a wysiwyg editor to hold shortcode text from wpforms."),
+            'render_template'   => 'template-parts/blocks/form-shortcode.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'email-alt',
+            'mode'              => 'edit',
+            'keywords'          => array('form', 'shortcode', 'wpforms'),
+        ));
+    }
+}
+
+add_action('acf/init', 'large_text_block');
+function large_text_block() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a Large Text block.
+        acf_register_block(array(
+            'name'              => 'large_text_block',
+            'title'             => __("Large Text"),
+            'description'       => __("The block for the Large Text component, a wysiwyg editor to hold text that is larger than the rest of the site with more space and gold in color."),
+            'render_template'   => 'template-parts/blocks/large-text.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'editor-alignleft',
+            'mode'              => 'edit',
+            'keywords'          => array('large', 'text'),
+        ));
+    }
+}
+
 /*Register WordPress Gutenberg CPT */
 function listing_post_type() {
 

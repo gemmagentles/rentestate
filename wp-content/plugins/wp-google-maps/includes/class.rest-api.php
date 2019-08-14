@@ -115,7 +115,14 @@ class RestAPI extends Factory
 		{
 			global $wpgmza;
 			
-			$doActionNonceCheck = !$methodIsOnlyGET && (!$wpgmza->isProVersion() || version_compare($wpgmza->getProVersion(), '7.11.47', '>='));
+			$doActionNonceCheck = 
+				empty($args['skipNonceCheck']) &&
+				!$methodIsOnlyGET && 
+				(
+					!$wpgmza->isProVersion() 
+					||
+					version_compare($wpgmza->getProVersion(), '7.11.47', '>=')
+				);
 			
 			if($doActionNonceCheck && !$this->checkActionNonce($route))
 				return new \WP_Error('wpgmza_action_not_allowed', 'You do not have permission to perform this action', array('status' => 403));
@@ -123,12 +130,15 @@ class RestAPI extends Factory
 			return $callback($request);
 		};
 		
-		register_rest_route(RestAPI::NS, $route, $args);
-		
-		if(isset($args['useCompressedPathVariable']) && $args['useCompressedPathVariable'])
+		if(defined('REST_REQUEST'))
 		{
-			$compressedRoute = preg_replace('#/$#', '', $route) . RestAPI::CUSTOM_BASE64_REGEX;
-			register_rest_route(RestAPI::NS, $compressedRoute, $args);
+			register_rest_route(RestAPI::NS, $route, $args);
+			
+			if(isset($args['useCompressedPathVariable']) && $args['useCompressedPathVariable'])
+			{
+				$compressedRoute = preg_replace('#/$#', '', $route) . RestAPI::CUSTOM_BASE64_REGEX;
+				register_rest_route(RestAPI::NS, $compressedRoute, $args);
+			}
 		}
 		
 		$this->fallbackRoutesByRegex["#$route#"] = $args;
@@ -185,7 +195,7 @@ class RestAPI extends Factory
 	 * or from the $_REQUEST array when no compressed string is present
 	 * @return array The request parameters
 	 */
-	protected function getRequestParameters()
+	public function getRequestParameters()
 	{
 		switch($_SERVER['REQUEST_METHOD'])
 		{

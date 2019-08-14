@@ -554,7 +554,7 @@ jQuery(function($) {
 		
 		getQueryParamValue: function(name) {
 			
-			var regex = new RegExp(name + "=([^&]*)");
+			var regex = new RegExp(name + "=([^&#]*)");
 			var m;
 			
 			if(!(m = window.location.href.match(regex)))
@@ -1336,7 +1336,15 @@ jQuery(function($) {
 		for(i = path.length - 1; i >= 0 && !event._cancelled; i--)
 			path[i]._triggerListeners(event);
 		
-		if(this.element)
+		// Native DOM event
+		var topMostElement = this.element;
+		for(var obj = this.parent; obj != null; obj = obj.parent)
+		{
+			if(obj.element)
+				topMostElement = obj.element;
+		}
+		
+		if(topMostElement)
 		{
 			var customEvent = {};
 			
@@ -1350,7 +1358,7 @@ jQuery(function($) {
 				customEvent[key] = value;
 			}
 			
-			$(this.element).trigger(customEvent);
+			$(topMostElement).trigger(customEvent);
 		}
 	}
 
@@ -5206,7 +5214,6 @@ jQuery(function($) {
 		}).join("");
 		
 		var base64		= btoa(raw);
-		
 		return base64.replace(/\//g, "-") + suffix;
 	}
 	
@@ -5389,7 +5396,7 @@ jQuery(function($) {
 		
 		nativeCallFunction.apply(this, arguments);
 	}
-	
+
 	$(document.body).on("click", "#wpgmza-rest-api-blocked button.notice-dismiss", function(event) {
 		
 		WPGMZA.restAPI.call("/rest-api/", {
@@ -7454,7 +7461,7 @@ jQuery(function($) {
 			left: position.x + "px",
 			top: position.y + "px"
 		});
-		
+
 		var panes = this.getPanes();
 		panes.floatPane.appendChild(this.element[0]);
 	}
@@ -9191,6 +9198,22 @@ jQuery(function($) {
 		
 		this.dataTable.ajax.reload();
 	}
+	
+	Object.defineProperty(WPGMZA.DataTable.prototype, "canSendCompressedRequests", {
+		
+		"get": function() {
+			
+			return (
+				WPGMZA.serverCanInflate == 1 && 
+				"Uint8Array" in window && 
+				"TextEncoder" in window && 
+				!WPGMZA.settings.forceDatatablesPOST && 
+				WPGMZA.settings.useCompressedDataTablesRequests
+			);
+			
+		}
+		
+	});
 	
 	WPGMZA.DataTable.prototype.getDataTableElement = function()
 	{
