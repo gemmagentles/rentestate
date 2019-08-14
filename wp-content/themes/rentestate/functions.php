@@ -444,7 +444,7 @@ function html5blank_footer_scripts()
     wp_register_script('horizontal-slider-main-slider', get_template_directory_uri() . '/js/horizontal-slider.js', array('jquery'), '1.0.0'); // Conditional script(s)
     wp_enqueue_script('horizontal-slider-main-slider'); // Enqueue it!  
 
-    wp_register_script('image-gallery-lightbox', get_template_directory_uri() . '/node_modules/fslightbox/fslightbox.min.js', array('jquery'), '1.0.0'); // Conditional script(s)
+    wp_register_script('image-gallery-lightbox', get_template_directory_uri() . '/js/fslightbox.js', array('jquery'), '1.0.0'); // Conditional script(s)
     wp_enqueue_script('image-gallery-lightbox'); // Enqueue it!  
 }
 
@@ -462,6 +462,13 @@ function html5blank_styles()
 {
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
+}
+
+// Load FSlightbox styles
+function fslightbox_styles()
+{
+    wp_register_style('fslightbox', get_template_directory_uri() . '/src/sass/fslightbox.min.css', array(), '1.0', 'all');
+    wp_enqueue_style('fslightbox'); // Enqueue it!
 }
 
 // Register HTML5 Blank Navigation
@@ -691,6 +698,7 @@ add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 add_action('wp_footer', 'html5blank_footer_scripts'); // Add Custom Scripts to wp_footer
+add_action('wp_head', 'fslightbox_styles'); // Add FSlightbox styles to wp_head
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
