@@ -1284,7 +1284,11 @@ main {
 
 .map__wrapper {
   display: block;
-  clear: both; }
+  clear: both;
+  width: 100%; }
+  .map__wrapper iframe {
+    width: 100%;
+    height: 400px; }
 
 .map__heading {
   padding: 26px 0 30px;
