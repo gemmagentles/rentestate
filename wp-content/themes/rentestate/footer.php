@@ -45,6 +45,5 @@
 			</footer>
 		</div>
 		<?php wp_footer(); ?>
-		<script src="/wp-content/themes/rentestate/node_modules/fslightbox/fslightbox.min.js"></script>
 	</body>
 </html>
