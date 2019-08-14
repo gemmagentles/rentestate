@@ -7,7 +7,7 @@
             "label": "Map Shortcode",
             "name": "map_shortcode",
             "type": "wysiwyg",
-            "instructions": "To create a map to mark the location of this apartment please go to the Maps plugin in the left sidebar and create a new map. Then copy the shortcode generated and paste it into the below text editor.",
+            "instructions": "To create a map to mark the location of this apartment please go to https:\/\/www.google.ca\/maps\/preview and type in the address. Then click on Share, then Embed a map, then Copy HTML. Now paste that into the below editor.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -39,5 +39,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1564612152
+    "modified": 1565803293
 }
