@@ -443,6 +443,9 @@ function html5blank_footer_scripts()
     wp_enqueue_script('article-hero-main-slider'); // Enqueue it!  
     wp_register_script('horizontal-slider-main-slider', get_template_directory_uri() . '/js/horizontal-slider.js', array('jquery'), '1.0.0'); // Conditional script(s)
     wp_enqueue_script('horizontal-slider-main-slider'); // Enqueue it!  
+
+    wp_register_script('image-gallery-lightbox', get_template_directory_uri() . '/node_modules/fslightbox/fslightbox.min.js', array('jquery'), '1.0.0'); // Conditional script(s)
+    wp_enqueue_script('image-gallery-lightbox'); // Enqueue it!  
 }
 
 // Load HTML5 Blank conditional scripts
