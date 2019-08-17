@@ -1,9 +1,14 @@
 <?php get_header(); ?>
 
 	<main role="main">
+		<!-- Filter bar -->
+		<div class="listing-filter__wrapper">
+			<?php echo do_shortcode("[searchandfilter id=245]"); ?>
+		</div>
 		<!-- section -->
 		<section>
 			<div class="article-cards__grid">
+
 				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 					<?php get_template_part('template-parts/blocks/article-cards'); ?> 		

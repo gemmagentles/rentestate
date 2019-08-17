@@ -1,0 +1,13 @@
+.listing-filter {
+    &__wrapper {
+        form ul {
+            display: flex;
+            max-width: $inner-site-width;
+            margin: 0 auto;
+            align-items: center;
+        }
+        form li {
+            padding-right: 60px;
+        }
+    }
+}
