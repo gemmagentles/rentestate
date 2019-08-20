@@ -2,6 +2,7 @@ import 'jquery';
 import './sass/main.scss';
 import './components/header.js';
 import './components/footer.js';
+import './components/accordion.js';
 
 // Listen to tab events to enable outlines (accessibility improvement)
 function handleFirstTab(e) {
