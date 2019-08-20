@@ -19,7 +19,6 @@
     top: 0;
     width: 100%;
     z-index: 99999;
-    box-shadow: 0 10px 20px 0 rgba(100, 112, 160, 0.1);
     background: white;
 
     .header {
@@ -49,6 +48,7 @@ main {
     padding: 31px 25px 25px;
     transition: 0.4s; /* Adds a transition effect when the padding is decreased */
     position: relative;
+    box-shadow: 0 10px 20px 0 rgba(100, 112, 160, 0.1);
 
     &::before {
         content: "";
