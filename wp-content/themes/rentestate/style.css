@@ -2006,6 +2006,102 @@ main {
     font-family: Calibre-Regular;
     font-size: 1em; }
 
+.anchor-list__container {
+  max-width: 1476px;
+  margin: 0 auto;
+  padding: 80px 38px; }
+  @media (min-width: 48em) {
+    .anchor-list__container {
+      display: flex; } }
+  @media (min-width: 70em) {
+    .anchor-list__container {
+      padding: 120px 38px; } }
+  @media (min-width: 87em) {
+    .anchor-list__container {
+      padding: 196px 38px 144px; } }
+
+.anchor-list__sidebar {
+  border-bottom: 1px solid #EEEEEE;
+  padding-bottom: 50px; }
+  @media (min-width: 48em) {
+    .anchor-list__sidebar {
+      padding-bottom: 0;
+      padding-right: 30px;
+      border-bottom: none;
+      border-right: 1px solid #EEEEEE;
+      width: 30%;
+      height: 100%;
+      position: sticky;
+      /* Fixed Sidebar (stay in place on scroll) */
+      z-index: 1;
+      /* Stay on top */
+      top: 130px;
+      /* Stay at the top */
+      left: 0;
+      overflow-x: hidden;
+      /* Disable horizontal scroll */ } }
+  .anchor-list__sidebar--heading {
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 2.0px;
+    font-family: EngraversGothic-Bold;
+    color: #B8C1CB;
+    line-height: 24px;
+    padding-bottom: 40px; }
+
+.anchor-list__anchor-link {
+  list-style: none;
+  background: url("/wp-content/themes/rentestate/img/icons/dark-bullet.svg");
+  margin: 0;
+  padding: 0 0 20px 48px;
+  background-repeat: no-repeat;
+  background-position: 0 12px; }
+  .anchor-list__anchor-link--link {
+    font-size: 1.125em;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #201C1D;
+    text-decoration: none; }
+    .anchor-list__anchor-link--link:hover, .anchor-list__anchor-link--link:focus, .anchor-list__anchor-link--link:active {
+      color: #B98361; }
+
+.anchor-list__list {
+  margin-top: 80px; }
+  @media (min-width: 48em) {
+    .anchor-list__list {
+      padding-left: 40px;
+      width: 70%;
+      margin-top: 0; } }
+  @media (min-width: 64em) {
+    .anchor-list__list {
+      padding-left: 80px; } }
+
+.anchor-list__list-item {
+  list-style: none;
+  margin: 0;
+  padding-bottom: 68px; }
+  .anchor-list__list-item:last-child {
+    padding-bottom: 0; }
+  .anchor-list__list-item--heading {
+    font-size: 1.375em;
+    line-height: 32px;
+    letter-spacing: normal;
+    font-family: Calibre-Regular;
+    padding-bottom: 14px;
+    color: #B98361;
+    padding-top: 130px;
+    margin-top: -130px; }
+    @media (min-width: 48em) {
+      .anchor-list__list-item--heading {
+        font-size: 1.5em;
+        line-height: 34px;
+        padding-bottom: 28px; } }
+  .anchor-list__list-item--paragraph p {
+    font-size: 1.125em;
+    line-height: 30px;
+    letter-spacing: 0.15px;
+    font-family: Calibre-Regular; }
+
 * {
   margin: 0;
   padding: 0;

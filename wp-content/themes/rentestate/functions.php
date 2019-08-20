@@ -272,6 +272,27 @@ function large_text_block() {
     }
 }
 
+add_action('acf/init', 'anchor_list');
+function anchor_list() {
+
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a Anchor List block.
+        acf_register_block(array(
+            'name'              => 'anchor_list',
+            'title'             => __("Anchor List"),
+            'description'       => __("The block for the Anchor List component, a list of paragraphs with a sidebar menu to jump to each paragraph."),
+            'render_template'   => 'template-parts/blocks/anchor-list.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'feedback',
+            'mode'              => 'edit',
+            'keywords'          => array('list', 'text', 'anchor'),
+        ));
+    }
+}
+
 // Register a new custom post type called Listings
 add_action('init', 'listing_post_type_init');
  function listing_post_type_init() {
