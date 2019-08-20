@@ -2102,6 +2102,39 @@ main {
     letter-spacing: 0.15px;
     font-family: Calibre-Regular; }
 
+.wsp-container {
+  max-width: 1476px;
+  margin: 0 auto;
+  padding: 50px 38px 0; }
+  @media (min-width: 48em) {
+    .wsp-container {
+      padding: 80px 38px 0; } }
+  .wsp-container .wsp-pages-title {
+    font-family: Calibre-Regular;
+    font-size: 1.5em;
+    line-height: 36px;
+    letter-spacing: 0.3px;
+    color: #B98361; }
+    @media (min-width: 64em) {
+      .wsp-container .wsp-pages-title {
+        font-size: 2.25em;
+        line-height: 48px; } }
+
+.wsp-pages-list {
+  margin-top: 50px; }
+  .wsp-pages-list .page_item {
+    padding-bottom: 20px;
+    list-style: none;
+    background: url("/wp-content/themes/rentestate/img/icons/dark-bullet.svg");
+    padding: 0 0 20px 48px;
+    background-repeat: no-repeat;
+    background-position: 0 12px; }
+  .wsp-pages-list a {
+    text-decoration: none;
+    color: #787C82; }
+    .wsp-pages-list a:hover, .wsp-pages-list a:focus, .wsp-pages-list a:active {
+      color: #B98361; }
+
 * {
   margin: 0;
   padding: 0;

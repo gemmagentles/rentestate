@@ -1,0 +1,46 @@
+.wsp-container {
+    max-width: $inner-site-width;
+    margin: 0 auto;
+    padding: 50px 38px 0;
+
+    @include breakpoint(tablet) {
+        padding: 80px 38px 0;
+    }
+
+    .wsp-pages-title {
+        font-family: $secondary-font-family;
+        font-size: em(24);
+        line-height: 36px;
+        letter-spacing: 0.3px;
+        color: $secondary-color;
+
+        @include breakpoint(smalldesktop) {
+            font-size: em(36);
+            line-height: 48px;
+        }
+    }
+}
+
+.wsp-pages-list {
+    margin-top: 50px;
+
+    .page_item {
+        padding-bottom: 20px;
+        list-style: none;
+        background: url('/wp-content/themes/rentestate/img/icons/dark-bullet.svg');
+        padding: 0 0 20px 48px;
+        background-repeat: no-repeat;
+        background-position: 0 12px;
+    }
+
+    a {
+        text-decoration: none;
+        color: $font-secondary-color;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $secondary-color;
+        }
+    }
+}
