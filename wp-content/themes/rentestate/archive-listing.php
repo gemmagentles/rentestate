@@ -1,9 +1,21 @@
 <?php get_header(); ?>
 
 	<main role="main">
+		<!-- Filter bar -->
+		<!-- button to click on to open accordion -->
+		<div class="listing-filter__wrapper">
+			<div class="listing-filter__container">
+				<button class="accordion-btn accordion-js">Filter</button>
+				<!-- content inside accordion -->
+				<div class="listing-filter__inner">
+					<?php echo do_shortcode("[searchandfilter id=245]"); ?>
+				</div>
+			</div>
+		</div>
 		<!-- section -->
 		<section>
 			<div class="article-cards__grid">
+
 				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 					<?php get_template_part('template-parts/blocks/article-cards'); ?> 		
@@ -15,7 +27,7 @@
 				<!-- article -->
 				<article>
 
-					<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
+					<h1 class="article-cards__no-posts-heading"><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
 
 				</article>
 				<!-- /article -->

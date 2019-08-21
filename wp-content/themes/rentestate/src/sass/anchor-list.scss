@@ -1,0 +1,121 @@
+.anchor-list {
+
+    &__container {
+        max-width: $inner-site-width;
+        margin: 0 auto;
+        padding: 80px 38px;
+
+        @include breakpoint(tablet) {
+            display: flex;
+        }
+
+        @include breakpoint(desktop) {
+            padding: 120px 38px;
+        }
+
+        @include breakpoint(largedesktop) {
+            padding: 196px 38px 144px;
+        }
+    }
+
+    &__sidebar {
+        border-bottom: 1px solid #EEEEEE;
+        padding-bottom: 50px;
+
+        @include breakpoint(tablet) {
+            padding-bottom: 0;
+            padding-right: 30px;
+            border-bottom: none;
+            border-right: 1px solid #EEEEEE;
+            width: 30%;
+            height: 100%; 
+            position: sticky; /* Fixed Sidebar (stay in place on scroll) */
+            z-index: 1; /* Stay on top */
+            top: 130px; /* Stay at the top */
+            left: 0;
+            overflow-x: hidden; /* Disable horizontal scroll */
+        }
+        
+        &--heading {
+            text-transform: uppercase;
+            font-size: em(16);
+            letter-spacing: 2.0px;
+            font-family: $tertiary-font-family;
+            color: $tertiary-color;
+            line-height: 24px;
+            padding-bottom: 40px;
+        }
+    }
+
+    &__anchor-link {
+        list-style: none;
+        background: url('/wp-content/themes/rentestate/img/icons/dark-bullet.svg');
+        margin: 0;
+        padding: 0 0 20px 48px;
+        background-repeat: no-repeat;
+        background-position: 0 12px;
+
+        &--link {
+            font-size: em(18);
+            line-height: 24px;
+            letter-spacing: 0.15px;
+            color: $font-color;
+            text-decoration: none;
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $secondary-color;
+            }
+        }
+    }
+
+    &__list {
+        margin-top: 80px;
+
+        @include breakpoint(tablet) {        
+            padding-left: 40px;
+            width: 70%;
+            margin-top: 0;
+        }
+
+        @include breakpoint(smalldesktop) {        
+            padding-left: 80px;
+        }
+    }
+
+    &__list-item {
+        list-style: none;
+        margin: 0;
+        padding-bottom: 68px;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        &--heading {
+            font-size: em(22);
+            line-height: 32px;
+            letter-spacing: normal;
+            font-family: $secondary-font-family;
+            padding-bottom: 14px;
+            color: $secondary-color;
+            // give a gap so the anchor link jumps above the heading rather than below it
+            padding-top: 130px;
+            margin-top: -130px;
+
+            @include breakpoint(tablet) {        
+                font-size: em(24);
+                line-height: 34px;
+                padding-bottom: 28px;
+            }
+        }
+
+        &--paragraph p {
+            font-size: em(18);
+            line-height: 30px;
+            letter-spacing: 0.15px;
+            font-family: $secondary-font-family;
+        }
+    }
+}

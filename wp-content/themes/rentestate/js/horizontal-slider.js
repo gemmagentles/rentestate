@@ -10,7 +10,7 @@ if (articleHeroSlider.length > 0) {
     controlsPosition: 'bottom',
     items: 1,
     gutter: 40,
-    center: true,
+    center: false,
     loop: false,
     swipeAngle: false,
     speed: 400,

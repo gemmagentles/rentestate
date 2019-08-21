@@ -8,6 +8,26 @@
             margin-bottom: 144px;
         }
 
+        // container of images
+    .tns-outer .tns-ovh {
+
+        @include breakpoint(tablet) {
+            margin-left: 38px;
+        }
+
+        @include breakpoint(desktop) {
+            margin-left: 78px;
+        }
+
+        @include breakpoint(largedesktop) {
+            margin-left: calc(((100vw - #{$inner-site-width}) / 2) + 140px);
+        }
+
+        @include breakpoint(xlargedesktop) {
+            margin-left: calc(((100vw - #{$inner-site-width}) / 2) + 116px);
+        }
+    }
+
         &--heading {
             max-width: $inner-site-width;
             margin: 0 auto;
@@ -16,7 +36,7 @@
             font-family: $secondary-font-family;
             padding: 50px 38px 34px;
             letter-spacing: normal;
-
+            
             @include breakpoint(tablet) {
                 padding: 70px 38px 44px;
             }

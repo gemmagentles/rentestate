@@ -272,24 +272,167 @@ function large_text_block() {
     }
 }
 
-/*Register WordPress Gutenberg CPT */
-function listing_post_type() {
+add_action('acf/init', 'anchor_list');
+function anchor_list() {
 
-    register_post_type( 'listing',
-        // WordPress CPT Options Start
-        array(
-            'labels' => array(
-                'name' => __( 'Listings' ),
-                'singular_name' => __( 'Listing' )
-            ),
-            'has_archive' => true,
-            'public' => true,
-            'rewrite' => array('slug' => 'listings', 'index'),
-        )
-    );
+    // check function exists.
+    if( function_exists('acf_register_block') ) {
+
+        // register a Anchor List block.
+        acf_register_block(array(
+            'name'              => 'anchor_list',
+            'title'             => __("Anchor List"),
+            'description'       => __("The block for the Anchor List component, a list of paragraphs with a sidebar menu to jump to each paragraph."),
+            'render_template'   => 'template-parts/blocks/anchor-list.php',
+            'enqueue_style'     => get_template_directory_uri() . '/style.css',
+            'category'          => 'layout',
+            'icon'              => 'feedback',
+            'mode'              => 'edit',
+            'keywords'          => array('list', 'text', 'anchor'),
+        ));
+    }
 }
- 
-add_action( 'init', 'listing_post_type' );
+
+// Register a new custom post type called Listings
+add_action('init', 'listing_post_type_init');
+ function listing_post_type_init() {
+     $labels = array(
+         'name' => _x('Listings', 'post type general name'),
+         'singular_name' => _x('Listing', 'post type singular name'),
+         'add_new' => _x('Add New', 'listing'),
+         'add_new_item' => __('Add new item'),
+         'edit_item' => __('Edit item'),
+         'new_item' => __('New item'),
+         'view_item' => __('View item'),
+         'search_items' => __('Search item'),
+         'not_found' =>  __('No items found'),
+         'not_found_in_trash' => __('No items found in trash'),
+         'parent_item_colon' => ''
+     );
+     $args = array(
+         'labels' => $labels,
+         'public' => true,
+         'has_archive' => true,
+         'publicly_queryable' => true,
+         'show_ui' => true,
+         'rewrite' => true,
+         'query_var' => true,
+         'capability_type' => 'post',
+         'hierarchical' => false,
+         '_builtin' => false,
+        'rewrite' => array( 'slug' => 'listings', 'with_front' => true ),
+         'show_in_nav_menus' => true,
+         'menu_position' => 20,
+        //  'menu_icon' => 'dashicons-format-listing',
+         'supports' => array(
+             'title',
+             'editor',
+             'thumbnail'
+         )
+     );
+     register_post_type('listing',$args);
+ }
+
+// Create 4 new categories to help filter custom post type Listings
+// Availability
+add_action( 'init', 'create_listing_availability_taxonomies', 0 );
+function create_listing_availability_taxonomies() {
+    $cats = array(
+        'name' => _x( 'Availability Categories', 'taxonomy general name' ),
+        'singular_name' => _x( 'Category', 'taxonomy singular name' ),
+        'search_items' =>  __( 'Search categories' ),
+        'all_items' => __( 'All categories' ),
+        'parent_item' => __( 'Parent category' ),
+        'parent_item_colon' => __( 'Parent category:' ),
+        'edit_item' => __( 'Edit category' ),
+        'update_item' => __( 'Update category' ),
+        'add_new_item' => __( 'Add new availability category' ),
+        'new_item_name' => __( 'New category name' ),
+    );
+
+    register_taxonomy( 'listing_availability', array( 'listing' ), array(
+        'hierarchical' => true,
+        'labels' => $cats,
+        'show_ui' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'listing-availability' ),
+    ));
+}
+
+// Property Type
+add_action( 'init', 'create_listing_property_type_taxonomies', 0 );
+function create_listing_property_type_taxonomies() {
+    $cats = array(
+        'name' => _x( 'Property Type Categories', 'taxonomy general name' ),
+        'singular_name' => _x( 'Property Type', 'taxonomy singular name' ),
+        'search_items' =>  __( 'Search property type categories' ),
+        'all_items' => __( 'All categories' ),
+        'parent_item' => __( 'Parent category' ),
+        'parent_item_colon' => __( 'Parent category:' ),
+        'edit_item' => __( 'Edit property type category' ),
+        'update_item' => __( 'Update property type category' ),
+        'add_new_item' => __( 'Add new property type category' ),
+        'new_item_name' => __( 'New property type category name' ),
+    );
+
+    register_taxonomy( 'listing_property_type', array( 'listing' ), array(
+        'hierarchical' => true,
+        'labels' => $cats,
+        'show_ui' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'listing-property-type' ),
+    ));
+}
+
+// Location
+add_action( 'init', 'create_listing_location_taxonomies', 0 );
+function create_listing_location_taxonomies() {
+    $cats = array(
+        'name' => _x( 'Location Categories', 'taxonomy general name' ),
+        'singular_name' => _x( 'Location', 'taxonomy singular name' ),
+        'search_items' =>  __( 'Search location categories' ),
+        'all_items' => __( 'All categories' ),
+        'parent_item' => __( 'Parent category' ),
+        'parent_item_colon' => __( 'Parent category:' ),
+        'edit_item' => __( 'Edit location category' ),
+        'update_item' => __( 'Update location category' ),
+        'add_new_item' => __( 'Add new location category' ),
+        'new_item_name' => __( 'New location category name' ),
+    );
+
+    register_taxonomy( 'listing_location', array( 'listing' ), array(
+        'hierarchical' => true,
+        'labels' => $cats,
+        'show_ui' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'listing-location' ),
+    ));
+}
+
+// Bedrooms
+add_action( 'init', 'create_listing_bedrooms_taxonomies', 0 );
+function create_listing_bedrooms_taxonomies() {
+    $cats = array(
+        'name' => _x( 'Bedrooms Categories', 'taxonomy general name' ),
+        'singular_name' => _x( 'Bedroom', 'taxonomy singular name' ),
+        'search_items' =>  __( 'Search bedroom categories' ),
+        'all_items' => __( 'All categories' ),
+        'parent_item' => __( 'Parent category' ),
+        'parent_item_colon' => __( 'Parent category:' ),
+        'edit_item' => __( 'Edit bedroom category' ),
+        'update_item' => __( 'Update bedroom category' ),
+        'add_new_item' => __( 'Add new bedroom category' ),
+        'new_item_name' => __( 'New bedroom category name' ),
+    );
+
+    register_taxonomy( 'listing_bed', array( 'listing' ), array(
+        'hierarchical' => true,
+        'labels' => $cats,
+        'show_ui' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'listing-bed' ),
+    ));
+}
 
 /*------------------------------------*\
 	Theme Support
@@ -783,6 +926,7 @@ function create_post_type_html5()
             ) // Add Category and Post Tags support
         ));
 }
+
 
 /*------------------------------------*\
 	ShortCode Functions

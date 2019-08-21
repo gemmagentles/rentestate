@@ -97,6 +97,20 @@
         }
     }
 
+    &__no-posts-heading {
+        font-size: em(24);
+        line-height: 28px;
+        font-family: $secondary-font-family;
+        letter-spacing: 0;
+        padding: 26px 0 0;
+        border-bottom: 1px solid $secondary-color;
+
+        @include breakpoint(smalldesktop) {
+            font-size: em(28);
+            line-height: 38px;
+        }
+    }
+
     &__features-wrapper {
         display: flex;
     }
