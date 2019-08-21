@@ -974,6 +974,18 @@ main {
   @media (min-width: 64em) {
     .horizontal-slider__wrapper {
       margin-bottom: 144px; } }
+  @media (min-width: 48em) {
+    .horizontal-slider__wrapper .tns-outer .tns-ovh {
+      margin-left: 38px; } }
+  @media (min-width: 70em) {
+    .horizontal-slider__wrapper .tns-outer .tns-ovh {
+      margin-left: 78px; } }
+  @media (min-width: 87em) {
+    .horizontal-slider__wrapper .tns-outer .tns-ovh {
+      margin-left: calc(((100vw - 1476px) / 2) + 140px); } }
+  @media (min-width: 98.125em) {
+    .horizontal-slider__wrapper .tns-outer .tns-ovh {
+      margin-left: calc(((100vw - 1476px) / 2) + 116px); } }
   .horizontal-slider__wrapper--heading {
     max-width: 1476px;
     margin: 0 auto;
