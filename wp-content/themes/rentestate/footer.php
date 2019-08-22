@@ -7,9 +7,9 @@
 						<?php while ( have_rows( 'social_media', 'option' ) ) : the_row(); ?>
 							<?php $social_icon = get_sub_field( 'social_icon' ); ?>
 							<?php if ( $social_icon ) { ?>
-								<img class="footer__social--icon" src="<?php echo $social_icon['url']; ?>" alt="<?php echo $social_icon['alt']; ?>" />
+								<a title="<?php echo $social_icon['alt']; ?>" target="_blank" href="<?php the_sub_field( 'social_link' ); ?>">
+								<img class="footer__social--icon" src="<?php echo $social_icon['url']; ?>" alt="<?php echo $social_icon['alt']; ?>" /></a>
 							<?php } ?>
-							<?php the_sub_field( 'social_link' ); ?>
 						<?php endwhile; ?>
 					</div>
 					<?php else : ?>
