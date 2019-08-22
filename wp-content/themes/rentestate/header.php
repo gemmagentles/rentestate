@@ -21,6 +21,8 @@
                 nav.style.width = "0";
                 main.style.marginLeft = "0";
                 nav.classList.remove("header__nav--open");
+
+                document.getElementById("navbar-js").style.width = "100%";
                 
                 // move middle hamburger icon back to the left
                 document.getElementById("js-hamburger-bar2").style.margin = "0 0 0 0";
@@ -31,7 +33,10 @@
             else {
                 nav.style.width = "272px";
                 main.style.marginLeft = "272px";
+                main.style.position = "relative";
                 nav.classList.add("header__nav--open");
+
+                document.getElementById("navbar-js").style.width = "calc(100% - 276px)";
 
                 // when menu nav opens move the middle hamburger icon to right to show it is open. 
                 document.getElementById("js-hamburger-bar2").style.margin = "0 0 0 10px";
