@@ -22,15 +22,15 @@ TYPOGRAPHY
 *********************/
 @font-face {
   font-family: Calibre-Semibold;
-  src: url("/wp-content/themes/platinum-theme/fonts/Calibre-Semibold.otf") format("opentype"); }
+  src: url("/wp-content/themes/rentestate/fonts/Calibre-Semibold.otf") format("opentype"); }
 
 @font-face {
   font-family: Calibre-Regular;
-  src: url("/wp-content/themes/platinum-theme/fonts/Calibre-Medium.otf") format("opentype"); }
+  src: url("/wp-content/themes/rentestate/fonts/Calibre-Regular.otf") format("opentype"); }
 
 @font-face {
   font-family: EngraversGothic-Bold;
-  src: url("/wp-content/themes/platinum-theme/fonts/EngraversGothic-Bold.otf") format("opentype"); }
+  src: url("/wp-content/themes/rentestate/fonts/EngraversGothic-Bold.otf") format("opentype"); }
 
 /*********************
 BREAKPOINTS
@@ -55,7 +55,6 @@ h1 {
 #navbar-js {
   background: white;
   transition: 0.4s;
-  width: 100%;
   top: 0;
   z-index: 99; }
 
