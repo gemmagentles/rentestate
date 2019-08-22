@@ -944,4 +944,39 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     return '<h2>' . $content . '</h2>';
 }
 
+/**
+ * Register the Smart Tag so it will be available to select in the form builder.
+ *
+ * @param array $tags
+ * @return array
+ */
+function wpf_dev_register_smarttag( $tags ) {
+
+	// Key is the tag, item is the tag name.
+	$tags['listing_title'] = 'Listing Title';
+
+	return $tags;
+}
+add_filter( 'wpforms_smart_tags', 'wpf_dev_register_smarttag' );
+
+/**
+ * Process the Smart Tag.
+ *
+ * @param string $content
+ * @param string $tag
+ * @return string
+ */
+function wpf_dev_process_smarttag( $content, $tag ) {
+
+	// Only run if it is our desired tag.
+	if ( 'listing_title' === $tag ) {
+		// $link = echo get_the_title();
+        // Replace the tag with our link.
+        $content = "Example listing title";
+	}
+
+	return $content;
+}
+add_filter( 'wpforms_smart_tag_process', 'wpf_dev_process_smarttag', 10, 2 );
+
 ?>

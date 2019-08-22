@@ -56,9 +56,9 @@
 								<?php while ( have_rows( 'social_media', 'option' ) ) : the_row(); ?>
 									<?php $social_icon = get_sub_field( 'social_icon' ); ?>
 									<?php if ( $social_icon ) { ?>
-										<img class="contact-page__social--icon" src="<?php echo $social_icon['url']; ?>" alt="<?php echo $social_icon['alt']; ?>" />
+										<a title="<?php echo $social_icon['alt']; ?>" target="_blank" href="<?php the_sub_field( 'social_link' ); ?>">
+										<img class="footer__social--icon" src="<?php echo $social_icon['url']; ?>" alt="<?php echo $social_icon['alt']; ?>" /></a>
 									<?php } ?>
-									<?php the_sub_field( 'social_link' ); ?>
 								<?php endwhile; ?>
 							</div>
 							<?php else : ?>
@@ -103,7 +103,7 @@
 			<div class="contact-footer">
 				<div class="contact-footer__container">
 					<p class="contact-footer__copyright">
-						&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> | <a class="contact-footer__copyright--link" href="/terms-and-conditions/">Terms and Conditions</a>
+						&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> | <a class="contact-footer__copyright--link" href="/terms-and-conditions/">Terms and Conditions</a> | <a class="footer__copyright--link" href="/site-map/">Site Map</a>
 					</p>
 				</div>
 			</div>

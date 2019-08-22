@@ -2,15 +2,14 @@
     display: flex;
     max-width: $inner-site-width;
     margin: 0 auto;
-    text-transform: uppercase;
     transition: 0.4s;
     font-size: em(22);
-    font-family: $tertiary-font-family;
-    color: $font-secondary-color;
+    color: $secondary-color;
+    font-family: $secondary-font-family;
     background: none;
     border: none;
     margin-top: 165px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     border-bottom: 1px solid $font-secondary-color;
     width: 100%;
     text-align: left;
@@ -24,7 +23,7 @@
         width: 19px;
         height: 20px;
         position: absolute;
-        top: 6px;
+        top: 0;
         right: 30px;
         background-repeat: no-repeat;
         background-size: contain;
@@ -43,7 +42,7 @@
         width: 19px;
         height: 20px;
         position: absolute;
-        top: 6px;
+        top: 0;
         right: 30px;
         background-repeat: no-repeat;
         transform: rotate(180deg);
