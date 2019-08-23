@@ -7,7 +7,7 @@
             "label": "Image Gallery Block",
             "name": "image_gallery_block",
             "type": "repeater",
-            "instructions": "",
+            "instructions": "Recommended dimensions: these images are reduced by the code to make them the size of thumbnails. Each image can therefore be a different size if you wanted, but make them large enough for the pop up to show the full details of the image.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -65,5 +65,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1564616802
+    "modified": 1566519012
 }
