@@ -100,6 +100,7 @@
             color: $font-secondary-color;
             text-decoration: none;
             font-size: em(16);
+            transition: all 0.2s ease-in;
 
             &:hover,
             &:focus {
@@ -151,19 +152,32 @@
 
         &--email {
             text-decoration: none;
+            transition: all 0.2s ease-in;
 
+            &::after {
+                content: "";
+                position: absolute;
+                height: 2px;
+                border-bottom: 1px solid $font-color;
+                width: 100%;
+                top: 18px;
+                left: 0;
+                opacity: 0;
+                transition: all 0.4s ease-in;
+    
+                &:hover,
+                &:active {
+                    opacity: 1;
+                }
+            }
+    
             &:hover,
             &:active {
                 color: $font-color;
-                
+                transition: all 0.4s ease-in;
+    
                 &::after {
-                    content: "";
-                    position: absolute;
-                    height: 2px;
-                    border-bottom: 1px solid $font-color;
-                    width: 100%;
-                    top: 18px;
-                    left: 0;
+                    opacity: 1;
                 }
             }
         }
@@ -191,6 +205,7 @@
         &--link {
             text-decoration: none;
             color: $font-secondary-color;
+            transition: all 0.2s ease-in;
 
             &:hover,
             &:focus {

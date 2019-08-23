@@ -153,6 +153,7 @@ BUTTONS
   font-weight: normal;
   font-size: em(24);
   display: flex;
+  transition: all 0.2s ease-in;
 
   &:hover,
   &:focus {
