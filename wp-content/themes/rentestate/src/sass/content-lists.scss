@@ -6,6 +6,7 @@
         line-height: 42px;
         letter-spacing: 0.3px;
         font-family: $secondary-font-family;
+        font-weight: normal;
         padding-bottom: 26px;
 
         @include breakpoint(smalldesktop) {
@@ -35,6 +36,7 @@
         line-height: 24px;
         letter-spacing: 2.0px;
         font-family: $tertiary-font-family;
+        font-weight: normal;
         padding-bottom: 20px;
     }
 
@@ -61,6 +63,7 @@
             line-height: 38px;
             letter-spacing: 0.3px;
             font-family: $secondary-font-family;
+            font-weight: normal;
             padding-bottom: 30px;
 
             @include breakpoint(smalldesktop) {

@@ -73,6 +73,7 @@
     &__sub-heading {
         color: $font-secondary-color;
         font-family: $tertiary-font-family;
+        font-weight: normal;
         font-size: em(16);
         line-height: 20px;
         letter-spacing: 2.0px;
@@ -87,6 +88,7 @@
         font-size: em(24);
         line-height: 28px;
         font-family: $secondary-font-family;
+        font-weight: normal;
         letter-spacing: 0;
         padding: 26px 0 0;
         border-top: 1px solid $secondary-color;
@@ -101,6 +103,7 @@
         font-size: em(24);
         line-height: 28px;
         font-family: $secondary-font-family;
+        font-weight: normal;
         letter-spacing: 0;
         padding: 26px 0 0;
         border-bottom: 1px solid $secondary-color;
@@ -118,6 +121,7 @@
     &__features {
         color: $secondary-color;
         font-family: $tertiary-font-family;
+        font-weight: normal;
         font-size: em(16);
         padding-right: 25px;
         position: relative;
@@ -154,6 +158,7 @@
         padding: 12px 30px 7px;
         color: $secondary-color;
         font-family: $secondary-font-family;
+        font-weight: normal;
         font-size: em(18);
         cursor: pointer;
         margin-bottom: 60px;

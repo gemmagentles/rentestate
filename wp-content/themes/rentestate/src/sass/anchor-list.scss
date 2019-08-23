@@ -41,6 +41,7 @@
             font-size: em(16);
             letter-spacing: 2.0px;
             font-family: $tertiary-font-family;
+            font-weight: normal;
             color: $tertiary-color;
             line-height: 24px;
             padding-bottom: 40px;
@@ -98,6 +99,7 @@
             line-height: 32px;
             letter-spacing: normal;
             font-family: $secondary-font-family;
+            font-weight: normal;
             padding-bottom: 14px;
             color: $secondary-color;
             // give a gap so the anchor link jumps above the heading rather than below it
@@ -116,6 +118,7 @@
             line-height: 30px;
             letter-spacing: 0.15px;
             font-family: $secondary-font-family;
+            font-weight: normal;
         }
     }
 }
