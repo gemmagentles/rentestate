@@ -13,6 +13,7 @@
         letter-spacing: 2.0px;
         padding-bottom: 22px;
         font-family: $tertiary-font-family;
+        font-weight: normal;
     }
 }
 
@@ -65,6 +66,7 @@
             top: 100px;
             left: 0;
             font-family: $secondary-font-family;
+            font-weight: normal;
             letter-spacing: 0.3px;
             color: $font-color;
             font-size: em(24);
@@ -88,6 +90,7 @@
             top: 100px;
             left: 0;
             font-family: $secondary-font-family;
+            font-weight: normal;
             font-size: em(24);
             line-height: 36px;
             letter-spacing: 0.3px;
@@ -110,6 +113,7 @@
         border: none;
         border-bottom: 1px solid $secondary-color;
         font-family: $secondary-font-family;
+        font-weight: normal;
         font-size: em(18);
         line-height: 24px;
         letter-spacing: 0.15px;
@@ -125,6 +129,12 @@
     select { 
         color: $tertiary-color !important;
         margin-left: -8px;
+        background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 95% 50%;
+        -moz-appearance: none; 
+        -webkit-appearance: none; 
+        appearance: none;
+        width: 100%;
+        margin-left: 2px;
     }
 
     // sidebar form text area
@@ -135,6 +145,7 @@
     .wpforms-field-label {
         text-transform: uppercase;
         font-family: $tertiary-font-family;
+        font-weight: normal;
         color: $font-secondary-color;
         letter-spacing: 2.0px;
         font-size: em(16);
@@ -148,6 +159,7 @@
     .wpforms-error {
         color: $font-secondary-color;
         font-family: $secondary-font-family;
+        font-weight: normal;
     }
 
     .wpforms-submit {
@@ -158,6 +170,7 @@
         color: white;
         text-decoration: none;
         font-family: $secondary-font-family;
+        font-weight: normal;
         font-size: em(18);
         border-radius: 4px; 
         transition: all 0.2s ease-in;
@@ -191,6 +204,7 @@
 
     p {
         font-family: $secondary-font-family !important;
+        font-weight: normal;
         font-size: em(18) !important;
         line-height: 24px !important;
         letter-spacing: 0.15px !important;
