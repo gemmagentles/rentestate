@@ -155,7 +155,7 @@
                             "label": "Image Slider",
                             "name": "image_slider",
                             "type": "repeater",
-                            "instructions": "",
+                            "instructions": "Recommended dimensions 910px by 668px",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -232,5 +232,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1564446450
+    "modified": 1566515739
 }

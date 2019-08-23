@@ -55,6 +55,8 @@ h1 {
 #navbar-js {
   background: white;
   transition: 0.4s;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 99; }
 
@@ -80,6 +82,7 @@ h1 {
 main {
   transition: 0.4s;
   /* Adds a transition effect when the padding is decreased */
+  margin-top: 94px;
   width: 100%; }
 
 .header {
@@ -245,6 +248,7 @@ main {
       text-decoration: none;
       color: #787C82;
       font-family: Calibre-Regular;
+      font-weight: normal;
       letter-spacing: 1.12px;
       font-size: 1.125em;
       font-weight: normal; }
@@ -485,6 +489,7 @@ main {
   color: white;
   text-transform: uppercase;
   font-family: EngraversGothic-Bold;
+  font-weight: normal;
   font-size: 1em;
   line-height: 20px;
   letter-spacing: 2px;
@@ -569,6 +574,7 @@ main {
       margin-right: 20px; }
   .footer__newsletter--title {
     font-family: Calibre-Regular;
+    font-weight: normal;
     font-size: 1.5em;
     line-height: 30px;
     display: block; }
@@ -597,6 +603,7 @@ main {
     font-size: 1em;
     letter-spacing: 2px;
     font-family: EngraversGothic-Bold;
+    font-weight: normal;
     margin-bottom: 40px; }
     @media (min-width: 48em) {
       .footer__newsletter--subtitle {
@@ -663,6 +670,7 @@ main {
     line-height: 22px;
     letter-spacing: 1.5px;
     font-family: EngraversGothic-Bold;
+    font-weight: normal;
     margin: 80px 0 40px; }
     @media (min-width: 48em) {
       .footer__copyright {
@@ -733,6 +741,7 @@ main {
 .article-hero__sub-heading {
   color: #787C82;
   font-family: EngraversGothic-Bold;
+  font-weight: normal;
   font-size: 1em;
   line-height: 20px;
   letter-spacing: 2.0px;
@@ -742,6 +751,7 @@ main {
   font-size: 1.5em;
   line-height: 28px;
   font-family: Calibre-Regular;
+  font-weight: normal;
   letter-spacing: 0;
   padding: 30px 0 14px;
   border-top: 1px solid #B98361; }
@@ -756,6 +766,7 @@ main {
 .article-hero__features {
   color: #B98361;
   font-family: EngraversGothic-Bold;
+  font-weight: normal;
   font-size: 1em;
   padding-right: 25px;
   position: relative; }
@@ -899,6 +910,7 @@ main {
 .article-cards__sub-heading {
   color: #787C82;
   font-family: EngraversGothic-Bold;
+  font-weight: normal;
   font-size: 1em;
   line-height: 20px;
   letter-spacing: 2.0px;
@@ -911,6 +923,7 @@ main {
   font-size: 1.5em;
   line-height: 28px;
   font-family: Calibre-Regular;
+  font-weight: normal;
   letter-spacing: 0;
   padding: 26px 0 0;
   border-top: 1px solid #B98361; }
@@ -923,6 +936,7 @@ main {
   font-size: 1.5em;
   line-height: 28px;
   font-family: Calibre-Regular;
+  font-weight: normal;
   letter-spacing: 0;
   padding: 26px 0 0;
   border-bottom: 1px solid #B98361; }
@@ -937,6 +951,7 @@ main {
 .article-cards__features {
   color: #B98361;
   font-family: EngraversGothic-Bold;
+  font-weight: normal;
   font-size: 1em;
   padding-right: 25px;
   position: relative; }
@@ -965,6 +980,7 @@ main {
   padding: 12px 30px 7px;
   color: #B98361;
   font-family: Calibre-Regular;
+  font-weight: normal;
   font-size: 1.125em;
   cursor: pointer;
   margin-bottom: 60px;
@@ -1000,6 +1016,7 @@ main {
     font-size: 1.75em;
     line-height: 34px;
     font-family: Calibre-Regular;
+    font-weight: normal;
     padding: 50px 38px 34px;
     letter-spacing: normal; }
     @media (min-width: 48em) {
@@ -1030,7 +1047,8 @@ main {
       background: #787C82;
       width: 100px;
       height: 2px;
-      width: 20%; }
+      width: 20%;
+      border: none; }
       @media (min-width: 48em) {
         .horizontal-slider__wrapper .tns-nav button {
           width: 33.3333333333%; } }
@@ -1073,8 +1091,7 @@ main {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='19' viewBox='0 0 11 19'%3E%3Cpath fill='%23B98361' fill-rule='evenodd' d='M0 1.901l5.924 6.254L7.16 9.5l-1.237 1.344L0 17.1 1.801 19l9-9.5-9-9.5z'/%3E%3C/svg%3E%0A"); } }
 
 .horizontal-slider__slides {
-  padding-bottom: 40px;
-  display: flex; }
+  padding-bottom: 40px; }
   @media (min-width: 64em) {
     .horizontal-slider__slides {
       padding-bottom: 64px; } }
@@ -1134,6 +1151,7 @@ main {
 .horizontal-slider__sub-heading {
   color: #787C82;
   font-family: EngraversGothic-Bold;
+  font-weight: normal;
   font-size: 1em;
   line-height: 20px;
   letter-spacing: 2.0px;
@@ -1146,6 +1164,7 @@ main {
   font-size: 1.5em;
   line-height: 28px;
   font-family: Calibre-Regular;
+  font-weight: normal;
   letter-spacing: 0;
   padding: 26px 0 0;
   border-top: 1px solid #B98361; }
@@ -1160,6 +1179,7 @@ main {
 .horizontal-slider__features {
   color: #B98361;
   font-family: EngraversGothic-Bold;
+  font-weight: normal;
   font-size: 1em;
   padding-right: 25px;
   position: relative; }
@@ -1228,6 +1248,7 @@ main {
   line-height: 42px;
   letter-spacing: 0.3px;
   font-family: Calibre-Regular;
+  font-weight: normal;
   padding-bottom: 26px; }
   @media (min-width: 64em) {
     .content-lists__heading {
@@ -1253,6 +1274,7 @@ main {
   line-height: 24px;
   letter-spacing: 2.0px;
   font-family: EngraversGothic-Bold;
+  font-weight: normal;
   padding-bottom: 20px; }
 
 .content-lists__list {
@@ -1275,6 +1297,7 @@ main {
     line-height: 38px;
     letter-spacing: 0.3px;
     font-family: Calibre-Regular;
+    font-weight: normal;
     padding-bottom: 30px; }
     @media (min-width: 64em) {
       .content-lists__list--heading {
@@ -1328,7 +1351,8 @@ main {
   color: #B98361;
   line-height: 38px;
   letter-spacing: 0.3px;
-  font-family: Calibre-Regular; }
+  font-family: Calibre-Regular;
+  font-weight: normal; }
   @media (min-width: 64em) {
     .map__heading {
       font-size: 2.25em;
@@ -1349,6 +1373,7 @@ main {
   line-height: 38px;
   letter-spacing: 0.3px;
   font-family: Calibre-Regular;
+  font-weight: normal;
   padding-bottom: 30px; }
   @media (min-width: 64em) {
     .image-gallery__heading {
@@ -1475,6 +1500,7 @@ main {
     color: #B98361;
     letter-spacing: 0.0px;
     font-family: Calibre-Regular;
+    font-weight: normal;
     padding-bottom: 30px; }
     @media (min-width: 64em) {
       .list-with-background__intro--heading {
@@ -1519,6 +1545,7 @@ main {
     line-height: 34px;
     letter-spacing: normal;
     font-family: Calibre-Regular;
+    font-weight: normal;
     padding-bottom: 14px; }
     @media (min-width: 64em) {
       .list-with-background__list-item--heading {
@@ -1528,7 +1555,8 @@ main {
     font-size: 1.125em;
     line-height: 30px;
     letter-spacing: 0.15px;
-    font-family: Calibre-Regular; }
+    font-family: Calibre-Regular;
+    font-weight: normal; }
 
 .contact-page {
   background: #F3F4F5;
@@ -1675,7 +1703,8 @@ main {
     font-size: 0.75em;
     line-height: 22px;
     letter-spacing: 1.5px;
-    font-family: EngraversGothic-Bold; }
+    font-family: EngraversGothic-Bold;
+    font-weight: normal; }
     .contact-footer__copyright--link {
       text-decoration: none;
       color: #787C82;
@@ -1695,7 +1724,8 @@ main {
   line-height: 24px;
   letter-spacing: 2.0px;
   padding-bottom: 22px;
-  font-family: EngraversGothic-Bold; }
+  font-family: EngraversGothic-Bold;
+  font-weight: normal; }
 
 .form-shortcode__wrapper {
   max-width: 960px;
@@ -1738,6 +1768,7 @@ main {
     top: 100px;
     left: 0;
     font-family: Calibre-Regular;
+    font-weight: normal;
     letter-spacing: 0.3px;
     color: #201C1D;
     font-size: 1.5em;
@@ -1763,6 +1794,7 @@ main {
     top: 100px;
     left: 0;
     font-family: Calibre-Regular;
+    font-weight: normal;
     font-size: 1.5em;
     line-height: 36px;
     letter-spacing: 0.3px;
@@ -1787,6 +1819,7 @@ main {
   border: none;
   border-bottom: 1px solid #B98361;
   font-family: Calibre-Regular;
+  font-weight: normal;
   font-size: 1.125em;
   line-height: 24px;
   letter-spacing: 0.15px;
@@ -1804,7 +1837,13 @@ main {
 #wpforms-203 select,
 #wpforms-208 select {
   color: #B8C1CB !important;
-  margin-left: -8px; }
+  margin-left: -8px;
+  background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 95% 50%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  margin-left: 2px; }
 
 #wpforms-form-198 #wpforms-198-field_5,
 #wpforms-203 #wpforms-198-field_5,
@@ -1816,6 +1855,7 @@ main {
 #wpforms-208 .wpforms-field-label {
   text-transform: uppercase;
   font-family: EngraversGothic-Bold;
+  font-weight: normal;
   color: #787C82;
   letter-spacing: 2.0px;
   font-size: 1em;
@@ -1830,7 +1870,8 @@ main {
 #wpforms-203 .wpforms-error,
 #wpforms-208 .wpforms-error {
   color: #787C82;
-  font-family: Calibre-Regular; }
+  font-family: Calibre-Regular;
+  font-weight: normal; }
 
 #wpforms-form-198 .wpforms-submit,
 #wpforms-203 .wpforms-submit,
@@ -1842,6 +1883,7 @@ main {
   color: white;
   text-decoration: none;
   font-family: Calibre-Regular;
+  font-weight: normal;
   font-size: 1.125em;
   border-radius: 4px;
   transition: all 0.2s ease-in;
@@ -1873,6 +1915,7 @@ main {
   padding: 50px !important; }
   .wpforms-confirmation-container-full p, div[submit-success] > .wpforms-confirmation-container-full p {
     font-family: Calibre-Regular !important;
+    font-weight: normal;
     font-size: 1.125em !important;
     line-height: 24px !important;
     letter-spacing: 0.15px !important; }
@@ -1898,6 +1941,7 @@ main {
       padding: 230px 0 0 92px; } }
   .large-text__wrapper p {
     font-family: Calibre-Regular;
+    font-weight: normal;
     font-size: 1.5em;
     line-height: 36px;
     letter-spacing: 0.3px;
@@ -1915,6 +1959,7 @@ main {
   font-size: 1.375em;
   color: #B98361;
   font-family: Calibre-Regular;
+  font-weight: normal;
   background: none;
   border: none;
   margin-top: 165px;
@@ -2007,6 +2052,7 @@ main {
     text-transform: uppercase;
     color: #787C82;
     font-family: EngraversGothic-Bold;
+    font-weight: normal;
     padding: 5px 0 20px; }
   .listing-filter__inner .search-filter-reset {
     -webkit-font-smoothing: antialiased;
@@ -2016,6 +2062,7 @@ main {
     padding: 10px 28px;
     text-decoration: none;
     font-family: Calibre-Regular;
+    font-weight: normal;
     font-size: 1em;
     border-radius: 4px;
     transition: all 0.2s ease-in; }
@@ -2031,6 +2078,7 @@ main {
   .listing-filter__inner label {
     color: #787C82;
     font-family: Calibre-Regular;
+    font-weight: normal;
     font-size: 1em; }
 
 .anchor-list__container {
@@ -2072,6 +2120,7 @@ main {
     font-size: 1em;
     letter-spacing: 2.0px;
     font-family: EngraversGothic-Bold;
+    font-weight: normal;
     color: #B8C1CB;
     line-height: 24px;
     padding-bottom: 40px; }
@@ -2114,6 +2163,7 @@ main {
     line-height: 32px;
     letter-spacing: normal;
     font-family: Calibre-Regular;
+    font-weight: normal;
     padding-bottom: 14px;
     color: #B98361;
     padding-top: 130px;
@@ -2127,7 +2177,8 @@ main {
     font-size: 1.125em;
     line-height: 30px;
     letter-spacing: 0.15px;
-    font-family: Calibre-Regular; }
+    font-family: Calibre-Regular;
+    font-weight: normal; }
 
 .wsp-container {
   max-width: 1476px;
@@ -2188,6 +2239,7 @@ li {
   line-height: 28px;
   letter-spacing: 0.55px;
   font-family: Calibre-Regular;
+  font-weight: normal;
   -webkit-font-smoothing: antialiased; }
   @media (min-width: 64em) {
     p,
@@ -2228,7 +2280,8 @@ h2 {
   font-size: 2.375em;
   letter-spacing: 1.81px;
   line-height: 54px;
-  font-family: Calibre-Regular; }
+  font-family: Calibre-Regular;
+  font-weight: normal; }
   @media (min-width: 87em) {
     h2 {
       font-size: 3.75em;
@@ -2263,6 +2316,7 @@ BUTTONS
   text-decoration: none;
   color: #201C1D;
   font-family: Calibre-Regular;
+  font-weight: normal;
   font-size: 1.5em;
   display: flex; }
   .text-button:hover, .text-button:focus {
@@ -2285,6 +2339,7 @@ BUTTONS
   color: #B98361;
   text-decoration: none;
   font-family: Calibre-Regular;
+  font-weight: normal;
   font-size: 1.125em;
   border-radius: 4px;
   margin-top: 30px;
@@ -2313,6 +2368,7 @@ BUTTONS
   padding: 24px 28px;
   text-decoration: none;
   font-family: Calibre-Regular;
+  font-weight: normal;
   font-size: 1.125em;
   border-radius: 4px;
   transition: all 0.2s ease-in; }

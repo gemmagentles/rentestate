@@ -26,6 +26,7 @@
             color: $secondary-color;
             letter-spacing: 0.0px;
             font-family: $secondary-font-family;
+            font-weight: normal;
             padding-bottom: 30px;
             
             @include breakpoint(smalldesktop) {
@@ -84,6 +85,7 @@
             line-height: 34px;
             letter-spacing: normal;
             font-family: $secondary-font-family;
+            font-weight: normal;
             padding-bottom: 14px;
 
             @include breakpoint(smalldesktop) {        
@@ -97,6 +99,7 @@
             line-height: 30px;
             letter-spacing: 0.15px;
             font-family: $secondary-font-family;
+            font-weight: normal;
         }
     }
 }

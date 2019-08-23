@@ -34,6 +34,7 @@
             font-size: em(28);
             line-height: 34px;
             font-family: $secondary-font-family;
+            font-weight: normal;
             padding: 50px 38px 34px;
             letter-spacing: normal;
             
@@ -75,6 +76,7 @@
                 width: 100px;
                 height: 2px;
                 width: 20%;
+                border: none;
                 
                 @include breakpoint(tablet) {
                     width: 33.3333333333%;
@@ -136,7 +138,6 @@
 
     &__slides {
         padding-bottom: 40px;
-        display: flex;
 
         @include breakpoint(smalldesktop) {
             padding-bottom: 64px;
@@ -211,6 +212,7 @@
     &__sub-heading {
         color: $font-secondary-color;
         font-family: $tertiary-font-family;
+        font-weight: normal;
         font-size: em(16);
         line-height: 20px;
         letter-spacing: 2.0px;
@@ -225,6 +227,7 @@
         font-size: em(24);
         line-height: 28px;
         font-family: $secondary-font-family;
+        font-weight: normal;
         letter-spacing: 0;
         padding: 26px 0 0;
         border-top: 1px solid $secondary-color;
@@ -242,6 +245,7 @@
     &__features {
         color: $secondary-color;
         font-family: $tertiary-font-family;
+        font-weight: normal;
         font-size: em(16);
         padding-right: 25px;
         position: relative;

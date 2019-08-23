@@ -39,6 +39,7 @@
     &__newsletter {
         &--title {
             font-family: $secondary-font-family;
+            font-weight: normal;
             font-size: em(24);
             line-height: 30px;
             display: block;
@@ -73,6 +74,7 @@
             font-size: em(16);
             letter-spacing: 2px;
             font-family: $tertiary-font-family;
+            font-weight: normal;
             margin-bottom: 40px;
 
             @include breakpoint(tablet) {
@@ -179,6 +181,7 @@
         line-height: 22px;
         letter-spacing: 1.5px;
         font-family: $tertiary-font-family;
+        font-weight: normal;
         margin: 80px 0 40px;
 
         @include breakpoint(tablet) {

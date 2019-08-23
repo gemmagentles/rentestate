@@ -2,8 +2,8 @@
     // overflow: visible;
     background: white;
     transition: 0.4s;
-    // position: fixed;
-    // width: 100%;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 99;
 }
@@ -40,7 +40,7 @@
 
 main {
     transition: 0.4s; /* Adds a transition effect when the padding is decreased */
-    // margin-top: 94px;
+    margin-top: 94px;
     width: 100%;
 }
 
@@ -251,6 +251,7 @@ main {
             text-decoration: none;
             color: $font-secondary-color;
             font-family: $secondary-font-family;
+            font-weight: normal;
             letter-spacing: 1.12px;
             font-size: em(18);
             font-weight: normal;
