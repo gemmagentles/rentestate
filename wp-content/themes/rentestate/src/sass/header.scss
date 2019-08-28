@@ -258,6 +258,7 @@ main {
 
             @include breakpoint(smalldesktop) {
                 font-size: em(16);
+                transition: all 0.2s ease-in;
 
                 &:hover,
                 &:focus,
