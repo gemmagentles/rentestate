@@ -36,7 +36,7 @@
 			</div>
 			<div class="footer__bottom-footer">
 				<p class="footer__copyright">
-					&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> | <a class="footer__copyright--link" href="/terms-and-conditions/">Terms and Conditions</a> | <a class="footer__copyright--link" href="/site-map/">Site Map</a>
+					&copy; <?php echo date('Y'); ?> RE Rent Estate Property Management | <a class="footer__copyright--link" href="/terms-and-conditions/">Terms and Conditions</a> | <a class="footer__copyright--link" href="/site-map/">Site Map</a>
 				</p>
 				<a href="javascript:" id="top" title="Top">
 					<svg class="footer__top-arrow"><use href="<?php echo get_template_directory_uri(); ?>/img/icons/icons.svg#icon-top-arrow" xlink:href="<?php echo get_template_directory_uri(); ?>/img/icons/icons.svg#icon-top-arrow"/></svg>
