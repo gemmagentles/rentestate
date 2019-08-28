@@ -6,7 +6,7 @@
                 <div class="half-and-half-image__paragraph"><?php the_sub_field( 'paragraph' ); ?></div>
                 <?php $button = get_sub_field( 'button' ); ?>
                 <?php if ( $button ) { ?>
-                    <a class="half-and-half-image__button dark-button" href="<?php echo $button['url']; ?>" target="<?php echo $button['target']; ?>"><?php echo $button['title']; ?>
+                    <a class="half-and-half-image__button dark-button" href="<?php echo $button['url']; ?>" target="<?php echo $button['target']; ?>"><span><?php echo $button['title']; ?></span>
                     <svg class="half-and-half-image__button--icon dark-button--icon"><use href="<?php echo get_template_directory_uri(); ?>/img/icons/icons.svg#icon-arrow" xlink:href="<?php echo get_template_directory_uri(); ?>/img/icons/icons.svg#icon-arrow"/></svg>
                     </a>
                 <?php } ?>

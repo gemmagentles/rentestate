@@ -220,8 +220,14 @@ BUTTONS
   font-family: $secondary-font-family;
   font-weight: normal;
   font-size: em(18);
+  line-height: 20px;
   border-radius: 4px; 
   transition: all 0.2s ease-in;
+
+  span {
+    position: relative;
+    top: 2px;
+  }
 
   @include breakpoint(smalldesktop) {
     margin-top: 46px;
@@ -238,7 +244,7 @@ BUTTONS
       width: 27px;
       height: 12px;
       margin-left: 25px;
-      top: 3px;
+      top: 4px;
       position: relative;
   }
 }

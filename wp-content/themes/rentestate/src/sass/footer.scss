@@ -34,6 +34,11 @@
         &--icon {
             margin-right: 20px;
         }
+
+        .mc4wp-alert.mc4wp-success {
+            padding-bottom: 64px;
+            color: $font-secondary-color;
+        }
     }
 
     &__newsletter {
@@ -78,7 +83,7 @@
             margin-bottom: 40px;
 
             @include breakpoint(tablet) {
-                margin-bottom: 64px;
+                margin-bottom: 32px;
             }
         }
     }

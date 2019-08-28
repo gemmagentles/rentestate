@@ -173,6 +173,11 @@
             position: relative;
         }
 
+        .mc4wp-alert.mc4wp-success {
+            padding-top: 32px;
+            color: $font-secondary-color;
+        }
+
         .footer__newsletter--title {
             font-size: em(24);
             line-height: 30px;
