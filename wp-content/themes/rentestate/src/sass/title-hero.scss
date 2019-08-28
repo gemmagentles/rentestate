@@ -13,10 +13,10 @@
 
     &__text-wrapper {
         max-width: 750px;
-        padding: 50px 0 40px;
+        padding: 60px 0 50px;
 
         @include breakpoint(smalldesktop) {
-            padding: 96px 0 72px;
+            padding: 120px 0 104px;
         }
 
         .title-hero__heading {
