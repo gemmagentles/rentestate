@@ -25,6 +25,7 @@
 								<?php while ( have_rows( 'contact_details', 'option' ) ) : the_row(); ?>
 								<div class="contact-page__contact--row">
 									<p class="contact-page__name"><?php the_sub_field( 'name' ); ?></p>
+									<p class="contact-page__job-role"><?php the_sub_field( 'job_role' ); ?></p>
 									<p class="contact-page__phone"><?php the_sub_field( 'phone_number' ); ?></p>
 									<p><a class="contact-page__email" href="mailto:<?php the_sub_field( 'email_address' ); ?>" target="_top"><?php the_sub_field( 'email_address' ); ?></a></p>
 								</div>

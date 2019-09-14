@@ -5,7 +5,7 @@
     &__wrapper {
         max-width: $inner-site-width;
         margin: 0 auto 94px;
-        padding: 68px 38px 80px;
+        padding: 68px 38px 38px;
         height: calc(100% - 94px);
 
         @include breakpoint(smalldesktop) {
@@ -103,7 +103,8 @@
         color: $secondary-color;
     }
 
-    &__phone {
+    &__phone,
+    &__job-role {
         color: $font-secondary-color;
     }
 
@@ -153,7 +154,7 @@
         padding: 0 0 40px;
 
         @include breakpoint(smalldesktop) {
-            padding: 75px 0;
+            padding: 75px 0 0;
         }
 
         &--icon {
@@ -192,6 +193,10 @@
             margin-bottom: 0;
         }
     }
+}
+
+.contact-page footer {
+    position: relative;
 }
 
 .contact-footer {

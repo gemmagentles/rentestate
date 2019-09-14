@@ -41,6 +41,25 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_5d7a9d193bf67",
+                    "label": "Job Role",
+                    "name": "job_role",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5d2533a15238f",
                     "label": "Phone Number",
                     "name": "phone_number",
@@ -269,5 +288,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1565380063
+    "modified": 1568316710
 }
