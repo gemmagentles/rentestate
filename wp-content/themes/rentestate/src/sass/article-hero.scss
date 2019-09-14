@@ -201,9 +201,16 @@
     &__image {
         width: 100%;
         display: block;
+        object-fit: cover;
+        max-width: 1024px;
+        height: 284px;
 
-        @include breakpoint(smalldesktop) {
-            max-width: 920px;
+        @include breakpoint(tablet) {
+            height: 460px;
+        }
+
+        @include breakpoint(largedesktop) {
+            height: 668px;
         }
     }
 }
