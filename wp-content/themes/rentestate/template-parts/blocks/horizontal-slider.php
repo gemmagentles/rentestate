@@ -26,7 +26,7 @@
 
 
 								<?php while ( have_rows( 'slider', $listings_id ) ) : the_row(); ?>
-								<p class="horizontal-slider__price">$<?php the_sub_field( 'price', $listings_id ); ?></p>
+								<p class="horizontal-slider__price"><?php the_sub_field( 'price', $listings_id ); ?></p>
 									<?php if ( have_rows( 'image_slider', $listings_id ) ) : ?>
 									
 

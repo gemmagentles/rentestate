@@ -8,7 +8,7 @@
             margin-bottom: 144px;
         }
 
-        // container of images
+    // container of images
     .tns-outer .tns-ovh {
 
         @include breakpoint(tablet) {
@@ -138,6 +138,7 @@
 
     &__slides {
         padding-bottom: 40px;
+        display: flex;
 
         @include breakpoint(smalldesktop) {
             padding-bottom: 64px;
@@ -164,7 +165,7 @@
         background: white;
 
         @include breakpoint(smalldesktop) {
-            padding: 60px;
+            padding: 40px;
         }
 
         @include breakpoint(largedesktop) {
@@ -185,10 +186,17 @@
 
     &__image {
         width: 100%;
-        min-height: 323px;
-        max-height: 660px;
+        height: 323px;
         object-fit: cover;
         display: block;
+
+        @include breakpoint(smalldesktop) {
+            height: 500px;
+        }
+
+        @include breakpoint(largedesktop) {
+            height: 660px;
+        }
     }
 
     &__price {

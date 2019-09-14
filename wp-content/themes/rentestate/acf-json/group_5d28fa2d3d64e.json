@@ -41,7 +41,7 @@
                     "label": "Heading",
                     "name": "heading",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "This heading is limited to a 40 character limit for best design and copywriting practice.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -53,7 +53,7 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": 40
                 },
                 {
                     "key": "field_5d29099d662b2",
@@ -136,7 +136,7 @@
                             "label": "Price",
                             "name": "price",
                             "type": "text",
-                            "instructions": "",
+                            "instructions": "Add $ before price value, or add word if price isn't to be shown.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -232,5 +232,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1566515739
+    "modified": 1568328590
 }
