@@ -1,3 +1,4 @@
+<title>Rent Estate | Our Listings</title>
 <?php get_header(); ?>
 
 	<main role="main">
@@ -15,7 +16,7 @@
 		<!-- section -->
 		<section>
 			<div class="article-cards__grid">
-
+			
 				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 					<?php get_template_part('template-parts/blocks/article-cards'); ?> 		
