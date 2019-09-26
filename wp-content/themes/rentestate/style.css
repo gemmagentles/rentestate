@@ -1153,10 +1153,10 @@ main {
   display: block; }
   @media (min-width: 64em) {
     .horizontal-slider__image {
-      height: 500px; } }
-  @media (min-width: 87em) {
-    .horizontal-slider__image {
-      height: 660px; } }
+      height: 505px;
+      width: 100%;
+      max-width: 920px;
+      object-fit: cover; } }
 
 .horizontal-slider__price {
   background: #B98361;
