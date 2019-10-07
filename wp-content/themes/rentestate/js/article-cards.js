@@ -1,5 +1,26 @@
 jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" error
-	$('#js-load-more-btn').click(function(){
+	
+availabilityOrder(500);
+
+$( "input[type=checkbox]" ).change(function() {
+	availabilityOrder(5000);
+});
+
+$( "li a.search-filter-reset" ).click(function() {
+	availabilityOrder(5000);
+});
+
+function availabilityOrder(time) {
+
+	setTimeout(function(){
+		$('div.article-cards__card').has('div > p.article-cards__tag--availability-price').css('order', '0');
+		$('div.article-cards__card').has('div > p.article-cards__tag--coming-soon').css('order', '1');
+		$('div.article-cards__card').has('div > p.article-cards__tag--rented').css('order', '2');
+	  }, time);
+
+}
+
+$('#js-load-more-btn').click(function(){
  
 		var button = $(this),
 		    data = {
