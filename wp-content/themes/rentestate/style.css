@@ -911,7 +911,7 @@ main {
     .article-cards__image {
       max-width: 440px; } }
 
-.article-cards__price {
+.article-cards__tag {
   background: #B98361;
   color: white;
   padding: 10px 15px 5px;
@@ -923,9 +923,13 @@ main {
   left: 0;
   z-index: 1; }
   @media (min-width: 48em) {
-    .article-cards__price {
+    .article-cards__tag {
       font-size: 1.125em;
       line-height: 24px; } }
+  .article-cards__tag--rented {
+    background: #29292B; }
+    .article-cards__tag--rented + .article-cards__image-container {
+      opacity: 0.4; }
 
 .article-cards__sub-heading {
   color: #787C82;
@@ -2424,4 +2428,10 @@ BUTTONS
     margin-left: 25px;
     top: 4px;
     position: relative; }
+
+.not-found__button {
+  margin-bottom: 60px; }
+  @media (min-width: 64em) {
+    .not-found__button {
+      margin-bottom: 0; } }
 
