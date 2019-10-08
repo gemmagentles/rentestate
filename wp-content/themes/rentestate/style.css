@@ -1178,7 +1178,7 @@ main {
       max-width: 920px;
       object-fit: cover; } }
 
-.horizontal-slider__price {
+.horizontal-slider__tag {
   background: #B98361;
   color: white;
   padding: 10px 15px 5px;
@@ -1190,9 +1190,11 @@ main {
   right: 0;
   z-index: 1; }
   @media (min-width: 48em) {
-    .horizontal-slider__price {
+    .horizontal-slider__tag {
       font-size: 1.125em;
       line-height: 24px; } }
+  .horizontal-slider__tag--rented {
+    background: #29292B; }
 
 .horizontal-slider__sub-heading {
   color: #787C82;
