@@ -877,19 +877,33 @@ main {
   @media (min-width: 48em) {
     .article-cards__grid {
       padding: 68px 38px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 62px 40px; } }
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; }
+      @supports (display: grid) {
+        .article-cards__grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 62px 40px; } } }
   @media (min-width: 64em) {
     .article-cards__grid {
-      padding: 68px 38px 92px;
-      grid-template-columns: 1fr 1fr 1fr; } }
+      padding: 68px 38px 92px; }
+      @supports (display: grid) {
+        .article-cards__grid {
+          grid-template-columns: 1fr 1fr 1fr; } } }
 
 .article-cards__card {
   margin-bottom: 60px; }
   @media (min-width: 48em) {
     .article-cards__card {
-      margin-bottom: 0; } }
+      margin-bottom: 0;
+      max-width: 440px;
+      margin-right: 20px;
+      margin-bottom: 62px; }
+      @supports (display: grid) {
+        .article-cards__card {
+          margin-right: 0;
+          margin-bottom: 0; } } }
 
 .article-cards__container {
   width: 100%;

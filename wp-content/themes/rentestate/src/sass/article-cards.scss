@@ -6,14 +6,23 @@
 
         @include breakpoint(tablet) {
             padding: 68px 38px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 62px 40px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+            @supports (display: grid) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 62px 40px;
+            }
         }
 
         @include breakpoint(smalldesktop) {
             padding: 68px 38px 92px;
-            grid-template-columns: 1fr 1fr 1fr;
+
+            @supports (display: grid) {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
         }
     }
 
@@ -22,6 +31,14 @@
 
         @include breakpoint(tablet) {
             margin-bottom: 0;
+            max-width: 440px;
+            margin-right: 20px;
+            margin-bottom: 62px;
+
+            @supports (display: grid) {
+                margin-right: 0;
+                margin-bottom: 0;
+            }
         }
     }
 
