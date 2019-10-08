@@ -198,7 +198,7 @@
         }
     }
 
-    &__price {
+    &__tag {
         background: $secondary-color;
         color: white;
         padding: 10px 15px 5px;
@@ -213,6 +213,10 @@
         @include breakpoint(tablet) {
             font-size: em(18);
             line-height: 24px;
+        }
+
+        &--rented {
+            background: $quaternary-color;
         }
     }
 

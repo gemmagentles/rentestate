@@ -26,7 +26,16 @@
 
 
 								<?php while ( have_rows( 'slider', $listings_id ) ) : the_row(); ?>
-								<p class="horizontal-slider__price"><?php the_sub_field( 'price', $listings_id ); ?></p>
+
+									<?php $availability = get_sub_field( 'availability' ); ?>
+									<?php if ( $availability == 'Available' ) { ?>
+										<p class="horizontal-slider__tag horizontal-slider__tag--availability-price">$<?php the_sub_field( 'price', $listings_id ); ?></p>
+									<?php } elseif ( $availability == 'Coming Soon' ) { ?>
+										<p class="horizontal-slider__tag horizontal-slider__tag--coming-soon">Coming Soon</p>
+									<?php } else { ?>
+										<p class="horizontal-slider__tag horizontal-slider__tag--rented">Rented</p>
+									<?php } ?>
+
 									<?php if ( have_rows( 'image_slider', $listings_id ) ) : ?>
 									
 
