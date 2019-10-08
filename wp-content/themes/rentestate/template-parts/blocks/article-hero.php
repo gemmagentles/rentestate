@@ -16,7 +16,16 @@
 		<?php if ( have_rows( 'slider' ) ) : ?>
 		<div class="article-hero__slider">
 			<?php while ( have_rows( 'slider' ) ) : the_row(); ?>
-			<p class="article-hero__price">$<?php the_sub_field( 'price' ); ?></p>
+
+				<?php $availability = get_sub_field( 'availability' ); ?>
+				<?php if ( $availability == 'Available' ) { ?>
+					<p class="article-hero__tag article-hero__tag--availability-price">$<?php the_sub_field( 'price' ); ?></p>
+				<?php } elseif ( $availability == 'Coming Soon' ) { ?>
+					<p class="article-hero__tag article-hero__tag--coming-soon">Coming Soon</p>
+				<?php } else { ?>
+					<p class="article-hero__tag article-hero__tag--rented">Rented</p>
+				<?php } ?>
+
 				<?php if ( have_rows( 'image_slider' ) ) : ?>
 				<div class="article-hero__slides">
 						<?php while ( have_rows( 'image_slider' ) ) : the_row(); ?>

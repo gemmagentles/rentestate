@@ -832,7 +832,7 @@ main {
     display: none;
     visibility: hidden; }
 
-.article-hero__price {
+.article-hero__tag {
   background: #B98361;
   color: white;
   padding: 15px 20px 10px;
@@ -844,18 +844,20 @@ main {
   right: 0;
   z-index: 1; }
   @media (min-width: 48em) {
-    .article-hero__price {
+    .article-hero__tag {
       font-size: 1.25em;
       line-height: 26px; } }
   @media (min-width: 64em) {
-    .article-hero__price {
+    .article-hero__tag {
       bottom: unset;
       right: unset;
       top: 0;
       left: 0; } }
   @media (min-width: 87em) {
-    .article-hero__price {
+    .article-hero__tag {
       font-size: 1.5em; } }
+  .article-hero__tag--rented {
+    background: #29292B; }
 
 .article-hero__image {
   width: 100%;
