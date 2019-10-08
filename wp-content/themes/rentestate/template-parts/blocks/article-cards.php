@@ -1,16 +1,24 @@
 <?php if ( have_rows( 'article_hero_block' ) ) : ?>
 	<?php while ( have_rows( 'article_hero_block' ) ) : the_row(); ?>
-    <div class="article-cards__card">
 
+    <div class="article-cards__card">
     <!-- This is only a slider when you click into the individual page -->
     <?php if ( have_rows( 'slider' ) ) : ?>
 		<div class="article-cards__image-wrapper">
 
 
 			<?php while ( have_rows( 'slider' ) ) : the_row(); ?>
-			<p class="article-cards__price"><?php the_sub_field( 'price' ); ?></p>
+
+				<?php $availability = get_sub_field( 'availability' ); ?>
+				<?php if ( $availability == 'Available' ) { ?>
+					<p class="article-cards__tag article-cards__tag--availability-price">$<?php the_sub_field( 'price' ); ?></p>
+				<?php } elseif ( $availability == 'Coming Soon' ) { ?>
+					<p class="article-cards__tag article-cards__tag--coming-soon">Coming Soon</p>
+				<?php } else { ?>
+					<p class="article-cards__tag article-cards__tag--rented">Rented</p>
+				<?php } ?>
+
                 <?php if ( have_rows( 'image_slider' ) ) : ?>
-                
 
 				<div class="article-cards__image-container">
 
@@ -27,7 +35,6 @@
                         
                 </div>
                     
-                
                 <?php else : ?>
                     <?php // no rows found ?>
 				<?php endif; ?>
