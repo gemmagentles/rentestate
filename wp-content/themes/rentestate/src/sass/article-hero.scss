@@ -169,7 +169,7 @@
         }
     }
 
-    &__price {
+    &__tag {
         background: $secondary-color;
         color: white;
         padding: 15px 20px 10px;
@@ -195,6 +195,10 @@
 
         @include breakpoint(largedesktop) {
             font-size: em(24);
+        }
+
+        &--rented {
+            background: $quaternary-color;
         }
     }
 
