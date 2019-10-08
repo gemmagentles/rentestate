@@ -104,7 +104,7 @@
 			<div class="contact-footer">
 				<div class="contact-footer__container">
 					<p class="contact-footer__copyright">
-						&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> | <a class="contact-footer__copyright--link" href="/terms-and-conditions/">Terms and Conditions</a> | <a class="footer__copyright--link" href="/site-map/">Site Map</a>
+						&copy; <?php echo date('Y'); ?> RE Rent Estate Property Management | <a class="footer__copyright--link" href="/terms-and-conditions/">Terms and Conditions</a> | <a class="footer__copyright--link" href="/site-map/">Site Map</a>
 					</p>
 				</div>
 			</div>

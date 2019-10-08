@@ -248,3 +248,11 @@ BUTTONS
       position: relative;
   }
 }
+
+.not-found__button {
+  margin-bottom: 60px;
+
+  @include breakpoint(smalldesktop) {
+    margin-bottom: 0;
+  }
+}
